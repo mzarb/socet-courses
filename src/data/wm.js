@@ -15,7 +15,6 @@ const wmData =
                         { code: "CM1109", name: "Exploring Computing Devices", type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -34,8 +33,7 @@ const wmData =
                         { code: "CM1113", name: "Software Design and Development", type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
-                            type: "Elective Choice",
+                           type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
                                 electives.stage1.semester2.ccdElec.name,
@@ -61,7 +59,6 @@ const wmData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -89,7 +86,6 @@ const wmData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -114,7 +110,6 @@ const wmData =
                         { code: "CM3140", name: "Native Mobile Apps", type: "Subject Core", size: 1, source: "subject"},
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -135,7 +130,6 @@ const wmData =
                         { code: "CM3139", name: "Visual Communication", type: "Subject Core", size: 1, source: "subject"},
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -161,7 +155,6 @@ const wmData =
                        { code: "CB3162", name: "Digital Media & User Experience", type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [

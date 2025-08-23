@@ -16,7 +16,6 @@ const mscicsData =
                         { ...moduleList.CM1109, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -35,7 +34,6 @@ const mscicsData =
                         { ...moduleList.CM1113, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -62,7 +60,6 @@ const mscicsData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -87,7 +84,6 @@ const mscicsData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -112,7 +108,6 @@ const mscicsData =
                         { ...moduleList.CM3151, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -132,7 +127,6 @@ const mscicsData =
                         { ...moduleList.CM3152, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -154,7 +148,6 @@ const mscicsData =
                     modules: [
                         {
                             code: "Routes",
-                            name: "Routes",
                             type: "Elective Choice",
                             size: 3, source: "subject",
                             options: [
@@ -171,7 +164,6 @@ const mscicsData =
                     modules: [
                         {
                             code: "Routes",
-                            name: "Routes",
                             type: "Elective Choice",
                             size: 3, source: "subject",
                             options: [

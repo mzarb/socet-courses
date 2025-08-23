@@ -16,7 +16,6 @@ const gdData =
                         { ...moduleList.CM1108, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -34,7 +33,6 @@ const gdData =
                         { ...moduleList.CM1116, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -61,7 +59,6 @@ const gdData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -89,7 +86,6 @@ const gdData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -115,7 +111,6 @@ const gdData =
                         { ...moduleList.CM4136, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -136,7 +131,6 @@ const gdData =
                         { ...moduleList.CM3150, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -162,7 +156,6 @@ const gdData =
                         { ...moduleList.CM4137, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [

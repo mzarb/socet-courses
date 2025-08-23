@@ -192,7 +192,10 @@
 
 /* This rule is for electives */
 .module-box.elective-choice {
-  background-color: #f7e1b5; /* Beige */
+  /* background-color: #f7e1b5; /* Beige */
+  background-color: #712177; /* RGU purple */
+  color: white;
+  font-style: italic;
 }
 
 

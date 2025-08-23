@@ -41,7 +41,6 @@ const dsbmData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -69,7 +68,6 @@ const dsbmData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -98,7 +96,6 @@ const dsbmData =
                 size: 1, source: "subject"},
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -123,7 +120,6 @@ const dsbmData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -152,7 +148,6 @@ const dsbmData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [

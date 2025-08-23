@@ -16,7 +16,6 @@ const cyData =
               {  ...moduleList.CM1131, type: "Subject Core", size: 1, source: "subject"  },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -34,7 +33,6 @@ const cyData =
               {  ...moduleList.CM1132, type: "Subject Core", size: 1, source: "subject"  },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -61,7 +59,6 @@ const cyData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -89,8 +86,7 @@ const cyData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
-                type: "Elective Choice",
+               type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
                                electives.stage2.semester2.ccdElec.name,
@@ -118,7 +114,6 @@ const cyData =
                 size: 1, source: "subject"},
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -143,7 +138,6 @@ const cyData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -172,7 +166,6 @@ const cyData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [

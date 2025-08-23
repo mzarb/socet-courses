@@ -16,7 +16,6 @@ const dsaiData =
               { ...moduleList.CM1122, type: "Subject Core", size: 1, source: "subject"  },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -34,7 +33,6 @@ const dsaiData =
               { ...moduleList.CM1123, type: "Subject Core", size: 1, source: "subject"  },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -61,7 +59,6 @@ const dsaiData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -88,7 +85,6 @@ const dsaiData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -116,7 +112,6 @@ const dsaiData =
                 size: 1, source: "subject"},
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
@@ -141,8 +136,7 @@ const dsaiData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
-                type: "Elective Choice",
+               type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
                                electives.stage3.semester2.ccdElec.name,
@@ -170,7 +164,6 @@ const dsaiData =
               },
               {
                 code: "Elective",
-                name: "Elective Choice",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
