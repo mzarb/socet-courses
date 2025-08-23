@@ -25,6 +25,7 @@ export const moduleList = {
   CM2120: { code: "CM2120", name: "Game Design and Gameplay", size: 1 },
   CE2000: { code: "CE2000", name: "Dynamic Web Technologies", size: 1 },
   CM2116: { code: "CM2116", name: "Data Structures and Algorithms", size: 1 },
+  CM2135: { code: "CM2135", name: "Securing Networks", size: 1},
   CM2136: { code: "CM2136", name: "Cryptography", size: 1 },
   CM2138: { code: "CM2138", name: "Business Intelligence", size: 1 },
   CM2121: { code: "CM2121", name: "3D Reconstructive Techniques", size: 1 },
