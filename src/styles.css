@@ -63,7 +63,7 @@
   writing-mode: vertical-rl;
   text-orientation: mixed;
   /* background-color: #f7e1b5; /* Beige */
-  background-color: #b97ebd; /* RGU purple */
+  background-color: #E6EAFF; /* RGU purple */
   padding: 10px;
   font-weight: bold;
   font-size: 1.2rem;
@@ -146,7 +146,7 @@
   padding: 0;
   margin: 0;
   /* background-color: #f7e1b5; /* Beige */
-  background-color: #b97ebd; /* RGU purple */
+  background-color: #E6EAFF; /* RGU purple */
   font-style: italic;
   border: 1px solid #ccc;
   border-top: none;
@@ -196,7 +196,7 @@
 /* This rule is for electives */
 .module-box.elective-choice {
   /* background-color: #f7e1b5; /* Beige */
-  background-color: #b97ebd; /* RGU purple */
+  background-color: #E6EAFF; /* RGU purple */
   font-style: italic;
 }
 
