@@ -17,7 +17,7 @@ const coursesData = [
     gdData,
     dsaiData,
     dsbmData,
-    badata,
+//    badata,
     mscicsData,
 ];
 

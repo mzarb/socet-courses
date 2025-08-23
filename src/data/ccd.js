@@ -16,7 +16,6 @@ const ccdData =
                         { ...moduleList.CM1108, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -34,7 +33,6 @@ const ccdData =
                         { ...moduleList.CM1116, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -61,7 +59,6 @@ const ccdData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -89,7 +86,6 @@ const ccdData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -115,7 +111,6 @@ const ccdData =
                         { ...moduleList.CM3128, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -135,7 +130,6 @@ const ccdData =
                         { ...moduleList.CM3136, type: "Subject Core", source: "subject" },
                         {
                             code: "Routes",
-                            name: "Routes",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -145,7 +139,6 @@ const ccdData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
@@ -174,7 +167,6 @@ const ccdData =
                         },
                         {
                             code: "Elective",
-                            name: "Elective Choice",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
