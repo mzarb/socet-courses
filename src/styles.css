@@ -190,14 +190,23 @@
   background-color: #e6f7ff; /* Light blue */
 }
 
-/* This rule is for electives */
+* Styles the main elective box */
 .module-box.elective-choice {
-  /* background-color: #f7e1b5; /* Beige */
   background-color: #712177; /* RGU purple */
-  color: white;
   font-style: italic;
 }
 
+/* Styles the text inside the main elective box */
+.module-box.elective-choice .module-code {
+  color: white;
+}
+
+/* Styles the tooltip that appears on hover */
+.elective-options {
+  background-color: #712177; /* RGU purple */
+  color: white;
+  font-style: italic; /* Apply italic to the options text as well */
+}
 
 /* ====================================== */
 /* 5. Responsive Design for Small Screens */
