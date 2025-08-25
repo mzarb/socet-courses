@@ -38,7 +38,9 @@ const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '
       {module.type === "Elective Choice" && isExpanded && module.options && (
         <ul className="elective-options">
           {module.options.map((option, index) => (
-            <li key={index}>{option}</li>
+                    <li key={index}>
+            {option.code}: {option.name}
+        </li>
           ))}
         </ul>
       )}

@@ -19,9 +19,9 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester1.csElec.name,
-                                electives.stage1.semester1.cyElec.name,
-                                electives.stage1.semester1.dsElec.name
+                                electives.stage1.semester1.csElec,
+                                electives.stage1.semester1.cyElec,
+                                electives.stage1.semester1.dsElec
                             ],
                         },
                     ],
