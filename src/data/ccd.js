@@ -133,8 +133,8 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - " + electives.stage3.semester2.ccdElec.code + ": " + electives.stage3.semester2.ccdElec.name,
-                                "Route B - " + electives.stage3.semester2.gdElec.code + ": " + electives.stage3.semester2.gdElec.name,
+                                "Route A - CM3149: Audio & Visual Production",
+                                "Route B - CM3150: Immersive Technology",
                             ],
                         },
                         {
