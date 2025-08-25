@@ -147,7 +147,8 @@ const ccdData =
                                 electives.stage3.semester2.cyElec,
                                 electives.stage3.semester2.dsElec,
                                 electives.stage3.semester2.gdElec,
-                                electives.stage3.semester2.wmElec
+                                electives.stage3.semester2.wmElec,
+                                moduleList.CM2124
                             ],
                         },
                     ],
