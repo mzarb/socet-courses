@@ -134,7 +134,6 @@ const csData =
                         {  ...moduleList.CM3142, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Routes",
-                            name: "Routes",
                             type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
