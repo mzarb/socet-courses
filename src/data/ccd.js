@@ -130,11 +130,11 @@ const ccdData =
                         { ...moduleList.CM3136, type: "Subject Core", source: "subject" },
                         {
                             code: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - CM3149: Audio & Visual Production",
-                                "Route B - CM3150: Immersive Technology",
+                                "Route A " + moduleList.CM3149,
+                                "Route B " + moduleList.CM3150,
                             ],
                         },
                         {
