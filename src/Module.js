@@ -5,13 +5,13 @@ const Module = ({ module }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleMouseEnter = () => {
-    if (module.type === "Elective Choice") {
+    if (module.type === "Elective Choice" || module.type === "Route Choice") {
       setIsExpanded(true);
     }
   };
 
   const handleMouseLeave = () => {
-    if (module.type === "Elective Choice") {
+    if (module.type === "Elective Choice" || module.type === "Route Choice") {
       setIsExpanded(false);
     }
   };
@@ -39,7 +39,7 @@ const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '
         <ul className="elective-options">
           {module.options.map((option, index) => (
             <li key={index}>
-                {module.type === "Elective Choice" ? `${option.code}: ${option.name}` : option}
+                 {option.code}: {option.name}
             </li>
           ))}
         </ul>
