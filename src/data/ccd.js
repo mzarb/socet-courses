@@ -133,8 +133,8 @@ const ccdData =
                             type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - " + electives.stage3.semester2.ccdElec,
-                                "Route B - " + electives.stage3.semester2.gdElec,
+                                moduleList.CM3149,
+                                moduleList.CM3150,
                             ],
                         },
                         {
