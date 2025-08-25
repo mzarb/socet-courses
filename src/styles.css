@@ -209,7 +209,7 @@
 /* Ensure text inside route choice modules is white */
 .module-box.route-choice .module-code,
 .module-box.route-choice .module-name {
-  color: white;
+  color: black;
 }
 
 /* ====================================== */
