@@ -148,6 +148,7 @@
   /* background-color: #f7e1b5; /* Beige */
   background-color: #E6EAFF; /* RGU purple */
   font-style: italic;
+  text-decoration: underline;
   border: 1px solid #ccc;
   border-top: none;
   border-radius: 0 0 5px 5px;
@@ -198,12 +199,15 @@
   /* background-color: #f7e1b5; /* Beige */
   background-color: #E6EAFF; /* RGU purple */
   font-style: italic;
+
+  text-decoration: underline;
 }
 
 /* This rule is for route choice modules */
 .module-box.route-choice {
   background-color: #E6EAFF; /* RGU purple */
   font-style: italic;
+  text-decoration: underline;
 }
 
 /* Ensure text inside route choice modules is white */
