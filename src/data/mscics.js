@@ -148,12 +148,12 @@ const mscicsData =
                     modules: [
                         {
                             code: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 3, source: "subject",
                             options: [
-                                "CM4305: MSci Industrial Placement",
-                                "CM4307: MSci Study Abroad",
-                                "CM4309: MSci Research Placement",
+                                moduleList.CM4305,
+                                moduleList.CM4307,
+                                moduleList.CM4309
                             ],
                         },
                         { ...moduleList.CM4304, type: "Subject Core", size: 1, source: "subject" },
@@ -164,12 +164,12 @@ const mscicsData =
                     modules: [
                         {
                             code: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 3, source: "subject",
                             options: [
-                                "CM4306: MSci Industrial Placement",
-                                "CM4308: MSci Study Abroad",
-                                "CM4310: MSci Research Placement",
+                                moduleList.CM4305,
+                                moduleList.CM4307,
+                                moduleList.CM4309
                             ],
                         },
                         { ...moduleList.CM4304, type: "Subject Core", size: 1, source: "subject" },

@@ -106,11 +106,11 @@ const csData =
                         { ...moduleList.CM3113, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - CM3131: Machine Learning",
-                                "Route B - CM2119: Experimental Game Mechanics",
+                                moduleList.CM3113,
+                                moduleList.CM2119
                             ],
                         },
                         {
@@ -135,11 +135,11 @@ const csData =
                         {
                             code: "Routes",
                             name: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - CM3131: Machine Learning",
-                                "Route B - CM2119: Experimental Game Mechanics",
+                                moduleList.CM3152,
+                                moduleList.CM2124
                             ],
                         },
                         {
@@ -167,11 +167,20 @@ const csData =
                         { ...moduleList.CM4106, type: "Subject Core", size: 1, source: "subject" },
                        {
                             code: "Routes",
-                            type: "Elective Choice",
-                            size: 2, source: "subject",
+                            type: "Route Choice",
+                            size: 1, source: "subject",
                             options: [
-                                "Route A - CE4145 Natural Language Processing // CM4126 Computer Vision",
-                                "Route B - CM4110 Human Computer Interaction // CM4114 Games Development"
+                                moduleList.CE4145,
+                                moduleList.CM4110
+                            ],
+                        },
+                                               {
+                            code: "Routes",
+                            type: "Route Choice",
+                            size: 1, source: "subject",
+                            options: [
+                                moduleList.CM4126,
+                                moduleList.CM4114
                             ],
                         },
                         {
