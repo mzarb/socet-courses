@@ -200,6 +200,17 @@
   font-style: italic;
 }
 
+/* This rule is for route choice modules */
+.module-box.route-choice {
+  background-color: #712177; /* RGU purple */
+  font-style: italic;
+}
+
+/* Ensure text inside route choice modules is white */
+.module-box.route-choice .module-code,
+.module-box.route-choice .module-name {
+  color: white;
+}
 
 /* ====================================== */
 /* 5. Responsive Design for Small Screens */
