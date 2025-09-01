@@ -1,17 +1,20 @@
 // Module.js
 import React, { useState } from 'react';
 
+  // Array for route prefixes
+  const routePrefixes = ['Route A', 'Route B', 'Route C', 'Route D', 'Route E', 'Route F'];
+
 const Module = ({ module }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleMouseEnter = () => {
-    if (module.type === "Elective Choice") {
+    if (module.type === "Elective Choice" || module.type === "Route Choice") {
       setIsExpanded(true);
     }
   };
 
   const handleMouseLeave = () => {
-    if (module.type === "Elective Choice") {
+    if (module.type === "Elective Choice" || module.type === "Route Choice") {
       setIsExpanded(false);
     }
   };
@@ -35,10 +38,16 @@ const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '
         <div className="module-code">{module.code}</div>
         <div className="module-name">{module.name}</div>
       </div>
-      {module.type === "Elective Choice" && isExpanded && module.options && (
+          {(module.type === "Elective Choice" || module.type === "Route Choice") && isExpanded && module.options && (
         <ul className="elective-options">
           {module.options.map((option, index) => (
-            <li key={index}>{option}</li>
+            <li key={index}>
+              {module.type === "Elective Choice" && `${option.code}: ${option.name}`}
+              {module.type === "Route Choice" && (
+                // Prepend 'Route A', 'Route B', etc. for Route Choice options
+                `${routePrefixes[index]}: ${option.code}: ${option.name}`
+              )}
+            </li>
           ))}
         </ul>
       )}

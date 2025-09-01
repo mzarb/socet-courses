@@ -83,12 +83,15 @@ BS2916: {code: "BS2916", name: "Managing Projects", size: 1},
   CM4106: {code: "CM4106", name: "Languages and Compilers", size:1},
 CM4140: {code: "CM4140", name: "Optimisation", size:1},
 CM4144: {code: "CM4144", name: "Information Retrieval", size:1},
+CM4126: {code: "CM4126", name: "Computer Vision", size:1},
 BS4256: {code: "BS4256", name: "Labour Market Economics", size: 1},
 BS4411: {code: "BS4329", name: "Leadership", size: 1},
 BS4104: {code: "BS4104", name: "Business Strategy", size: 1},
 BS4329: {code: "BS4329", name: "Business & Innovation", size: 1},
 CM4304: {code: "CM4304", name: "Evidencing Employability", size: 1},
-
+CM4305: {code: "CM4305", name: "MSci Industrial Placement", size: 1},
+CM4307: {code: "CM4307", name: "MSci Study Abroad", size: 1},
+CM4309: {code: "CM4309", name: "MSci Research Placement", size: 1},
   CM4134: { code: "CM4134", name: "Capstone Project", size: 4 },
 
   // Stage 5 modules

@@ -19,9 +19,9 @@ const csData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester1.ccdElec.name,
-                                electives.stage1.semester1.cyElec.name,
-                                electives.stage1.semester1.dsElec.name
+                                electives.stage1.semester1.ccdElec,
+                                electives.stage1.semester1.cyElec,
+                                electives.stage1.semester1.dsElec
 
                             ],
                         },
@@ -37,9 +37,9 @@ const csData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester2.ccdElec.name,
-                                electives.stage1.semester2.cyElec.name,
-                                electives.stage1.semester2.dsElec.name
+                                electives.stage1.semester2.ccdElec,
+                                electives.stage1.semester2.cyElec,
+                                electives.stage1.semester2.dsElec
                             ],
                         },
                     ],
@@ -63,10 +63,10 @@ const csData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage2.semester1.ccdElec.name,
-                                electives.stage2.semester1.cyElec.name,
-                                electives.stage2.semester1.dsElec.name,
-                                electives.stage2.semester1.gdElec.name,
+                                electives.stage2.semester1.ccdElec,
+                                electives.stage2.semester1.cyElec,
+                                electives.stage2.semester1.dsElec,
+                                electives.stage2.semester1.gdElec,
                             ],
                         },
                     ],
@@ -86,10 +86,10 @@ const csData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage2.semester2.ccdElec.name,
-                                electives.stage2.semester2.cyElec.name,
-                                electives.stage2.semester2.dsElec.name,
-                                electives.stage2.semester2.gdElec.name,
+                                electives.stage2.semester2.ccdElec,
+                                electives.stage2.semester2.cyElec,
+                                electives.stage2.semester2.dsElec,
+                                electives.stage2.semester2.gdElec,
                             ],
                         },
                     ],
@@ -106,11 +106,11 @@ const csData =
                         { ...moduleList.CM3113, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - CM3151: Machine Learning",
-                                "Route B - CM2119: Experimental Game Mechanics",
+                                moduleList.CM3151,
+                                moduleList.CM2119
                             ],
                         },
                         {
@@ -118,11 +118,11 @@ const csData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage3.semester1.ccdElec.name,
-                                electives.stage3.semester1.cyElec.name,
-                                electives.stage3.semester1.dsElec.name,
-                                electives.stage3.semester1.gdElec.name,
-                                electives.stage3.semester1.wmElec.name
+                                electives.stage3.semester1.ccdElec,
+                                electives.stage3.semester1.cyElec,
+                                electives.stage3.semester1.dsElec,
+                                electives.stage3.semester1.gdElec,
+                                electives.stage3.semester1.wmElec
                             ],
                         },
                     ],
@@ -134,12 +134,11 @@ const csData =
                         {  ...moduleList.CM3142, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Routes",
-                            name: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - CM3131: Machine Learning",
-                                "Route B - CM2119: Experimental Game Mechanics",
+                                moduleList.CM3152,
+                                moduleList.CM2124
                             ],
                         },
                         {
@@ -147,11 +146,11 @@ const csData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage3.semester2.ccdElec.name,
-                                electives.stage3.semester2.cyElec.name,
-                                electives.stage3.semester2.dsElec.name,
-                                electives.stage3.semester2.gdElec.name,
-                                electives.stage3.semester2.wmElec.name
+                                electives.stage3.semester2.ccdElec,
+                                electives.stage3.semester2.cyElec,
+                                electives.stage3.semester2.dsElec,
+                                electives.stage3.semester2.gdElec,
+                                electives.stage3.semester2.wmElec
                             ],
                         },
                     ],
@@ -167,11 +166,20 @@ const csData =
                         { ...moduleList.CM4106, type: "Subject Core", size: 1, source: "subject" },
                        {
                             code: "Routes",
-                            type: "Elective Choice",
-                            size: 2, source: "subject",
+                            type: "Route Choice",
+                            size: 1, source: "subject",
                             options: [
-                                "Route A - CE4145 Natural Language Processing // CM4126 Computer Vision",
-                                "Route B - CM4110 Human Computer Interaction // CM4114 Games Development"
+                                moduleList.CE4145,
+                                moduleList.CM4110
+                            ],
+                        },
+                                               {
+                            code: "Routes",
+                            type: "Route Choice",
+                            size: 1, source: "subject",
+                            options: [
+                                moduleList.CM4126,
+                                moduleList.CM4114
                             ],
                         },
                         {
@@ -179,11 +187,11 @@ const csData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage4.semester1.ccdElec.name,
-                                electives.stage4.semester1.cyElec.name,
-                                electives.stage4.semester1.dsElec.name,
-                                electives.stage4.semester1.gdElec.name,
-                                electives.stage4.semester1.wmElec.name
+                                electives.stage4.semester1.ccdElec,
+                                electives.stage4.semester1.cyElec,
+                                electives.stage4.semester1.dsElec,
+                                electives.stage4.semester1.gdElec,
+                                electives.stage4.semester1.wmElec
                             ],
                         },
                     ],

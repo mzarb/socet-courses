@@ -19,9 +19,9 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester1.csElec.name,
-                                electives.stage1.semester1.cyElec.name,
-                                electives.stage1.semester1.dsElec.name
+                                electives.stage1.semester1.csElec,
+                                electives.stage1.semester1.cyElec,
+                                electives.stage1.semester1.dsElec
                             ],
                         },
                     ],
@@ -36,9 +36,9 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester2.csElec.name,
-                                electives.stage1.semester2.cyElec.name,
-                                electives.stage1.semester2.dsElec.name
+                                electives.stage1.semester2.csElec,
+                                electives.stage1.semester2.cyElec,
+                                electives.stage1.semester2.dsElec
                             ],
                         },
                     ],
@@ -62,11 +62,11 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage2.semester1.csElec.name,
-                                electives.stage2.semester1.cyElec.name,
-                                electives.stage2.semester1.dsElec.name,
-                                electives.stage2.semester1.gdElec.name,
-                                electives.stage2.semester1.wmElec.name
+                                electives.stage2.semester1.csElec,
+                                electives.stage2.semester1.cyElec,
+                                electives.stage2.semester1.dsElec,
+                                electives.stage2.semester1.gdElec,
+                                electives.stage2.semester1.wmElec
                             ],
                         },
                     ],
@@ -89,11 +89,11 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage2.semester2.csElec.name,
-                                electives.stage2.semester2.cyElec.name,
-                                electives.stage2.semester2.dsElec.name,
-                                electives.stage2.semester2.gdElec.name,
-                                electives.stage2.semester2.wmElec.name
+                                electives.stage2.semester2.csElec,
+                                electives.stage2.semester2.cyElec,
+                                electives.stage2.semester2.dsElec,
+                                electives.stage2.semester2.gdElec,
+                                electives.stage2.semester2.wmElec
                             ],
                         },
                     ],
@@ -114,11 +114,12 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage3.semester1.csElec.name,
-                                electives.stage3.semester1.cyElec.name,
-                                electives.stage3.semester1.dsElec.name,
-                                electives.stage3.semester1.gdElec.name,
-                                electives.stage3.semester1.wmElec.name
+                                electives.stage3.semester1.csElec,
+                                electives.stage3.semester1.cyElec,
+                                electives.stage3.semester1.dsElec,
+                                electives.stage3.semester1.gdElec,
+                                electives.stage3.semester1.wmElec,
+                                moduleList.CM2119
                             ],
                         },
                     ],
@@ -130,11 +131,11 @@ const ccdData =
                         { ...moduleList.CM3136, type: "Subject Core", source: "subject" },
                         {
                             code: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - " + electives.stage3.semester2.ccdElec.name,
-                                "Route B - " + electives.stage3.semester2.gdElec.name,
+                                moduleList.CM3149,
+                                moduleList.CM3150,
                             ],
                         },
                         {
@@ -142,11 +143,12 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage3.semester2.csElec.name,
-                                electives.stage3.semester2.cyElec.name,
-                                electives.stage3.semester2.dsElec.name,
-                                electives.stage3.semester2.gdElec.name,
-                                electives.stage3.semester2.wmElec.name
+                                electives.stage3.semester2.csElec,
+                                electives.stage3.semester2.cyElec,
+                                electives.stage3.semester2.dsElec,
+                                electives.stage3.semester2.gdElec,
+                                electives.stage3.semester2.wmElec,
+                                moduleList.CM2124
                             ],
                         },
                     ],
@@ -170,11 +172,11 @@ const ccdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage4.semester1.csElec.name,
-                                electives.stage4.semester1.cyElec.name,
-                                electives.stage4.semester1.dsElec.name,
-                                electives.stage4.semester1.gdElec.name,
-                                electives.stage4.semester1.wmElec.name
+                                electives.stage4.semester1.csElec,
+                                electives.stage4.semester1.cyElec,
+                                electives.stage4.semester1.dsElec,
+                                electives.stage4.semester1.gdElec,
+                                electives.stage4.semester1.wmElec
                             ],
                         },
                     ],

@@ -19,9 +19,9 @@ const mscicsData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester1.ccdElec.name,
-                                electives.stage1.semester1.cyElec.name,
-                                electives.stage1.semester1.dsElec.name
+                                electives.stage1.semester1.ccdElec,
+                                electives.stage1.semester1.cyElec,
+                                electives.stage1.semester1.dsElec
 
                             ],
                         },
@@ -37,9 +37,9 @@ const mscicsData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester2.ccdElec.name,
-                                electives.stage1.semester2.cyElec.name,
-                                electives.stage1.semester2.dsElec.name
+                                electives.stage1.semester2.ccdElec,
+                                electives.stage1.semester2.cyElec,
+                                electives.stage1.semester2.dsElec
                             ],
                         },
                     ],
@@ -63,10 +63,10 @@ const mscicsData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage2.semester1.ccdElec.name,
-                                electives.stage2.semester1.cyElec.name,
-                                electives.stage2.semester1.dsElec.name,
-                                electives.stage2.semester1.gdElec.name,
+                                electives.stage2.semester1.ccdElec,
+                                electives.stage2.semester1.cyElec,
+                                electives.stage2.semester1.dsElec,
+                                electives.stage2.semester1.gdElec,
                             ],
                         },
                     ],
@@ -87,10 +87,10 @@ const mscicsData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage2.semester2.ccdElec.name,
-                                electives.stage2.semester2.cyElec.name,
-                                electives.stage2.semester2.dsElec.name,
-                                electives.stage2.semester2.gdElec.name,
+                                electives.stage2.semester2.ccdElec,
+                                electives.stage2.semester2.cyElec,
+                                electives.stage2.semester2.dsElec,
+                                electives.stage2.semester2.gdElec,
                             ],
                         },
                     ],
@@ -111,10 +111,10 @@ const mscicsData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage3.semester1.ccdElec.name,
-                                electives.stage3.semester1.cyElec.name,
-                                electives.stage3.semester1.dsElec.name,
-                                electives.stage3.semester1.gdElec.name,
+                                electives.stage3.semester1.ccdElec,
+                                electives.stage3.semester1.cyElec,
+                                electives.stage3.semester1.dsElec,
+                                electives.stage3.semester1.gdElec,
                             ],
                         },
                     ],
@@ -130,10 +130,10 @@ const mscicsData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage3.semester2.ccdElec.name,
-                                electives.stage3.semester2.cyElec.name,
-                                electives.stage3.semester2.dsElec.name,
-                                electives.stage3.semester2.gdElec.name,
+                                electives.stage3.semester2.ccdElec,
+                                electives.stage3.semester2.cyElec,
+                                electives.stage3.semester2.dsElec,
+                                electives.stage3.semester2.gdElec,
                             ],
                         },
                     ],
@@ -148,12 +148,12 @@ const mscicsData =
                     modules: [
                         {
                             code: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 3, source: "subject",
                             options: [
-                                "CM4305: MSci Industrial Placement",
-                                "CM4307: MSci Study Abroad",
-                                "CM4309: MSci Research Placement",
+                                moduleList.CM4305,
+                                moduleList.CM4307,
+                                moduleList.CM4309
                             ],
                         },
                         { ...moduleList.CM4304, type: "Subject Core", size: 1, source: "subject" },
@@ -164,12 +164,12 @@ const mscicsData =
                     modules: [
                         {
                             code: "Routes",
-                            type: "Elective Choice",
+                            type: "Route Choice",
                             size: 3, source: "subject",
                             options: [
-                                "CM4306: MSci Industrial Placement",
-                                "CM4308: MSci Study Abroad",
-                                "CM4310: MSci Research Placement",
+                                moduleList.CM4305,
+                                moduleList.CM4307,
+                                moduleList.CM4309
                             ],
                         },
                         { ...moduleList.CM4304, type: "Subject Core", size: 1, source: "subject" },

@@ -198,8 +198,22 @@
   /* background-color: #f7e1b5; /* Beige */
   background-color: #E6EAFF; /* RGU purple */
   font-style: italic;
+
+  text-decoration: underline;
 }
 
+/* This rule is for route choice modules */
+.module-box.route-choice {
+  background-color: #E6EAFF; /* RGU purple */
+  font-style: italic;
+  text-decoration: underline;
+}
+
+/* Ensure text inside route choice modules is white */
+.module-box.route-choice .module-code,
+.module-box.route-choice .module-name {
+  color: black;
+}
 
 /* ====================================== */
 /* 5. Responsive Design for Small Screens */
