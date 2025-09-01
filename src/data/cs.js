@@ -109,7 +109,7 @@ const csData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                "Route A - CM3131: Machine Learning",
+                                "Route A - CM3151: Machine Learning",
                                 "Route B - CM2119: Experimental Game Mechanics",
                             ],
                         },
