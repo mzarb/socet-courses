@@ -107,7 +107,7 @@ const wmData =
                     modules: [
                         ...coreModules.stage3.semester1,
                         { code: "CM3140", name: "Web and Mobile Development in Practice", type: "Subject Core", size: 1, source: "subject" },
-                        { code: "CM3140", name: "Native Mobile Apps", type: "Subject Core", size: 1, source: "subject"},
+                        { code: "CM3147", name: "Native Mobile Apps", type: "Subject Core", size: 1, source: "subject"},
                         {
                             code: "Elective",
                             type: "Elective Choice",
