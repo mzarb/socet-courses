@@ -73,9 +73,7 @@ const dsbmData =
                 options: [
                                electives.stage2.semester2.ccdElec,
                                 electives.stage2.semester2.csElec,
-                                electives.stage2.semester2.dsElec,
-                                electives.stage2.semester2.gdElec,
-                                electives.stage2.semester1.wmElec,
+                                electives.stage2.semester2.gdElec
                 ],
               },
             ],
