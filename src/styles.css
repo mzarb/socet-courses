@@ -261,3 +261,25 @@
   font-weight: bold;
   color: #333;
 }
+
+
+/* ==================================== */
+/* 6. Disclaimer Styling */
+/* ==================================== */
+.course-disclaimer {
+  width: 100%;
+  max-width: 1200px; /* Match your content width */
+  margin: 40px auto 20px auto;
+  padding: 15px;
+  background-color: #fcf8e3; /* Light yellow background */
+  border: 1px solid #faebcc; /* Soft border */
+  border-radius: 6px;
+  color: #8a6d3b; /* Dark text color */
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.course-disclaimer p {
+  margin: 0;
+  line-height: 1.4;
+}
