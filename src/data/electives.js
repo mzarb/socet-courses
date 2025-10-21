@@ -103,7 +103,7 @@ export const electives = {
         source: "elective",
       },
       gdElec: {
-        ...moduleList.CM2123,
+        ...moduleList.CM2122,
         type: "Elective",
         source: "elective",
       },

@@ -42,7 +42,7 @@ export const moduleList = {
     BS2916: {code: "BS2916", name: "Managing Projects", size: 1},
 BS2293: {code: "BS2293", name: "Business Ideas & Opportunities", size: 1},
 BS2916: {code: "BS2916", name: "Managing Projects", size: 1},
-CE3009: {code:"CE3009", name: "Interactive Narrative Design", size:1}
+CE3009: {code:"CE3009", name: "Interactive Narrative Design", size:1},
 
   // Stage 3 Modules
   CM3113: { code: "CM3113", name: "Concurrent Programming", size: 1 },

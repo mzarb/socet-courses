@@ -30,13 +30,12 @@ const gdData =
                     semesterName: "Semester 2",
                     modules: [
                         ...coreModules.stage1.semester2,
-                        { ...moduleList.CM1116, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CM1113, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester2.csElec,
                                 electives.stage1.semester2.cyElec,
                                 electives.stage1.semester2.dsElec
                             ],
@@ -81,7 +80,7 @@ const gdData =
                             source: "subject"
                         },
                         {
-                            ...moduleList.CM2123, type: "Subject Core",
+                            ...moduleList.CM2121, type: "Subject Core",
                             source: "subject"
                         },
                         {
@@ -92,7 +91,6 @@ const gdData =
                                 electives.stage2.semester2.csElec,
                                 electives.stage2.semester2.cyElec,
                                 electives.stage2.semester2.dsElec,
-                                electives.stage2.semester2.ccdElec,
                                 electives.stage2.semester2.wmElec
                             ],
                         },
@@ -108,7 +106,7 @@ const gdData =
                     modules: [
                         ...coreModules.stage3.semester1,
                         { ...moduleList.CM3137, type: "Subject Core", source: "subject" },
-                        { ...moduleList.CM4136, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CM3112, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -117,7 +115,6 @@ const gdData =
                                 electives.stage3.semester1.csElec,
                                 electives.stage3.semester1.cyElec,
                                 electives.stage3.semester1.dsElec,
-                                electives.stage3.semester1.ccdElec,
                                 electives.stage3.semester1.wmElec
                             ],
                         },
