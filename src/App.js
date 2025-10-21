@@ -8,8 +8,7 @@ import './styles.css';
 const Disclaimer = () => (
   <div className="course-disclaimer">
     <p>
-      <strong>Disclaimer:</strong> This course structure is provisional for the 2026/2027 academic year. Furthermore, this is not an official RGU resource, and is populated/maintained manually - the official course structures on Akari should be considered the single source of truth.
-    </p>
+      <strong>Disclaimer:</strong> Provisional course structure for 2026/2027. This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
   </div>
 );
 function App() {
