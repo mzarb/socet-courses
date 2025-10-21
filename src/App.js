@@ -9,6 +9,7 @@ const Disclaimer = () => (
   <div className="course-disclaimer">
     <p>
       <strong>Disclaimer:</strong> Provisional course structure for 2026/2027. This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
+    </p>
   </div>
 );
 function App() {
