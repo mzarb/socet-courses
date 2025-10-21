@@ -54,7 +54,7 @@ const ccdData =
                         ...coreModules.stage2.semester1,
                         { ...moduleList.CM2119, type: "Subject Core", source: "subject" },
                         {
-                            ...moduleList.CM2125, type: "Subject Core",
+                            ...moduleList.CE2000, type: "Subject Core",
                             source: "subject"
                         },
                         {
@@ -65,8 +65,7 @@ const ccdData =
                                 electives.stage2.semester1.csElec,
                                 electives.stage2.semester1.cyElec,
                                 electives.stage2.semester1.dsElec,
-                                electives.stage2.semester1.gdElec,
-                                electives.stage2.semester1.wmElec
+                                electives.stage2.semester1.gdElec
                             ],
                         },
                     ],
@@ -81,7 +80,7 @@ const ccdData =
                             source: "subject"
                         },
                         {
-                            ...moduleList.CM2126, type: "Subject Core",
+                            ...moduleList.CM2125, type: "Subject Core",
                             source: "subject"
                         },
                         {
@@ -108,7 +107,7 @@ const ccdData =
                     modules: [
                         ...coreModules.stage3.semester1,
                         { ...moduleList.CM3112, type: "Subject Core", source: "subject" },
-                        { ...moduleList.CM3128, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CE3009, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -129,15 +128,7 @@ const ccdData =
                     modules: [
                         ...coreModules.stage3.semester2,
                         { ...moduleList.CM3136, type: "Subject Core", source: "subject" },
-                        {
-                            code: "Routes",
-                            type: "Route Choice",
-                            size: 1, source: "subject",
-                            options: [
-                                moduleList.CM3149,
-                                moduleList.CM3150,
-                            ],
-                        },
+                        { ...moduleList.CM3149, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
