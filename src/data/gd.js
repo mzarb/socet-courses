@@ -4,7 +4,7 @@ import { moduleList } from './listofmodules'; // Import the central module list
 
 const gdData =
 {
-    name: "BSc (Hons) Games Design",
+    name: "BSc (Hons) Games Design (26-27)",
     stages: [
         {
             stageName: "Stage 1",

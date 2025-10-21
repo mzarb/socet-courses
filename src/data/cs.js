@@ -4,7 +4,7 @@ import { moduleList } from './listofmodules';
 
 const csData =
 {
-    name: "BSc (Hons) Computer Science",
+    name: "BSc (Hons) Computer Science (26-27)",
     stages: [
         {
             stageName: "Stage 1",

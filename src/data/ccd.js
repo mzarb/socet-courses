@@ -4,7 +4,7 @@ import { moduleList } from './listofmodules'; // Import the central module list
 
 const ccdData =
 {
-    name: "BSc (Hons) Computing & Creative Design",
+    name: "BSc (Hons) Computing & Creative Design (26-27)",
     stages: [
         {
             stageName: "Stage 1",
