@@ -34,14 +34,11 @@ export const moduleList = {
   CM2112: { code: "CM2112", name: "Real World Projects & Professional Skills", size: 1 },
   CM2124: { code: "CM2124", name: "Research Methods", size: 1 },
   CM2134: {code: "CM2134", name: "Operating Systems & Virtualisation Security", size: 1},
-    CM2136: {code: "CM2136", name: "Cryptography", size:1},
     CM2119:{code: "CM2119", name: "Experimental Game Mechanics", size:1},
     CM2126:{code: "CM2126", name: "2D Animation Production", size:1},
     CM2122: {code: "CM2122", name: "Quality Assurance for Games", size: 1},
     BS2293: {code: "BS2293", name: "Business Ideas & Opportunities", size: 1},
     BS2916: {code: "BS2916", name: "Managing Projects", size: 1},
-BS2293: {code: "BS2293", name: "Business Ideas & Opportunities", size: 1},
-BS2916: {code: "BS2916", name: "Managing Projects", size: 1},
 
   // Stage 3 Modules
   CM3113: { code: "CM3113", name: "Concurrent Programming", size: 1 },
