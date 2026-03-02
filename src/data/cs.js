@@ -1,5 +1,5 @@
 import { coreModules } from './coremodules';
-import { electives } from './electives';
+//import { electives } from './electives';
 import { moduleList } from './listofmodules';
 
 const csData =
@@ -21,9 +21,9 @@ const csData =
                             size: 1, source: "subject",
                             akariLabel: "Computer Science - Electives Group 1",
                             options: [
-                               // electives.stage1.semester1.ccdElec,
-                               // electives.stage1.semester1.cyElec,
-                               // electives.stage1.semester1.dsElec
+                                // electives.stage1.semester1.ccdElec,
+                                // electives.stage1.semester1.cyElec,
+                                // electives.stage1.semester1.dsElec
 
                             ],
                         },
@@ -38,10 +38,11 @@ const csData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
+                            akariLabel: "Computer Science - Electives Group 2",
                             options: [
-                                electives.stage1.semester2.ccdElec,
-                                electives.stage1.semester2.cyElec,
-                                electives.stage1.semester2.dsElec
+                                //    electives.stage1.semester2.ccdElec,
+                                //    electives.stage1.semester2.cyElec,
+                                //   electives.stage1.semester2.dsElec
                             ],
                         },
                     ],
@@ -64,11 +65,12 @@ const csData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
+                            akariLabel: "Computer Science - Electives Group 3",
                             options: [
-                                electives.stage2.semester1.ccdElec,
-                                electives.stage2.semester1.cyElec,
-                                electives.stage2.semester1.dsElec,
-                                electives.stage2.semester1.gdElec,
+                                //   electives.stage2.semester1.ccdElec,
+                                //   electives.stage2.semester1.cyElec,
+                                //   electives.stage2.semester1.dsElec,
+                                //   electives.stage2.semester1.gdElec,
                             ],
                         },
                     ],
@@ -78,7 +80,8 @@ const csData =
                     modules: [
                         ...coreModules.stage2.semester2,
                         {
-                             ...moduleList.CE2001, type: "Subject Core",size: 1, source: "subject"},
+                            ...moduleList.CE2001, type: "Subject Core", size: 1, source: "subject"
+                        },
                         {
                             ...moduleList.CM2116, type: "Subject Core",
                             size: 1, source: "subject"
@@ -87,11 +90,12 @@ const csData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
+                            akariLabel: "Computer Science - Electives Group 4",
                             options: [
-                                electives.stage2.semester2.ccdElec,
-                                electives.stage2.semester2.cyElec,
-                                electives.stage2.semester2.dsElec,
-                                electives.stage2.semester2.gdElec,
+                                //   electives.stage2.semester2.ccdElec,
+                                //   electives.stage2.semester2.cyElec,
+                                //   electives.stage2.semester2.dsElec,
+                                //   electives.stage2.semester2.gdElec,
                             ],
                         },
                     ],
@@ -106,25 +110,18 @@ const csData =
                     modules: [
                         ...coreModules.stage3.semester1,
                         { ...moduleList.CM3113, type: "Subject Core", size: 1, source: "subject" },
-                        {
-                            code: "Routes",
-                            type: "Route Choice",
-                            size: 1, source: "subject",
-                            options: [
-                                moduleList.CM3151,
-                                moduleList.CM2119
-                            ],
-                        },
+                        { ...moduleList.CM3151, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
+                            akariLabel: "Computer Science - Electives Group 6",
                             options: [
-                                electives.stage3.semester1.ccdElec,
-                                electives.stage3.semester1.cyElec,
-                                electives.stage3.semester1.dsElec,
-                                electives.stage3.semester1.gdElec,
-                                electives.stage3.semester1.wmElec
+                                //  electives.stage3.semester1.ccdElec,
+                                //  electives.stage3.semester1.cyElec,
+                                //  electives.stage3.semester1.dsElec,
+                                //  electives.stage3.semester1.gdElec,
+                                //  electives.stage3.semester1.wmElec
                             ],
                         },
                     ],
@@ -133,26 +130,19 @@ const csData =
                     semesterName: "Semester 2",
                     modules: [
                         ...coreModules.stage3.semester2,
-                        {  ...moduleList.CM3142, type: "Subject Core", size: 1, source: "subject" },
-                        {
-                            code: "Routes",
-                            type: "Route Choice",
-                            size: 1, source: "subject",
-                            options: [
-                                moduleList.CM3152,
-                                moduleList.CM2124
-                            ],
-                        },
+                        { ...moduleList.CM3142, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CM3152, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
+                            akariLabel: "Computer Science - Electives Group 7",
                             options: [
-                                electives.stage3.semester2.ccdElec,
-                                electives.stage3.semester2.cyElec,
-                                electives.stage3.semester2.dsElec,
-                                electives.stage3.semester2.gdElec,
-                                electives.stage3.semester2.wmElec
+                                //  electives.stage3.semester2.ccdElec,
+                                //  electives.stage3.semester2.cyElec,
+                                //  electives.stage3.semester2.dsElec,
+                                //  electives.stage3.semester2.gdElec,
+                                //  electives.stage3.semester2.wmElec
                             ],
                         },
                     ],
@@ -166,35 +156,14 @@ const csData =
                     semesterName: "Semester 1",
                     modules: [
                         { ...moduleList.CM4106, type: "Subject Core", size: 1, source: "subject" },
-                       {
-                            code: "Routes",
-                            type: "Route Choice",
-                            size: 1, source: "subject",
-                            options: [
-                                moduleList.CE4145,
-                                moduleList.CM4110
-                            ],
-                        },
-                                               {
-                            code: "Routes",
-                            type: "Route Choice",
-                            size: 1, source: "subject",
-                            options: [
-                                moduleList.CM4126,
-                                moduleList.CM4114
-                            ],
-                        },
+                        { ...moduleList.CE4145, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CE4126, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                            options: [
-                                electives.stage4.semester1.ccdElec,
-                                electives.stage4.semester1.cyElec,
-                                electives.stage4.semester1.dsElec,
-                                electives.stage4.semester1.gdElec,
-                                electives.stage4.semester1.wmElec
-                            ],
+                            akariLabel: "Computer Science - Electives Group 8",
+
                         },
                     ],
                 },
