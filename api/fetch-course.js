@@ -1,22 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-async function scrapeGroup(groupId, stage, semester) {
-  const url = `https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${groupId}`;
-  const { data } = await axios.get(url);
-  const $ = cheerio.load(data);
-  const modules = [];
-  $('table tr').each((i, el) => {
-    const cells = $(el).find('td');
-    const code = $(cells[0]).text().trim();
-    const title = $(cells[1]).text().trim();
-    if (/^[A-Z]{2}\d{4}$/.test(code)) {
-      modules.push({ code, title, stage, semester, isElective: true });
-    }
-  });
-  return modules;
-}
-
 module.exports = async (req, res) => {
   const { courseId } = req.query;
   const url = `https://rgu.akarisoftware.com/index.cfm/page/course/courseId/${courseId}`;
@@ -24,49 +8,53 @@ module.exports = async (req, res) => {
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
-    let allModules = [];
-    let lastFoundStage = "Stage 1";
-    let lastFoundSemester = "Semester 1";
+    const modules = [];
 
-    // Walk through the page elements in order
-    $('h3, h4, h5, table, div.group-header').each((i, el) => {
-      const text = $(el).text().trim();
+    // These "sticky" variables stay the same until we hit a new Stage/Semester label
+    let currentStage = "Stage 1"; 
+    let currentSemester = "Semester 1";
 
-      // Update context if we see Stage/Semester keywords
-      if (text.includes('Stage')) lastFoundStage = text.match(/Stage \d/)?.[0] || lastFoundStage;
-      if (text.includes('Semester')) lastFoundSemester = text.match(/Semester \d/)?.[0] || lastFoundSemester;
+    // We look at EVERY row in EVERY table on the page
+    $('table tr').each((i, row) => {
+      const rowText = $(row).text().trim();
 
-      // If it's a table of modules
-      if ($(el).is('table')) {
-        $(el).find('tr').each((j, row) => {
-          const cells = $(row).find('td');
-          const code = $(cells[0]).text().trim();
-          const title = $(cells[1]).text().trim();
-          
-          if (/^[A-Z]{2}\d{4}$/.test(code)) {
-            allModules.push({ 
-              code, title, 
-              stage: lastFoundStage, 
-              semester: lastFoundSemester, 
-              isElective: false 
-            });
-          }
+      // 1. Check if this row is actually a Header telling us the Stage
+      if (rowText.includes('Stage')) {
+        const stageMatch = rowText.match(/Stage \d/);
+        if (stageMatch) currentStage = stageMatch[0];
+      }
 
-          // If there's a link to an elective group in this row or nearby
-          const groupLink = $(row).find('a[href*="groupId/"]').attr('href');
-          if (groupLink) {
-             const groupId = groupLink.match(/groupId\/(\d+)/)?.[1];
-             // We'll handle these in the next step to keep it clean
-          }
-        });
+      // 2. Check if this row is a Header telling us the Semester
+      if (rowText.includes('Semester')) {
+        const semMatch = rowText.match(/Semester \d/);
+        if (semMatch) currentSemester = semMatch[0];
+      }
+
+      // 3. Look for module data in the cells
+      const cells = $(row).find('td');
+      if (cells.length >= 2) {
+        const code = $(cells[0]).text().trim();
+        const title = $(cells[1]).text().trim();
+
+        // If it looks like an RGU code (e.g., CM1122)
+        if (/^[A-Z]{2}\d{4}$/.test(code)) {
+          modules.push({
+            code,
+            title,
+            stage: currentStage,
+            semester: currentSemester,
+            // Tag as elective if the row or the text nearby says "Elective"
+            isElective: rowText.toLowerCase().includes('elective')
+          });
+        }
       }
     });
 
-    // To be truly "Future Proof," we could add a loop here that fetches 
-    // those group IDs found during the walk.
-    
-    res.status(200).json({ course: $('h2').text().trim(), modules: allModules });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
+    res.status(200).json({
+      course: $('h2').text().trim(),
+      modules: modules
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
