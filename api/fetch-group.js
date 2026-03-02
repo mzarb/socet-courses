@@ -10,7 +10,6 @@ module.exports = async (req, res) => {
     const $ = cheerio.load(data);
     let foundGroupId = null;
 
-    // Search for the link that matches your text exactly
     $('a[href*="groupId/"]').each((i, el) => {
      if ($(el).text().toLowerCase().includes(label.toLowerCase())) {
         foundGroupId = $(el).attr('href').match(/groupId\/(\d+)/)?.[1];
@@ -32,6 +31,11 @@ module.exports = async (req, res) => {
         if (/^[A-Z]{2}\d{4}$/.test(code)) modules.push({ code, title });
       }
     });
+
+    // --- ADD CACHING HERE ---
+    // s-maxage=3600: Vercel caches this for 1 hour.
+    // stale-while-revalidate: If the cache is old, show it anyway while fetching the new one in the background.
+    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
 
     res.status(200).json(modules);
   } catch (e) {
