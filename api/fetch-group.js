@@ -2,29 +2,31 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 module.exports = async (req, res) => {
-  const { courseId, label } = req.query; // e.g. "Cyber Security - Electives Group 1"
+  const { courseId, stage, semester } = req.query;
   const url = `https://rgu.akarisoftware.com/index.cfm/page/course/courseId/${courseId}/prgdeliveryperiodid/968`;
 
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
-    let foundGroupId = null;
-
-    // 1. Find the link that matches your label exactly
+    
+    // 1. Find all elective links
+    const electiveGroupIds = [];
     $('a[href*="groupId/"]').each((i, el) => {
-      const linkText = $(el).text().trim();
-      if (linkText.toLowerCase() === label.toLowerCase()) {
-        foundGroupId = $(el).attr('href').match(/groupId\/(\d+)/)?.[1];
-        return false; 
+      if ($(el).text().toLowerCase().includes('elective')) {
+        electiveGroupIds.push($(el).attr('href').match(/groupId\/(\d+)/)?.[1]);
       }
     });
 
-    if (!foundGroupId) {
-      return res.status(404).json({ error: `Label "${label}" not found on page.` });
-    }
+    // 2. Map Stage/Sem to the index (0, 1, 2, 3...)
+    // This assumes 2 electives per stage. 
+    // If S1S1 is the 1st link, S1S2 is the 2nd, S2S1 is the 3rd...
+    const index = ((parseInt(stage) - 1) * 2) + (parseInt(semester) - 1);
+    const foundId = electiveGroupIds[index];
 
-    // 2. Fetch the actual modules for that ID
-    const gRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${foundGroupId}`);
+    if (!foundId) return res.status(404).json([]);
+
+    // 3. Get the modules
+    const gRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${foundId}`);
     const g$ = cheerio.load(gRes.data);
     const modules = [];
 
@@ -32,15 +34,13 @@ module.exports = async (req, res) => {
       const cells = g$(row).find('td');
       if (cells.length >= 2) {
         const code = g$(cells[0]).text().trim().replace(/[^A-Z0-9]/g, '');
-        const title = g$(cells[1]).text().split(/Requisites|Prerequisite|\n\n/)[0].trim();
-        if (/^[A-Z]{2}\d{4}$/.test(code)) {
-          modules.push({ code, title });
-        }
+        const title = g$(cells[1]).text().split(/Requisites|Prerequisite/)[0].trim();
+        if (/^[A-Z]{2}\d{4}$/.test(code)) modules.push({ code, title });
       }
     });
 
     res.status(200).json(modules);
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    res.status(500).json([]);
   }
 };
