@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
     // Then find the first "groupId" link that follows it
     $('th, td, .group-header').each((i, el) => {
       const text = $(el).text();
-      if (text.includes(`Stage ${stage}`) && text.includes(`Semester ${semester}`)) {
+      if (text.toLowerCase().includes(`stage ${stage}`) && text.toLowerCase().includes(`semester ${semester}`)) {
         const nextLinks = $(el).closest('table').find('a[href*="groupId/"]');
         if (nextLinks.length > 0) {
           foundGroupId = $(nextLinks[0]).attr('href').match(/groupId\/(\d+)/)?.[1];
