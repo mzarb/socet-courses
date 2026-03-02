@@ -157,7 +157,7 @@ const csData =
                     modules: [
                         { ...moduleList.CM4106, type: "Subject Core", size: 1, source: "subject" },
                         { ...moduleList.CE4145, type: "Subject Core", size: 1, source: "subject" },
-                        { ...moduleList.CE4126, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CM4126, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
