@@ -5,6 +5,7 @@ import { moduleList } from './listofmodules';
 const cyData = 
       {
     name: "BSc (Hons) Cyber Security",
+    id: "6206",
     stages: [
       {
         stageName: "Stage 1",
@@ -18,10 +19,11 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
+                akariLabel: "Cyber Security - Electives Group 1",
                 options: [
-                                electives.stage1.semester1.csElec,
-                                electives.stage1.semester1.ccdElec,
-                                electives.stage1.semester1.dsElec
+                              //  electives.stage1.semester1.csElec,
+                              //  electives.stage1.semester1.ccdElec,
+                              //  electives.stage1.semester1.dsElec
                 ],
               },
             ],
