@@ -8,45 +8,44 @@ module.exports = async (req, res) => {
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
+    
+    // 1. ISOLATE THE STAGE: Find the start and end of the requested Stage
+    const stageHeader = $(`h3:contains("Stage ${stage}"), h4:contains("Stage ${stage}"), .group-header:contains("Stage ${stage}")`).first();
+    
+    if (!stageHeader.length) {
+      return res.status(404).json({ error: `Could not find header for Stage ${stage}` });
+    }
+
+    // Grab all HTML elements following the Stage header until the next Stage header appears
+    let stageHtmlChunk = '';
+    stageHeader.nextAll().each((i, el) => {
+      const text = $(el).text();
+      if (/Stage \d/i.test(text) && ( $(el).is('h3') || $(el).is('h4') || $(el).hasClass('group-header') )) {
+        return false; // Stop when the next Stage starts
+      }
+      stageHtmlChunk += $.html(el);
+    });
+
+    // 2. SEARCH WITHIN CHUNK: Now only look for the Semester inside that isolated block
+    const $chunk = cheerio.load(stageHtmlChunk);
     let foundGroupId = null;
-    let insideCorrectStage = false;
 
-    // We iterate through headers and tables
-    $('h3, h4, th, td, .group-header').each((i, el) => {
-      const text = $(el).text().trim().toLowerCase();
-
-      // 1. Check if we've entered the requested Stage
-      // We use a regex to ensure "Stage 3" doesn't match "Stage 13"
-      const stageRegex = new RegExp(`stage\\s${stage}(?!\\d)`, 'i');
-      if (stageRegex.test(text)) {
-        insideCorrectStage = true;
-      }
-
-      // 2. If we see a DIFFERENT stage header, turn the gatekeeper OFF
-      // this prevents Stage 3 from looking into Stage 4's tables
-      if (insideCorrectStage && /stage\s\d/i.test(text) && !stageRegex.test(text)) {
-        // Only turn off if it's a main header, not a tiny cell
-        if ($(el).is('h3, h4, .group-header')) insideCorrectStage = false;
-      }
-
-      // 3. If we are inside the right Stage, find the correct Semester
-      if (insideCorrectStage && text.includes(`semester ${semester}`)) {
-        // Look for the link in the immediate vicinity
-        const link = $(el).closest('table').find('a[href*="groupId/"]').attr('href') || 
-                     $(el).nextAll('table').first().find('a[href*="groupId/"]').attr('href');
-        
-        if (link) {
-          foundGroupId = link.match(/groupId\/(\d+)/)?.[1];
-          return false; // Success! Break the each loop
-        }
+    $chunk(`th:contains("Semester ${semester}"), td:contains("Semester ${semester}"), h4:contains("Semester ${semester}")`).each((i, el) => {
+      // Find the first groupId link in the table associated with this specific Semester header
+      const table = $chunk(el).closest('table').length ? $chunk(el).closest('table') : $chunk(el).nextAll('table').first();
+      const link = table.find('a[href*="groupId/"]').attr('href');
+      
+      if (link) {
+        foundGroupId = link.match(/groupId\/(\d+)/)?.[1];
+        return false;
       }
     });
 
     if (!foundGroupId) {
-      return res.status(404).json({ error: `Not found: Stage ${stage} Sem ${semester}` });
+      return res.status(404).json({ error: `No elective link found in Stage ${stage} Semester ${semester}` });
     }
 
-    // Standard group fetch logic
+    // 3. FETCH DATA: Standard cleanup
     const gRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${foundGroupId}`);
     const g$ = cheerio.load(gRes.data);
     const modules = [];
