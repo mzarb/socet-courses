@@ -92,7 +92,7 @@ const cyData =
                 code: "Elective",
                type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 5",
+                akariLabel: "Cyber Security - Electives Group 1",
                 options: [
                          //      electives.stage2.semester2.ccdElec,
                          //       electives.stage2.semester2.csElec,
