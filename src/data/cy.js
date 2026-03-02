@@ -19,7 +19,7 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 2",
+                akariLabel: "Cyber Security - Electives Group 1",
                 options: [
                               //  electives.stage1.semester1.csElec,
                               //  electives.stage1.semester1.ccdElec,
@@ -64,7 +64,7 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 2",
+                akariLabel: "Cyber Security - Electives Group 3",
                 options: [
                            //    electives.stage2.semester1.ccdElec,
                            //     electives.stage2.semester1.csElec,
@@ -92,7 +92,7 @@ const cyData =
                 code: "Elective",
                type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 2",
+                akariLabel: "Cyber Security - Electives Group 5",
                 options: [
                          //      electives.stage2.semester2.ccdElec,
                          //       electives.stage2.semester2.csElec,
