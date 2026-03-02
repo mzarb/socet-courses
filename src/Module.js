@@ -10,7 +10,7 @@ const Module = ({ module, courseID }) => { // Add courseId to props
   // 2. Fetch live data if a label exists
   useEffect(() => {
     if (module.akariLabel && courseID) {
-      fetch(`/api/fetch-group?courseID=${courseID}&label=${encodeURIComponent(module.akariLabel)}`)
+      fetch(`/api/fetch-group?courseId=${courseID}&label=${encodeURIComponent(module.akariLabel)}`)
         .then(res => res.json())
         .then(data => {
           if (data && data.length > 0) {
