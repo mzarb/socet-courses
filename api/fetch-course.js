@@ -32,39 +32,38 @@ module.exports = async (req, res) => {
     const { data } = await axios.get(targetUrl);
     const $ = cheerio.load(data);
     
-    // FOCUS AREA: Only look inside the "Course Schedules" section
-    const schedulesContainer = $('#courseSchedules');
+    // 1. Find the best container to search in
+    let container = $('#courseSchedules'); // Try CS layout first
+    if (container.length === 0) {
+      container = $('h2:contains("Course Schedules")').parent(); // Try header-based search
+    }
+    if (container.length === 0) {
+      container = $('body'); // Fallback to whole page for older layouts (Cyber/Games)
+    }
+
     let allModules = [];
     let currentStage = "Stage 1";
     let currentSemester = "Semester 1";
 
-    // If the specific ID isn't found, look for the header text "Course Schedules"
-    const targetSection = schedulesContainer.length > 0 
-      ? schedulesContainer 
-      : $('h2:contains("Course Schedules")').parent();
-
-    // Iterate through headers and tables ONLY within this section
-    targetSection.find('th, td, .group-header, tr').each((i, el) => {
+    // 2. Scan the container for headers and module rows
+    container.find('th, td, h3, h4, tr').each((i, el) => {
       const text = $(el).text().trim();
 
-      // Update Stage/Semester context based on table headers
+      // Update context ONLY if we find a clear Stage/Semester marker
       if (/Stage \d/.test(text)) currentStage = text.match(/Stage \d/)[0];
       if (/Semester \d/.test(text)) currentSemester = text.match(/Semester \d/)[0];
 
-      // Process rows that contain module data
       if ($(el).is('tr')) {
         const cells = $(el).find('td');
         if (cells.length >= 2) {
           const code = $(cells[0]).text().trim().replace(/[^A-Z0-9]/g, '');
           
-          // Core Module
           if (/^[A-Z]{2}\d{4}$/.test(code)) {
             const titleRaw = $(cells[1]).text().trim();
             const title = titleRaw.split(/Requisites|Prerequisite|\n\n/)[0].trim();
             allModules.push({ code, title, stage: currentStage, semester: currentSemester, isElective: false });
           }
 
-          // Elective Group
           const groupLink = $(el).find('a[href*="groupId/"]').attr('href');
           if (groupLink) {
             const groupId = groupLink.match(/groupId\/(\d+)/)?.[1];
@@ -76,7 +75,7 @@ module.exports = async (req, res) => {
       }
     });
 
-    // Resolve and Deduplicate
+    // 3. Resolve Electives and Deduplicate
     const finalModuleList = [];
     for (const item of allModules) {
       if (item.type === 'pending') {
@@ -87,9 +86,9 @@ module.exports = async (req, res) => {
       }
     }
 
+    // Use a composite key to prevent the "Double Scraping" issue
     const uniqueMap = new Map();
     finalModuleList.forEach(m => {
-      // Key includes stage/semester to handle modules that actually appear in multiple semesters (rare)
       const key = `${m.code}-${m.stage}-${m.semester}`;
       if (!uniqueMap.has(key)) uniqueMap.set(key, m);
     });
