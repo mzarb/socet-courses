@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
 
     // Search for the link that matches your text exactly
     $('a[href*="groupId/"]').each((i, el) => {
-      if ($(el).text().trim().toLowerCase() === label.toLowerCase()) {
+     if ($(el).text().toLowerCase().includes(label.toLowerCase())) {
         foundGroupId = $(el).attr('href').match(/groupId\/(\d+)/)?.[1];
         return false; 
       }
