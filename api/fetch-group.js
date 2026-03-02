@@ -12,47 +12,55 @@ module.exports = async (req, res) => {
     const semesterMap = [];
     let currentStage = "0";
 
-    // Scan every row, header, and div in the order they appear
-    $('tr, h3, h4, .group-header').each((i, el) => {
+    // 1. Scan EVERY element in order
+    // We look at headers and rows specifically
+    $('h3, h4, .group-header, tr, th').each((i, el) => {
       const text = $(el).text().trim();
 
-      // 1. Update the Stage context whenever we pass a Stage header
+      // Update the current stage if we pass a Stage header
       const stageMatch = text.match(/Stage\s+(\d+)/i);
       if (stageMatch) {
         currentStage = stageMatch[1];
       }
 
-      // 2. If we find "Semester X" in this element (or its children)
-      if (text.toLowerCase().includes("semester")) {
+      // If we find a Semester and it's within a valid stage
+      if (text.toLowerCase().includes("semester") && currentStage !== "0") {
         const semMatch = text.match(/Semester\s+(\d+)/i);
-        const link = $(el).find('a[href*="groupId/"]').attr('href') || 
-                     $(el).next('tr').find('a[href*="groupId/"]').attr('href');
+        if (semMatch) {
+          const semNum = semMatch[1];
+          
+          // Look for the groupId link: 
+          // 1. Inside this element? 
+          // 2. In the next table row?
+          // 3. In the parent table?
+          const link = $(el).find('a[href*="groupId/"]').attr('href') || 
+                       $(el).next('tr').find('a[href*="groupId/"]').attr('href') ||
+                       $(el).closest('tr').find('a[href*="groupId/"]').attr('href');
 
-        if (semMatch && link) {
-          const gId = link.match(/groupId\/(\d+)/)?.[1];
-          // Only add if we don't already have this Stage/Sem combo
-          const exists = semesterMap.find(m => m.stage === currentStage && m.semester === semMatch[1]);
-          if (!exists) {
-            semesterMap.push({
-              stage: currentStage,
-              semester: semMatch[1],
-              groupId: gId
-            });
+          if (link) {
+            const gId = link.match(/groupId\/(\d+)/)?.[1];
+            
+            // Deduplicate: Only add if we don't have this Stage/Sem combo yet
+            const exists = semesterMap.find(m => m.stage === currentStage && m.semester === semNum);
+            if (!exists) {
+              semesterMap.push({ stage: currentStage, semester: semNum, groupId: gId });
+            }
           }
         }
       }
     });
 
-    // 3. Find the specific match
+    // 2. Match the requested Stage and Semester
     const match = semesterMap.find(m => m.stage === stage.toString() && m.semester === semester.toString());
 
     if (!match) {
       return res.status(404).json({ 
-        error: `Not found. Found: ${semesterMap.map(m => `S${m.stage}Sem${m.semester}`).join(', ')}` 
+        error: `Could not find S${stage} Sem ${semester}.`,
+        found: semesterMap.map(m => `S${m.stage}Sem${m.semester}`).join(', ')
       });
     }
 
-    // 4. Fetch the module data
+    // 3. Fetch the module data from the discovered Group ID
     const gRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${match.groupId}`);
     const g$ = cheerio.load(gRes.data);
     const modules = [];
