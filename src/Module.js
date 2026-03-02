@@ -56,11 +56,13 @@ const Module = ({ module, courseID }) => { // Add courseId to props
         <div className="module-name">{module.name}</div>
       </div>
 
-      {(module.type === "Elective Choice" || module.type === "Route Choice") && isExpanded && liveOptions && (
+      {(module.type === "Elective Choice" || module.type === "Route Choice") && isExpanded && (
         <ul className="elective-options">
+          {/* 1. Show a loading message if we have a label but no data yet */}
           {module.akariLabel && liveOptions.length === 0 ? (
             <li className="loading-text">Syncing with Akari...</li>
           ) : (
+            /* 2. Map the options once they arrive */
             liveOptions.map((option, index) => (
               <li key={index}>
                 {module.type === "Elective Choice" && `${option.code}: ${option.name}`}
@@ -68,7 +70,8 @@ const Module = ({ module, courseID }) => { // Add courseId to props
                   `${routePrefixes[index]}: ${option.code}: ${option.name}`
                 )}
               </li>
-            ))}
+            ))
+          )}
         </ul>
       )}
     </div>
