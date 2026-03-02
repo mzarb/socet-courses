@@ -2,53 +2,29 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 module.exports = async (req, res) => {
-  const { courseId, stage, semester } = req.query;
+  const { courseId, label } = req.query; // e.g. "Cyber Security - Electives Group 1"
   const url = `https://rgu.akarisoftware.com/index.cfm/page/course/courseId/${courseId}/prgdeliveryperiodid/968`;
 
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
-    
-    const electiveMap = [];
+    let foundGroupId = null;
 
-    // 1. Find every link that mentions "Elective"
+    // 1. Find the link that matches your label exactly
     $('a[href*="groupId/"]').each((i, el) => {
-      const linkText = $(el).text().toLowerCase();
-      const href = $(el).attr('href');
-
-      if (linkText.includes('elective')) {
-        const gId = href.match(/groupId\/(\d+)/)?.[1];
-
-        // 2. Look "upstairs" for the Stage and Semester
-        // We look at the closest table or container to find the labels
-        const containerText = $(el).closest('tr').text() + " " + 
-                             $(el).closest('table').prevAll('h3, h4, .group-header').first().text() + " " +
-                             $(el).closest('table').find('th, td').first().text();
-
-        const stageMatch = containerText.match(/Stage\s+(\d+)/i);
-        const semMatch = containerText.match(/Semester\s+(\d+)/i);
-
-        electiveMap.push({
-          stage: stageMatch ? stageMatch[1] : "unknown",
-          semester: semMatch ? semMatch[1] : "unknown",
-          groupId: gId,
-          rawText: linkText
-        });
+      const linkText = $(el).text().trim();
+      if (linkText.toLowerCase() === label.toLowerCase()) {
+        foundGroupId = $(el).attr('href').match(/groupId\/(\d+)/)?.[1];
+        return false; 
       }
     });
 
-    // 3. Filter for the one you asked for
-    const match = electiveMap.find(m => m.stage === stage.toString() && m.semester === semester.toString());
-
-    if (!match) {
-      return res.status(404).json({ 
-        error: `No 'Elective' link found for S${stage} Sem ${semester}`,
-        detectedGroups: electiveMap 
-      });
+    if (!foundGroupId) {
+      return res.status(404).json({ error: `Label "${label}" not found on page.` });
     }
 
-    // 4. Fetch the modules for the group we found
-    const gRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${match.groupId}`);
+    // 2. Fetch the actual modules for that ID
+    const gRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${foundGroupId}`);
     const g$ = cheerio.load(gRes.data);
     const modules = [];
 
@@ -63,8 +39,7 @@ module.exports = async (req, res) => {
       }
     });
 
-    res.status(200).json({ ...match, modules });
-
+    res.status(200).json(modules);
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
