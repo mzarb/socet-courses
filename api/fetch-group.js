@@ -3,43 +3,58 @@ const cheerio = require('cheerio');
 
 module.exports = async (req, res) => {
   const { courseId, stage, semester } = req.query;
-  const courseUrl = `https://rgu.akarisoftware.com/index.cfm/page/course/courseId/${courseId}/prgdeliveryperiodid/968`;
+  const url = `https://rgu.akarisoftware.com/index.cfm/page/course/courseId/${courseId}/prgdeliveryperiodid/968`;
 
   try {
-    const { data } = await axios.get(courseUrl);
+    const { data } = await axios.get(url);
     const $ = cheerio.load(data);
     let foundGroupId = null;
 
-    // Search for the specific header (e.g., "Stage 1 / Semester 1")
-    // Then find the first "groupId" link that follows it
-    $('th, td, .group-header').each((i, el) => {
-      const text = $(el).text();
-      if (text.toLowerCase().includes(`stage ${stage}`) && text.toLowerCase().includes(`semester ${semester}`)) {
-        const nextLinks = $(el).closest('table').find('a[href*="groupId/"]');
-        if (nextLinks.length > 0) {
-          foundGroupId = $(nextLinks[0]).attr('href').match(/groupId\/(\d+)/)?.[1];
-          return false; // Break loop
+    // 1. Find the specific header that matches BOTH Stage and Semester
+    // We use a filter to ensure we get the exact heading for that section
+    const targetHeader = $('th, td, h3, h4, .group-header').filter((i, el) => {
+      const txt = $(el).text().toLowerCase();
+      return txt.includes(`stage ${stage}`) && txt.includes(`semester ${semester}`);
+    }).first();
+
+    if (targetHeader.length > 0) {
+      // 2. Look at the tables that come AFTER this specific header
+      // This prevents us from accidentally grabbing the Stage 1 table when looking for Stage 2
+      const associatedTable = targetHeader.nextAll('table').first();
+      const link = associatedTable.find('a[href*="groupId/"]').attr('href');
+      
+      if (link) {
+        foundGroupId = link.match(/groupId\/(\d+)/)?.[1];
+      }
+    }
+
+    if (!foundGroupId) {
+      return res.status(404).json({ error: `No Elective Group found for S${stage} Sem ${semester}` });
+    }
+
+    // 3. Fetch the actual modules from the discovered Group ID
+    const gRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${foundGroupId}`);
+    const g$ = cheerio.load(gRes.data);
+    const modules = [];
+
+    g$('table tr').each((i, row) => {
+      const cells = g$(row).find('td');
+      if (cells.length >= 2) {
+        const code = g$(cells[0]).text().trim().replace(/[^A-Z0-9]/g, '');
+        const title = g$(cells[1]).text().split(/Requisites|Prerequisite|\n\n/)[0].trim();
+        if (/^[A-Z]{2}\d{4}$/.test(code)) {
+          modules.push({ code, title });
         }
       }
     });
 
-    if (!foundGroupId) return res.status(404).json({ error: "Group ID not found for this stage/sem" });
-
-    // Now scrape that specific group
-    const groupRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${foundGroupId}`);
-    const group$ = cheerio.load(groupRes.data);
-    const modules = [];
-
-    group$('table tr').each((i, row) => {
-      const cells = group$(row).find('td');
-      const code = group$(cells[0]).text().trim().replace(/[^A-Z0-9]/g, '');
-      const title = group$(cells[1]).text().split(/Requisites|Prerequisite|\n\n/)[0].trim();
-      if (/^[A-Z]{2}\d{4}$/.test(code)) {
-        modules.push({ code, title });
-      }
+    res.status(200).json({ 
+      stage, 
+      semester, 
+      groupId: foundGroupId, 
+      modules 
     });
 
-    res.status(200).json({ groupId: foundGroupId, modules });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
