@@ -1,10 +1,11 @@
 import { coreModules } from './coremodules';
-import { electives } from './electives';
+//import { electives } from './electives';
 import { moduleList } from './listofmodules';
 
 const csData =
 {
     name: "BSc (Hons) Computer Science",
+    id: 6664,
     stages: [
         {
             stageName: "Stage 1",
@@ -18,10 +19,11 @@ const csData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
+                            akariLabel: "Computer Science - Electives Group 1",
                             options: [
-                                electives.stage1.semester1.ccdElec,
-                                electives.stage1.semester1.cyElec,
-                                electives.stage1.semester1.dsElec
+                               // electives.stage1.semester1.ccdElec,
+                               // electives.stage1.semester1.cyElec,
+                               // electives.stage1.semester1.dsElec
 
                             ],
                         },
