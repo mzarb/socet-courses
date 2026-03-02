@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 const routePrefixes = ['Route A', 'Route B', 'Route C', 'Route D', 'Route E', 'Route F'];
 
-const Module = ({ module, courseId }) => { // Add courseId to props
+const Module = ({ module, courseID }) => { // Add courseId to props
   const [isExpanded, setIsExpanded] = useState(false);
   // 1. New state to hold live options
   const [liveOptions, setLiveOptions] = useState(module.options || []);
 
   // 2. Fetch live data if a label exists
   useEffect(() => {
-    if (module.akariLabel && courseId) {
-      fetch(`/api/fetch-group?courseId=${courseId}&label=${encodeURIComponent(module.akariLabel)}`)
+    if (module.akariLabel && courseID) {
+      fetch(`/api/fetch-group?courseID=${courseID}&label=${encodeURIComponent(module.akariLabel)}`)
         .then(res => res.json())
         .then(data => {
           if (data && data.length > 0) {
@@ -24,7 +24,7 @@ const Module = ({ module, courseId }) => { // Add courseId to props
         })
         .catch(err => console.error("Live fetch failed:", err));
     }
-  }, [module.akariLabel, courseId]);
+  }, [module.akariLabel, courseID]);
 
   const handleMouseEnter = () => {
     if (module.type === "Elective Choice" || module.type === "Route Choice") {

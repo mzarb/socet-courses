@@ -2,7 +2,7 @@
 import React from 'react';
 import Module from './Module';
 
-const Semester = ({ semester }) => (
+const Semester = ({ semester, courseID }) => (
   <div className="semester-container">
     <div className="semester-header">{semester.semesterName}</div>
     <div className="modules-grid">
