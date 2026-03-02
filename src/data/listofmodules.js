@@ -16,6 +16,7 @@ export const moduleList = {
   CM1121: { code: "CM1121", name: "Web UX", size: 1 },
   BS1009: { code: "BS1009", name: "Business Perspectives", size: 1},
   BS1005: {code: "BS1005", name: "Sustainable Business", size: 1},
+  CE1337: {code: "CE1337", name: "Programming Bootcamp", size: 1},
 
   // Stage 2 Modules
   CM2115: { code: "CM2115", name: "Advanced Software Design and Development", size: 1 },
@@ -62,6 +63,7 @@ export const moduleList = {
   CM3128:{code: "CM3128", name: "Design Principles in Composition", size:1},
   CM3136:{code: "CM3136", name: "3D Animation", size:1},
   CM3152: {code: "CM3152", name: "AI for Problem Solving", size:1},
+  CE3009: {code: "CE3009", name: "Interactive Narrative Design", size:1},
 
 
   // Stage 4 Modules
@@ -90,6 +92,7 @@ CM4305: {code: "CM4305", name: "MSci Industrial Placement", size: 1},
 CM4307: {code: "CM4307", name: "MSci Study Abroad", size: 1},
 CM4309: {code: "CM4309", name: "MSci Research Placement", size: 1},
   CM4134: { code: "CM4134", name: "Capstone Project", size: 4 },
+  CE4321: { code: "CE4321", name: "Capstone Project", size: 4},
 
   // Stage 5 modules
   CMM302: {code: "CMM302", name: "Computing Science Research", size: 1},

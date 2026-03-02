@@ -56,7 +56,7 @@ const ccdData =
                     modules: [
                         ...coreModules.stage2.semester1,
                         { ...moduleList.CM2119, type: "Subject Core", source: "subject" },
-                        { ...moduleList.CM2125, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CE2000, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -82,7 +82,7 @@ const ccdData =
                             source: "subject"
                         },
                         {
-                            ...moduleList.CM2126, type: "Subject Core",
+                            ...moduleList.CM2125, type: "Subject Core",
                             source: "subject"
                         },
                         {
@@ -110,7 +110,7 @@ const ccdData =
                     modules: [
                         ...coreModules.stage3.semester1,
                         { ...moduleList.CM3112, type: "Subject Core", source: "subject" },
-                        { ...moduleList.CM3128, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CE3009, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -132,7 +132,7 @@ const ccdData =
                     modules: [
                         ...coreModules.stage3.semester2,
                         { ...moduleList.CM3136, type: "Subject Core", source: "subject" },
-                        { ...moduleList.CM3141, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CM3149, type: "Subject Core", source: "subject" },
 
                         {
                             code: "Elective",
