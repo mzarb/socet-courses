@@ -9,43 +9,25 @@ module.exports = async (req, res) => {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
     
-    // 1. ISOLATE THE STAGE: Find the start and end of the requested Stage
-    const stageHeader = $(`h3:contains("Stage ${stage}"), h4:contains("Stage ${stage}"), .group-header:contains("Stage ${stage}")`).first();
-    
-    if (!stageHeader.length) {
-      return res.status(404).json({ error: `Could not find header for Stage ${stage}` });
-    }
-
-    // Grab all HTML elements following the Stage header until the next Stage header appears
-    let stageHtmlChunk = '';
-    stageHeader.nextAll().each((i, el) => {
-      const text = $(el).text();
-      if (/Stage \d/i.test(text) && ( $(el).is('h3') || $(el).is('h4') || $(el).hasClass('group-header') )) {
-        return false; // Stop when the next Stage starts
-      }
-      stageHtmlChunk += $.html(el);
+    // 1. Find EVERY elective group link on the page in order
+    const electiveGroupIds = [];
+    $('a[href*="groupId/"]').each((i, el) => {
+      const match = $(el).attr('href').match(/groupId\/(\d+)/);
+      if (match) electiveGroupIds.push(match[1]);
     });
 
-    // 2. SEARCH WITHIN CHUNK: Now only look for the Semester inside that isolated block
-    const $chunk = cheerio.load(stageHtmlChunk);
-    let foundGroupId = null;
-
-    $chunk(`th:contains("Semester ${semester}"), td:contains("Semester ${semester}"), h4:contains("Semester ${semester}")`).each((i, el) => {
-      // Find the first groupId link in the table associated with this specific Semester header
-      const table = $chunk(el).closest('table').length ? $chunk(el).closest('table') : $chunk(el).nextAll('table').first();
-      const link = table.find('a[href*="groupId/"]').attr('href');
-      
-      if (link) {
-        foundGroupId = link.match(/groupId\/(\d+)/)?.[1];
-        return false;
-      }
-    });
+    // 2. Calculate the Index
+    // Stage 1, Sem 1 = Index 0
+    // Stage 1, Sem 2 = Index 1
+    // Stage 2, Sem 1 = Index 2...
+    const index = ((parseInt(stage) - 1) * 2) + (parseInt(semester) - 1);
+    const foundGroupId = electiveGroupIds[index];
 
     if (!foundGroupId) {
-      return res.status(404).json({ error: `No elective link found in Stage ${stage} Semester ${semester}` });
+      return res.status(404).json({ error: `Could not find elective group at position ${index}` });
     }
 
-    // 3. FETCH DATA: Standard cleanup
+    // 3. Fetch the modules from that ID
     const gRes = await axios.get(`https://rgu.akarisoftware.com/index.cfm/page/group/groupId/${foundGroupId}`);
     const g$ = cheerio.load(gRes.data);
     const modules = [];
@@ -61,7 +43,7 @@ module.exports = async (req, res) => {
       }
     });
 
-    res.status(200).json({ stage, semester, groupId: foundGroupId, modules });
+    res.status(200).json({ stage, semester, index, groupId: foundGroupId, modules });
 
   } catch (e) {
     res.status(500).json({ error: e.message });
