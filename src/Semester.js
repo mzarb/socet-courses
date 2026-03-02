@@ -7,7 +7,7 @@ const Semester = ({ semester }) => (
     <div className="semester-header">{semester.semesterName}</div>
     <div className="modules-grid">
       {semester.modules.map((module, index) => (
-        <Module key={index} module={module} courseID={course.id}/>
+        <Module key={index} module={module} courseID={courseID}/>
       ))}
     </div>
   </div>
