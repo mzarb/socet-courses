@@ -115,14 +115,14 @@ const ccdData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                     akariLabel: "Computing and Creative Design - Electives Group 6",
+                            akariLabel: "Computing and Creative Design - Electives Group 6",
                             options: [
-                             //   electives.stage3.semester1.csElec,
-                             //   electives.stage3.semester1.cyElec,
-                             //   electives.stage3.semester1.dsElec,
-                             //   electives.stage3.semester1.gdElec,
-                             //   electives.stage3.semester1.wmElec,
-                             //   moduleList.CM2119
+                                //   electives.stage3.semester1.csElec,
+                                //   electives.stage3.semester1.cyElec,
+                                //   electives.stage3.semester1.dsElec,
+                                //   electives.stage3.semester1.gdElec,
+                                //   electives.stage3.semester1.wmElec,
+                                //   moduleList.CM2119
                             ],
                         },
                     ],
@@ -132,20 +132,20 @@ const ccdData =
                     modules: [
                         ...coreModules.stage3.semester2,
                         { ...moduleList.CM3136, type: "Subject Core", source: "subject" },
-                        { ...moduleList.CM3141, type: "Subject Core", source: "subject"},
+                        { ...moduleList.CM3141, type: "Subject Core", source: "subject" },
 
                         {
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                     akariLabel: "Computing and Creative Design - Electives Group 7",
+                            akariLabel: "Computing and Creative Design - Electives Group 7",
                             options: [
-                               // electives.stage3.semester2.csElec,
-                               // electives.stage3.semester2.cyElec,
-                               // electives.stage3.semester2.dsElec,
-                               // electives.stage3.semester2.gdElec,
-                               // electives.stage3.semester2.wmElec,
-                               // moduleList.CM2124
+                                // electives.stage3.semester2.csElec,
+                                // electives.stage3.semester2.cyElec,
+                                // electives.stage3.semester2.dsElec,
+                                // electives.stage3.semester2.gdElec,
+                                // electives.stage3.semester2.wmElec,
+                                // moduleList.CM2124
                             ],
                         },
                     ],
@@ -168,13 +168,13 @@ const ccdData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                     akariLabel: "Computing and Creative Design - Electives Group 8",
+                            akariLabel: "Computing and Creative Design - Electives Group 8",
                             options: [
-                             //   electives.stage4.semester1.csElec,
-                             //   electives.stage4.semester1.cyElec,
-                             //   electives.stage4.semester1.dsElec,
-                             //   electives.stage4.semester1.gdElec,
-                             //   electives.stage4.semester1.wmElec
+                                //   electives.stage4.semester1.csElec,
+                                //   electives.stage4.semester1.cyElec,
+                                //   electives.stage4.semester1.dsElec,
+                                //   electives.stage4.semester1.gdElec,
+                                //   electives.stage4.semester1.wmElec
                             ],
                         },
                     ],
