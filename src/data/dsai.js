@@ -4,7 +4,7 @@ import { moduleList } from './listofmodules';
 
 const dsaiData = 
       {
-    name: "BSc (Hons) Data Science with AI (26-27)",
+    name: "BSc (Hons) Data Science with AI",
     stages: [
       {
         stageName: "Stage 1",

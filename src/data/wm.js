@@ -3,7 +3,7 @@ import { electives } from './electives';
 
 const wmData =
 {
-    name: "BSc (Hons) Web & Mobile Design (26-27)",
+    name: "BSc (Hons) Web & Mobile Design",
     stages: [
         {
             stageName: "Stage 1",

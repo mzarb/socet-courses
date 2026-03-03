@@ -4,7 +4,7 @@ import { moduleList } from './listofmodules';
 
 const cyData = 
       {
-    name: "BSc (Hons) Cyber Security (26-27)",
+    name: "BSc (Hons) Cyber Security",
     stages: [
       {
         stageName: "Stage 1",
