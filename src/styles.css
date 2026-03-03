@@ -230,53 +230,43 @@
 /* 5. Responsive Design (Hamburger Logic) */
 /* ====================================== */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* Show hamburger on mobile */
+.hamburger {
+    display: flex;
+    position: fixed; /* Keep it visible while scrolling */
+    top: 15px;
+    right: 20px;
+    z-index: 1001; 
   }
 
-  .course-tabs {
-    display: none; /* Hide standard tabs */
+.course-tabs {
+    display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    z-index: 100;
-    width: 200px;
-    margin-bottom: 0;
+    position: fixed; /* Fixed to the side */
+    top: 0;
+    right: -100%; /* Hidden off-screen to the right */
+    width: 280px; /* Specific width for the drawer */
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 80px 20px 20px 20px; /* Space at top for the hamburger */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease-in-out; /* Smooth slide-in */
+    z-index: 1000;
+    overflow-y: auto; /* Allows scrolling if you have 20+ courses */
   }
 
   /* When JS adds the .open class */
   .course-tabs.open {
-    display: flex;
+    right: 0;
   }
 
-  .tab-button {
-    top: 0;
-    border-bottom: 1px solid #eee;
-    padding: 15px;
+.tab-button {
     text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    top: 0; /* Reset from desktop positioning */
   }
 
-  .tab-button.active {
-    border-bottom: 1px solid #007bff;
-    background-color: #f0f7ff;
-  }
-
-  .stage-row { flex-direction: column; }
-  .stage-label {
-    writing-mode: horizontal-tb;
-    border-right: none;
-    border-bottom: 2px solid #ccc;
-    border-radius: 4px 4px 0 0;
-  }
-  .semesters-row { flex-direction: column; }
-  .semester-container { border-left: none; border-top: 1px solid #ccc; }
-  .modules-grid { grid-template-columns: repeat(2, 1fr); }
-}
 
 @media (max-width: 480px) {
   .modules-grid { grid-template-columns: repeat(1, 1fr); }
