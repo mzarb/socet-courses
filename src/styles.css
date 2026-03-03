@@ -1,5 +1,5 @@
 /* ==================================== */
-/* 1. Overall Application Layout        */
+/* 1. Overall Application and Layout    */
 /* ==================================== */
 .app-container {
   font-family: Arial, sans-serif;
@@ -9,15 +9,14 @@
   overflow-x: hidden;
 }
 
-/* THE TITLE AREA: One single line for Title + Hamburger */
+/* Integrated Title and Hamburger */
 .title-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative; 
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   padding: 10px 0;
-  /* Removed background and borders to let it sit flush */
 }
 
 .course-title {
@@ -26,24 +25,21 @@
   font-weight: bold;
   color: #333;
   margin: 0;
-  /* Ensure this matches your Course component's width */
-  max-width: 1200px; 
+  padding: 0 60px; /* Space for hamburger */
 }
 
-/* ==================================== */
-/* 2. Side Drawer (The Menu)            */
-/* ==================================== */
+/* Hamburger Icon */
 .hamburger {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
-  height: 1.5rem; /* Slightly shorter for a sleeker look */
+  height: 1.5rem;
   background: transparent;
   border: none;
   cursor: pointer;
   position: absolute; 
-  right: 10px; /* Pinned to the right of the container */
+  right: 10px;
   z-index: 1001;
 }
 
@@ -55,11 +51,14 @@
   transition: all 0.3s linear;
 }
 
-/* Hamburger Animation States */
+/* Hamburger X Animation */
 .hamburger div.open:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .hamburger div.open:nth-child(2) { opacity: 0; }
 .hamburger div.open:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
 
+/* ==================================== */
+/* 2. Side Menu Drawer                  */
+/* ==================================== */
 .course-tabs {
   display: flex;
   flex-direction: column;
@@ -100,7 +99,7 @@
 }
 
 /* ==================================== */
-/* 3. Restoration of Course Tables      */
+/* 3. Course Table Structure            */
 /* ==================================== */
 .course-container {
   border: 1px solid #ccc;
@@ -108,7 +107,6 @@
   padding: 20px;
   margin-bottom: 40px;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .stage-row {
@@ -142,6 +140,9 @@
   border-bottom: 2px solid #ccc;
 }
 
+/* ==================================== */
+/* 4. Modules Grid (Crucial Fixes)      */
+/* ==================================== */
 .modules-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -159,25 +160,41 @@
   justify-content: center;
   background-color: #e6f7ff; 
   min-height: 100px;
+  position: relative; /* REQUIRED for electives to fan out correctly */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
 
-/* Colors and Animations */
-.module-box.core { background-color: #ddd; }
-.module-box.elective-choice, .module-box.route-choice { 
-  background-color: #E6EAFF; 
-  font-style: italic; 
-  text-decoration: underline; 
-}
+.module-code { font-weight: bold; font-size: 0.9em; color: #555; }
+.module-name { font-size: 1em; font-weight: 500; margin-top: 5px; }
 
+/* ==================================== */
+/* 5. Electives & Animation             */
+/* ==================================== */
 .elective-options {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #E6EAFF;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #E6EAFF; 
   border: 1px solid #ccc;
-  z-index: 10;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  transform-origin: top;
   animation: fan-out 0.3s ease-in-out forwards;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.elective-options li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.85em;
+  font-style: italic;
 }
 
 @keyframes fan-out {
@@ -185,10 +202,57 @@
   to { transform: scaleY(1); opacity: 1; }
 }
 
-/* Responsiveness */
+/* Colors */
+.module-box.core { background-color: #ddd; }
+.module-box.elective-choice, .module-box.route-choice { 
+  background-color: #E6EAFF; 
+  font-style: italic; 
+  text-decoration: underline; 
+}
+
+/* ==================================== */
+/* 6. Gap Year & Disclaimer             */
+/* ==================================== */
+.gap-year {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #e8f5e9;
+  border-left: 5px solid #4caf50;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.course-disclaimer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto 20px auto;
+  padding: 15px;
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+  border-radius: 6px;
+  color: #8a6d3b;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+/* ==================================== */
+/* 7. Responsiveness                    */
+/* ==================================== */
 @media (max-width: 768px) {
-  .course-title { font-size: 1.4rem; }
+  .course-title { font-size: 1.4rem; padding: 0 45px; }
   .stage-row, .semesters-row { flex-direction: column; }
-  .stage-label { writing-mode: horizontal-tb; border-radius: 4px 4px 0 0; border-right: none; border-bottom: 2px solid #ccc; }
+  .stage-label { 
+    writing-mode: horizontal-tb; 
+    border-radius: 4px 4px 0 0; 
+    border-right: none; 
+    border-bottom: 2px solid #ccc; 
+  }
+  .semester-container { border-left: none; border-top: 1px solid #ccc; }
   .modules-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .modules-grid { grid-template-columns: repeat(1, 1fr); }
 }
