@@ -1,11 +1,23 @@
+import React, { useState } from 'react';
+import coursesData from './data/index.js'; 
+import Course from './Course.js';
+import './styles.css';
+
+const Disclaimer = () => (
+  <div className="course-disclaimer">
+    <p>
+      Note electives are still being updated as we are in course transition and may not be correct. <strong>Disclaimer:</strong> This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
+    </p>
+  </div>
+);
+
 function App() {
   const [selectedCourseIndex, setSelectedCourseIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // This is the function the error was complaining about
   const handleCourseSelect = (index) => {
     setSelectedCourseIndex(index);
-    setIsMenuOpen(false); // This closes the menu automatically when a course is clicked
+    setIsMenuOpen(false); 
   };
 
   return (
@@ -24,7 +36,7 @@ function App() {
             <button
               key={index}
               className={`tab-button ${index === selectedCourseIndex ? 'active' : ''}`}
-              onClick={() => handleCourseSelect(index)} // Now we are using it!
+              onClick={() => handleCourseSelect(index)}
             >
               {course.name}
             </button>
@@ -37,3 +49,6 @@ function App() {
     </div>
   );
 }
+
+// THIS LINE IS THE FIX:
+export default App;
