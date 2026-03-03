@@ -1,11 +1,12 @@
 /* ==================================== */
-/* 1. Overall Application and Course Layout */
+/* 1. Overall Application and Header */
 /* ==================================== */
 .app-container {
   font-family: Arial, sans-serif;
   padding: 20px;
   background-color: #f0f0f0;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .navbar-header {
@@ -13,10 +14,13 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px 8px 0 0;
-  border-bottom: 2px solid #ccc;
-  position: relative;
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  position: sticky; /* Keeps the nav at the top while scrolling */
+  top: 10px;
+  z-index: 100;
 }
 
 .nav-logo {
@@ -25,36 +29,11 @@
   color: #333;
 }
 
-/* Desktop View: Horizontal scrollable tabs */
-.course-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease-in-out;
-}
-
-.tab-button {
-  background-color: transparent;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: bold;
-  color: #555;
-  transition: all 0.3s ease;
-  position: relative;
-  white-space: nowrap; /* Prevents text wrapping on desktop */
-}
-
-.tab-button:hover,
-.tab-button.active {
-  color: #007bff;
-  border-bottom: 3px solid #007bff;
-}
-
-/* Hamburger Icon Styling */
+/* ==================================== */
+/* 2. Unified Hamburger Menu (All Screens) */
+/* ==================================== */
 .hamburger {
-  display: none; /* Hidden on desktop */
+  display: flex; /* Always show */
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
@@ -76,162 +55,66 @@
   transform-origin: 1px;
 }
 
-/* Hamburger Animations */
+/* Animations */
 .hamburger div.open:nth-child(1) { transform: rotate(45deg); }
 .hamburger div.open:nth-child(2) { opacity: 0; transform: translateX(20px); }
 .hamburger div.open:nth-child(3) { transform: rotate(-45deg); }
 
-/* ==================================== */
-/* 2. Course and Module Grid Styling */
-/* ==================================== */
-.course-container {
-  border: 1px solid #ccc;
-  border-radius: 0 0 8px 8px;
-  padding: 20px;
-  margin-bottom: 40px;
-  background-color: #fff;
-}
-
-.course-title {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.stage-row {
-  display: flex;
-  margin-bottom: 20px;
-  align-items: stretch;
-}
-
-.stage-label {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  background-color: #E6EAFF; 
-  padding: 10px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  border-right: 2px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px 0 0 4px;
-}
-
-.semesters-row { display: flex; flex: 1; }
-.semester-container { display: flex; flex-direction: column; flex: 1; border-left: 1px solid #ccc; }
-.semester-header {
-  text-align: center;
-  font-weight: bold;
-  padding: 10px;
-  background-color: #eee;
-  border-bottom: 2px solid #ccc;
-}
-
-.modules-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  padding: 10px;
-  align-items: stretch;
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.module-box {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
+/* The Side Drawer - Works for both Desktop and Mobile */
+.course-tabs {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #e6f7ff; 
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden by default */
+  width: 320px; /* Slightly wider for desktop comfort */
+  height: 100vh;
+  background-color: #fff;
+  padding: 80px 10px 40px 10px;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.15);
+  z-index: 1000;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto; /* IMPORTANT: Makes long list of courses scrollable */
 }
 
-.module-code { font-weight: bold; font-size: 0.9em; color: #555; }
-.module-name { font-size: 1em; font-weight: 500; margin-top: 5px; }
+.course-tabs.open {
+  right: 0; /* Slide in */
+}
 
-/* ==================================== */
-/* 3. Animations and Colors */
-/* ==================================== */
-.elective-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
+.tab-button {
   width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: #E6EAFF; 
-  font-style: italic;
-  border: 1px solid #ccc;
-  border-top: none;
-  border-radius: 0 0 5px 5px;
-  transform-origin: top;
-  animation: fan-out 0.3s ease-in-out forwards;
-  z-index: 10;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 18px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-@keyframes fan-out {
-  from { transform: scaleY(0); opacity: 0; }
-  to { transform: scaleY(1); opacity: 1; }
+.tab-button:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
 }
 
-.module-box.core { background-color: #ddd; }
-.module-box.subject-core { background-color: #e6f7ff; }
-.module-box.elective-choice, .module-box.route-choice { 
-  background-color: #E6EAFF; font-style: italic; text-decoration: underline; 
+.tab-button.active {
+  background-color: #E6EAFF;
+  color: #007bff;
+  border-left: 5px solid #007bff;
 }
 
-/* ====================================== */
-/* 4. Responsive Design (Side Drawer) */
-/* ====================================== */
+/* ==================================== */
+/* 3. Existing Course & Grid Styles */
+/* ==================================== */
+/* (Keep your stage-row, modules-grid, and module-box styles here) */
+
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  /* Transition to a Slide-in Side Drawer */
   .course-tabs {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Start off-screen */
-    width: 280px;
-    height: 100vh;
-    background-color: #fff;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 80px;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    z-index: 1000;
-    transition: right 0.3s ease-in-out;
-    overflow-y: auto; /* Scrollable if many courses */
+    width: 80%; /* Takes up more screen on mobile */
   }
-
-  .course-tabs.open {
-    right: 0; /* Slide in */
-  }
-
-  .tab-button {
-    text-align: left;
-    padding: 15px 25px;
-    border-bottom: 1px solid #eee;
-    width: 100%;
-  }
-
-  .tab-button.active {
-    background-color: #f0f7ff;
-    border-bottom: 1px solid #007bff;
-  }
-
-  /* Grid adjustments for mobile */
   .stage-row, .semesters-row { flex-direction: column; }
   .stage-label {
     writing-mode: horizontal-tb;
@@ -245,29 +128,4 @@
 
 @media (max-width: 480px) {
   .modules-grid { grid-template-columns: repeat(1, 1fr); }
-}
-
-/* ==================================== */
-/* 5. Extras */
-/* ==================================== */
-.gap-year {
-  text-align: center;
-  margin: 20px 0;
-  padding: 15px;
-  background-color: #e8f5e9;
-  border-left: 5px solid #4caf50;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.course-disclaimer {
-  width: 100%;
-  max-width: 1200px;
-  margin: 40px auto 20px auto;
-  padding: 15px;
-  background-color: #fcf8e3;
-  border: 1px solid #faebcc;
-  border-radius: 6px;
-  color: #8a6d3b;
-  font-size: 0.9em;
 }
