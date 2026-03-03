@@ -24,7 +24,7 @@ const Module = ({ module, courseID }) => {
         })
         .catch(err => console.error("Sync failed:", err));
     }
-  }, [module.akariLabel, courseID]);
+  }, [module.akariLabel, courseID, module.type]);
 
   const handleMouseEnter = () => {
     if (module.type === "Elective Choice" || module.type === "Route Choice") {
