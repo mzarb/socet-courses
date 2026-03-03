@@ -1,5 +1,5 @@
 import { coreModules } from './coremodules';
-import { electives } from './electives';
+//import { electives } from './electives';
 import { moduleList } from './listofmodules';
 
 const dsaiData = 
