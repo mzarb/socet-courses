@@ -9,14 +9,15 @@
   overflow-x: hidden;
 }
 
-/* THE NEW LAYOUT: Hamburger next to Title */
+/* THE TITLE AREA: One single line for Title + Hamburger */
 .title-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centers the title */
+  justify-content: center;
   position: relative; 
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding: 10px 0;
+  /* Removed background and borders to let it sit flush */
 }
 
 .course-title {
@@ -25,23 +26,24 @@
   font-weight: bold;
   color: #333;
   margin: 0;
-  padding: 0 60px; /* Prevents title from overlapping hamburger */
+  /* Ensure this matches your Course component's width */
+  max-width: 1200px; 
 }
 
 /* ==================================== */
-/* 2. Unified Side Drawer (The Menu)    */
+/* 2. Side Drawer (The Menu)            */
 /* ==================================== */
 .hamburger {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
-  height: 2rem;
+  height: 1.5rem; /* Slightly shorter for a sleeker look */
   background: transparent;
   border: none;
   cursor: pointer;
   position: absolute; 
-  right: 0;
+  right: 10px; /* Pinned to the right of the container */
   z-index: 1001;
 }
 
@@ -51,14 +53,12 @@
   background: #333;
   border-radius: 10px;
   transition: all 0.3s linear;
-  position: relative;
-  transform-origin: 1px;
 }
 
-/* Hamburger X Animation */
-.hamburger div.open:nth-child(1) { transform: rotate(45deg); }
-.hamburger div.open:nth-child(2) { opacity: 0; transform: translateX(20px); }
-.hamburger div.open:nth-child(3) { transform: rotate(-45deg); }
+/* Hamburger Animation States */
+.hamburger div.open:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger div.open:nth-child(2) { opacity: 0; }
+.hamburger div.open:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
 
 .course-tabs {
   display: flex;
@@ -91,10 +91,8 @@
   font-weight: bold;
   color: #444;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
-.tab-button:hover { background-color: #f8f9fa; color: #007bff; }
 .tab-button.active {
   background-color: #E6EAFF;
   color: #007bff;
@@ -102,7 +100,7 @@
 }
 
 /* ==================================== */
-/* 3. Course Container & Stage Tables   */
+/* 3. Restoration of Course Tables      */
 /* ==================================== */
 .course-container {
   border: 1px solid #ccc;
@@ -110,6 +108,7 @@
   padding: 20px;
   margin-bottom: 40px;
   background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .stage-row {
@@ -121,7 +120,7 @@
 .stage-label {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  background-color: #E6EAFF; /* RGU purple */
+  background-color: #E6EAFF;
   padding: 10px;
   font-weight: bold;
   font-size: 1.2rem;
@@ -143,16 +142,11 @@
   border-bottom: 2px solid #ccc;
 }
 
-/* ==================================== */
-/* 4. Modules Grid and Box Styling      */
-/* ==================================== */
 .modules-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding: 10px;
-  align-items: stretch;
-  grid-auto-rows: minmax(100px, auto);
 }
 
 .module-box {
@@ -160,98 +154,41 @@
   padding: 10px;
   border-radius: 5px;
   text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #e6f7ff; 
+  min-height: 100px;
 }
 
-.module-code { font-weight: bold; font-size: 0.9em; color: #555; }
-.module-name { font-size: 1em; font-weight: 500; margin-top: 5px; }
+/* Colors and Animations */
+.module-box.core { background-color: #ddd; }
+.module-box.elective-choice, .module-box.route-choice { 
+  background-color: #E6EAFF; 
+  font-style: italic; 
+  text-decoration: underline; 
+}
 
-/* ==================================== */
-/* 5. Elective Fan Out Animation        */
-/* ==================================== */
 .elective-options {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: #E6EAFF; 
-  font-style: italic;
+  background-color: #E6EAFF;
   border: 1px solid #ccc;
-  border-top: none;
-  border-radius: 0 0 5px 5px;
-  transform-origin: top;
-  animation: fan-out 0.3s ease-in-out forwards;
   z-index: 10;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  animation: fan-out 0.3s ease-in-out forwards;
 }
-
-.elective-options li { padding: 8px; border-bottom: 1px solid #ddd; text-align: left; font-size: 0.9em; }
 
 @keyframes fan-out {
   from { transform: scaleY(0); opacity: 0; }
   to { transform: scaleY(1); opacity: 1; }
 }
 
-/* ==================================== */
-/* 6. Module Colors                     */
-/* ==================================== */
-.module-box.core { background-color: #ddd; }
-.module-box.subject-core { background-color: #e6f7ff; }
-.module-box.elective-choice { background-color: #E6EAFF; font-style: italic; text-decoration: underline; }
-.module-box.route-choice { background-color: #E6EAFF; font-style: italic; text-decoration: underline; }
-.module-box.route-choice .module-code, .module-box.route-choice .module-name { color: black; }
-
-/* ====================================== */
-/* 7. Responsive Tablet/Mobile Overrides  */
-/* ====================================== */
+/* Responsiveness */
 @media (max-width: 768px) {
-  .course-tabs { width: 85%; }
-  .course-title { font-size: 1.4rem; padding: 0 45px; }
-  
+  .course-title { font-size: 1.4rem; }
   .stage-row, .semesters-row { flex-direction: column; }
-  .stage-label {
-    writing-mode: horizontal-tb;
-    border-right: none;
-    border-bottom: 2px solid #ccc;
-    border-radius: 4px 4px 0 0;
-  }
-  .semester-container { border-left: none; border-top: 1px solid #ccc; }
+  .stage-label { writing-mode: horizontal-tb; border-radius: 4px 4px 0 0; border-right: none; border-bottom: 2px solid #ccc; }
   .modules-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 480px) {
-  .modules-grid { grid-template-columns: repeat(1, 1fr); }
-}
-
-/* Gap Year & Disclaimer */
-.gap-year {
-  text-align: center;
-  margin: 20px 0;
-  padding: 15px;
-  background-color: #e8f5e9;
-  border-left: 5px solid #4caf50;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.course-disclaimer {
-  width: 100%;
-  max-width: 1200px;
-  margin: 40px auto 20px auto;
-  padding: 15px;
-  background-color: #fcf8e3;
-  border: 1px solid #faebcc;
-  border-radius: 6px;
-  color: #8a6d3b;
-  font-size: 0.9em;
 }

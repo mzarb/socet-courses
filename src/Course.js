@@ -9,7 +9,7 @@ const Course = ({ course }) => {
 
   return (
     <div className="course-container">
-      <h2 className="course-title">{course.name}</h2>
+      {/* <h2 className="course-title">{course.name}</h2> */}
       {course.stages.map((stage, stageIndex) => (
         <React.Fragment key={stageIndex}>
           <div className="stage-row">
