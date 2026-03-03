@@ -44,12 +44,7 @@ const baData =
               type: "Elective Choice",
               size: 1, source: "subject",
               options: [
-                ...moduleList.CE2000,
-                ...moduleList.CM2115,
-                ...moduleList.CM2120,
-                ...moduleList.CM2125,
-                ...moduleList.CM2133,
-                ...moduleList.BS2103,
+
               ],
             },
           ],
@@ -147,4 +142,4 @@ const baData =
   ],
 }
 
-export default baData;
+export default baData
