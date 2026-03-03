@@ -19,9 +19,9 @@ const gdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester1.csElec,
-                                electives.stage1.semester1.cyElec,
-                                electives.stage1.semester1.dsElec
+                                { ...moduleList.CM1109, type: "Elective" }, 
+                                { ...moduleList.CM1122, type: "Elective" },
+                                { ...moduleList.CM1131, type: "Elective" }, 
                             ],
                         },
                     ],
@@ -36,8 +36,9 @@ const gdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage1.semester2.cyElec,
-                                electives.stage1.semester2.dsElec
+                                { ...moduleList.CM1123, type: "Elective" },
+                                { ...moduleList.CM1132, type: "Elective" },
+                                { ...moduleList.CM1123, type: "Elective" },
                             ],
                         },
                     ],
@@ -61,11 +62,10 @@ const gdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage2.semester1.csElec,
-                                electives.stage2.semester1.cyElec,
-                                electives.stage2.semester1.dsElec,
-                                electives.stage2.semester1.ccdElec,
-                                electives.stage2.semester1.wmElec
+                                { ...moduleList.CE2000, type: "Elective" },
+                                { ...moduleList.CM2115, type: "Elective" },
+                                { ...moduleList.CM2133, type: "Elective" },
+                                { ...moduleList.CM2137, type: "Elective" },
                             ],
                         },
                     ],
@@ -88,10 +88,11 @@ const gdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage2.semester2.csElec,
-                                electives.stage2.semester2.cyElec,
-                                electives.stage2.semester2.dsElec,
-                                electives.stage2.semester2.wmElec
+                                { ...moduleList.CE2001, type: "Elective" },
+                                { ...moduleList.CM2116, type: "Elective" },
+                                { ...moduleList.CM2136, type: "Elective" },
+                                { ...moduleList.CM2138, type: "Elective" },
+                                { ...moduleList.CM1120, type: "Elective" },
                             ],
                         },
                     ],
@@ -112,10 +113,11 @@ const gdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage3.semester1.csElec,
-                                electives.stage3.semester1.cyElec,
-                                electives.stage3.semester1.dsElec,
-                                electives.stage3.semester1.wmElec
+                                { ...moduleList.CM2119, type: "Elective" },
+                                { ...moduleList.CM3113, type: "Elective" },
+                                { ...moduleList.CM3144, type: "Elective" },
+                                { ...moduleList.CM3147, type: "Elective" },
+                                { ...moduleList.CM3151, type: "Elective" },
                             ],
                         },
                     ],
@@ -131,11 +133,12 @@ const gdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage3.semester2.csElec,
-                                electives.stage3.semester2.cyElec,
-                                electives.stage3.semester2.dsElec,
-                                electives.stage3.semester2.ccdElec,
-                                electives.stage3.semester2.wmElec
+                                { ...moduleList.CM2124, type: "Elective" },
+                                { ...moduleList.CM3138, type: "Elective" },
+                                { ...moduleList.CM3142, type: "Elective" },
+                                { ...moduleList.CM3145, type: "Elective" },
+                                { ...moduleList.CM3149, type: "Elective" },
+                                { ...moduleList.CM3153, type: "Elective" },
                             ],
                         },
                     ],
@@ -156,11 +159,11 @@ const gdData =
                             type: "Elective Choice",
                             size: 1, source: "subject",
                             options: [
-                                electives.stage4.semester1.csElec,
-                                electives.stage4.semester1.cyElec,
-                                electives.stage4.semester1.dsElec,
-                                electives.stage4.semester1.ccdElec,
-                                electives.stage4.semester1.wmElec
+                                { ...moduleList.CE4145, type: "Elective" },
+                                { ...moduleList.CM4136, type: "Elective" },
+                                { ...moduleList.CM4125, type: "Elective" },
+                                { ...moduleList.CM4132, type: "Elective" },
+                                { ...moduleList.CM4143, type: "Elective" },
                             ],
                         },
                     ],
