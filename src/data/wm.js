@@ -12,7 +12,7 @@ const wmData =
                     semesterName: "Semester 1",
                     modules: [
                         ...coreModules.stage1.semester1,
-                        { code: "CM1109", name: "Exploring Computing Devices", type: "Subject Core", size: 1, source: "subject" },
+                        { code: "CM1109", type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -30,7 +30,7 @@ const wmData =
                     semesterName: "Semester 2",
                     modules: [
                         ...coreModules.stage1.semester2,
-                        { code: "CM1113", name: "Software Design and Development", type: "Subject Core", size: 1, source: "subject" },
+                        { code: "CM1113", type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                            type: "Elective Choice",
@@ -52,9 +52,9 @@ const wmData =
                     semesterName: "Semester 1",
                     modules: [
                         ...coreModules.stage2.semester1,
-                        { code: "CE2000", name: "Dynamic Web Technologies", type: "Subject Core", size: 1, source: "subject" },
+                        { code: "CE2000", type: "Subject Core", size: 1, source: "subject" },
                         {
-                            code: "CM2115", name: "Advanced Software Design and Development", type: "Subject Core",
+                            code: "CM2115", type: "Subject Core",
                             size: 1, source: "subject"
                         },
                         {
@@ -81,7 +81,7 @@ const wmData =
                             size: 1, source: "subject"
                         },
                         {
-                            code: "CM2116", name: "Data Structures and Algorithms", type: "Subject Core",
+                            code: "CM2116", type: "Subject Core",
                             size: 1, source: "subject"
                         },
                         {
@@ -106,8 +106,8 @@ const wmData =
                     semesterName: "Semester 1",
                     modules: [
                         ...coreModules.stage3.semester1,
-                        { code: "CM3140", name: "Web and Mobile Development in Practice", type: "Subject Core", size: 1, source: "subject" },
-                        { code: "CM3147", name: "Native Mobile Apps", type: "Subject Core", size: 1, source: "subject"},
+                        { code: "CE3026", type: "Subject Core", size: 1, source: "subject" },
+                        { code: "CM3147", type: "Subject Core", size: 1, source: "subject"},
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -126,8 +126,8 @@ const wmData =
                     semesterName: "Semester 2",
                     modules: [
                         ...coreModules.stage3.semester2,
-                        { code: "CM3138", name: "Hybrid Apps", type: "Subject Core", size: 1, source: "subject" },
-                        { code: "CM3139", name: "Visual Communication", type: "Subject Core", size: 1, source: "subject"},
+                        { code: "CM3138", type: "Subject Core", size: 1, source: "subject" },
+                        { code: "CE3025", type: "Subject Core", size: 1, source: "subject"},
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -150,9 +150,9 @@ const wmData =
                 {
                     semesterName: "Semester 1",
                     modules: [
-                        { code: "CM4132", name: "Advanced Mobile Development", type: "Subject Core", size: 1, source: "subject" },
-                        { code: "CM4133", name: "Cloud AI", type: "Subject Core", size: 1, source: "subject"},
-                       { code: "CB3162", name: "Digital Media & User Experience", type: "Subject Core", size: 1, source: "subject" },
+                        { code: "CM4110", type: "Subject Core", size: 1, source: "subject" },
+                        { code: "CM4133", type: "Subject Core", size: 1, source: "subject"},
+                       { code: "CB3162", type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
