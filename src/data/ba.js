@@ -44,7 +44,8 @@ const baData =
               type: "Elective Choice",
               size: 1, source: "subject",
               options: [
-                ...moduleList.CM1112, ...moduleList.CM1113
+                { ...moduleList.CM1112, type: "Elective"},
+                { ...moduleList.CM1112, type: "Elective"}
               ],
             },
           ],

@@ -110,7 +110,7 @@ export const moduleList = {
   CMM304: { code: "CMM304", name: "Knowledge Modelling and Reasoning", size: 1 },
   CMM306: { code: "CMM306", name: "Languages and Compilers", size: 1 },
   CEM300: { code: "CEM300", name: "Natural Language Processing", size: 1 },
-
+  CMM547: { code: "CMM547", name: "AI & Data Governance", size: 1 },
   CMM303: { code: "CMM303", name: "MSci Capstone Project", size: 4 },
   CEM321: { code: "CEM321", name: "Capstone Project", size: 4 },
 };
