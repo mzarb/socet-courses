@@ -8,7 +8,7 @@ import './styles.css';
 const Disclaimer = () => (
   <div className="course-disclaimer">
     <p>
-      <strong>Disclaimer:</strong> This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
+      Note electives are still being updated as we are in course transition and may not be correct. <strong>Disclaimer:</strong> This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
     </p>
   </div>
 );

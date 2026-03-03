@@ -41,6 +41,7 @@ export const moduleList = {
   BS2293: { code: "BS2293", name: "Business Ideas & Opportunities", size: 1 },
   BS2916: { code: "BS2916", name: "Managing Projects", size: 1 },
   BS2268: { code: "BS2268", name: "Personal & Business Finance", size: 1 },
+  BS2005: { code: "BS2005", name: "Digital Context of Business", size: 1 }, 
   CE2005: { code: "CE2005", name: "Data Science Development & Deployment", size: 1 },
   CE2003: { code: "CE2003", name: "Principles of Business Data Visualisation", size: 1 },
   CE2004: { code: "CE2004", name: "Technical Communication", size: 1 },
