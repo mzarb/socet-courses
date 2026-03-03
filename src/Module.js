@@ -2,71 +2,80 @@ import React, { useState, useEffect } from 'react';
 
 const routePrefixes = ['Route A', 'Route B', 'Route C', 'Route D', 'Route E', 'Route F'];
 
-const Module = ({ module, courseID }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  // Start with whatever is in the options (static routes or fallback electives)
-  const [liveOptions, setLiveOptions] = useState(module.options || []);
+const Module = ({ module, courseID }) => { // Add courseId to props
+const [isExpanded, setIsExpanded] = useState(false);
+// 1. New state to hold live options
+const [liveOptions, setLiveOptions] = useState(module.options || []);
 
-  useEffect(() => {
-    // Only fetch if it's an elective with a label
-    if (module.type === "Elective Choice" && module.akariLabel && courseID) {
-      fetch(`/api/fetch-group?courseId=${courseID}&label=${encodeURIComponent(module.akariLabel)}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data && data.length > 0) {
-            // Unify the data: Map Akari 'title' to 'name' to match your moduleList
-            const formatted = data.map(m => ({
-              code: m.code,
-              name: m.title 
-            }));
-            setLiveOptions(formatted);
-          }
-        })
-        .catch(err => console.error("Sync failed:", err));
-    }
-  }, [module.akariLabel, courseID, module.type]);
+// 2. Fetch live data if a label exists
+useEffect(() => {
+if (module.akariLabel && courseID) {
+fetch(`/api/fetch-group?courseId=${courseID}&label=${encodeURIComponent(module.akariLabel)}`)
+.then(res => res.json())
+.then(data => {
+if (data && data.length > 0) {
+// Map the API results to match your expected 'name' field
+const formatted = data.map(m => ({
+code: m.code,
+name: m.title // API returns 'title', your UI uses 'name'
+}));
+setLiveOptions(formatted);
+}
+})
+.catch(err => console.error("Live fetch failed:", err));
+}
+}, [module.akariLabel, courseID]);
 
-  const handleMouseEnter = () => {
-    if (module.type === "Elective Choice" || module.type === "Route Choice") {
-      setIsExpanded(true);
-    }
-  };
+const handleMouseEnter = () => {
+if (module.type === "Elective Choice" || module.type === "Route Choice") {
+setIsExpanded(true);
+}
+};
 
-  const handleMouseLeave = () => setIsExpanded(false);
+const handleMouseLeave = () => {
+if (module.type === "Elective Choice" || module.type === "Route Choice") {
+setIsExpanded(false);
+}
+};
 
-  const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '-')}`;
+const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '-')}`;
 
-  return (
-    <div
-      className={moduleClassName}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={{ gridColumn: `span ${module.size || 1}` }}
-    >
-      <div className="module-content">
-        <div className="module-code">{module.code}</div>
-        <div className="module-name">{module.name}</div>
-      </div>
+const boxStyle = {
+gridColumn: `span ${module.size || 1}`,
+};
 
-      {isExpanded && (module.type === "Elective Choice" || module.type === "Route Choice") && (
-        <ul className="elective-options">
-          {/* If it's an elective waiting for data, show syncing. Routes will skip this. */}
-          {module.type === "Elective Choice" && module.akariLabel && liveOptions.length === 0 ? (
-            <li className="loading-text">Syncing with Akari...</li>
-          ) : (
-            liveOptions.map((option, index) => (
-              <li key={index}>
-                {module.type === "Elective Choice" && `${option.code}: ${option.name}`}
-                {module.type === "Route Choice" && (
-                  `${routePrefixes[index] || 'Route'}: ${option.code}: ${option.name}`
-                )}
-              </li>
-            ))
-          )}
-        </ul>
-      )}
-    </div>
-  );
+return (
+<div
+className={moduleClassName}
+onMouseEnter={handleMouseEnter}
+onMouseLeave={handleMouseLeave}
+style={boxStyle}
+>
+<div className="module-content">
+<div className="module-code">{module.code}</div>
+<div className="module-name">{module.name}</div>
+</div>
+
+{(module.type === "Elective Choice" || module.type === "Route Choice") && isExpanded && (
+<ul className="elective-options">
+{/* 1. Show a loading message if we have a label but no data yet */}
+{module.akariLabel && liveOptions.length === 0 ? (
+<li className="loading-text">Syncing with Akari...</li>
+) : (
+/* 2. Map the options once they arrive */
+liveOptions.map((option, index) => (
+<li key={index}>
+{module.type === "Elective Choice" && `${option.code}: ${option.name}`}
+{module.type === "Route Choice" && (
+`${routePrefixes[index]}: ${option.code}: ${option.name}`
+)}
+</li>
+))
+)}
+</ul>
+)}
+</div>
+);
 };
 
 export default Module;
