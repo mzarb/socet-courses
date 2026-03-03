@@ -12,7 +12,7 @@ const wmData =
                     semesterName: "Semester 1",
                     modules: [
                         ...coreModules.stage1.semester1,
-                        { code: "CM1109", type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CM1109, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -30,7 +30,7 @@ const wmData =
                     semesterName: "Semester 2",
                     modules: [
                         ...coreModules.stage1.semester2,
-                        { code: "CM1113", type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CM1113, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                            type: "Elective Choice",
@@ -52,9 +52,9 @@ const wmData =
                     semesterName: "Semester 1",
                     modules: [
                         ...coreModules.stage2.semester1,
-                        { code: "CE2000", type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CE2000, type: "Subject Core", size: 1, source: "subject" },
                         {
-                            code: "CM2115", type: "Subject Core",
+                            ...moduleList.CM2115, type: "Subject Core",
                             size: 1, source: "subject"
                         },
                         {
@@ -75,13 +75,12 @@ const wmData =
                     modules: [
                         ...coreModules.stage2.semester2,
                         {
-                            code: "CE2001",
-                            name: "Full Stack Applications",
+                            ...moduleList.CE2001,
                             type: "Subject Core",
                             size: 1, source: "subject"
                         },
                         {
-                            code: "CM2116", type: "Subject Core",
+                            ...moduleList.CM2116, type: "Subject Core",
                             size: 1, source: "subject"
                         },
                         {
@@ -106,8 +105,8 @@ const wmData =
                     semesterName: "Semester 1",
                     modules: [
                         ...coreModules.stage3.semester1,
-                        { code: "CE3026", type: "Subject Core", size: 1, source: "subject" },
-                        { code: "CM3147", type: "Subject Core", size: 1, source: "subject"},
+                        { ...moduleList.CE3026, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CM3147, type: "Subject Core", size: 1, source: "subject"},
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -126,8 +125,8 @@ const wmData =
                     semesterName: "Semester 2",
                     modules: [
                         ...coreModules.stage3.semester2,
-                        { code: "CM3138", type: "Subject Core", size: 1, source: "subject" },
-                        { code: "CE3025", type: "Subject Core", size: 1, source: "subject"},
+                        { ...moduleList.CM3138, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CE3025, type: "Subject Core", size: 1, source: "subject"},
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -150,9 +149,9 @@ const wmData =
                 {
                     semesterName: "Semester 1",
                     modules: [
-                        { code: "CM4110", type: "Subject Core", size: 1, source: "subject" },
-                        { code: "CM4133", type: "Subject Core", size: 1, source: "subject"},
-                       { code: "CB3162", type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CM4110, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CM4133, type: "Subject Core", size: 1, source: "subject"},
+                       { ...moduleList.CB3162, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
