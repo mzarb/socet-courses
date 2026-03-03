@@ -34,7 +34,7 @@ const dsbmData =
             semesterName: "Semester 1",
             modules: [
                 ...coreModules.stage2.semester1,
-                { ...moduleList.BS2293, type: "Subject Core", size: 1, source: "subject"  },
+                { ...moduleList.BS2268, type: "Subject Core", size: 1, source: "subject"  },
               {
                 ...moduleList.CM2137, type: "Subject Core",
                 size: 1, source: "subject" 

@@ -52,7 +52,7 @@ const dsaiData =
             semesterName: "Semester 1",
             modules: [
                 ...coreModules.stage2.semester1,
-                { ...moduleList.CM2133, type: "Subject Core", size: 1, source: "subject"  },
+                { ...moduleList.CE2000, type: "Subject Core", size: 1, source: "subject"  },
               {
                 ...moduleList.CM2137, type: "Subject Core",
                 size: 1, source: "subject" 
@@ -75,7 +75,7 @@ const dsaiData =
             modules: [
               ...coreModules.stage2.semester2,
               {
-                ...moduleList.CE2001,
+                ...moduleList.CE2005,
                 type: "Subject Core",
                 size: 1, source: "subject" 
               },
@@ -158,7 +158,7 @@ const dsaiData =
               { ...moduleList.CE4145, type: "Subject Core", size: 1, source: "subject"  },
               { ...moduleList.CM4140, type: "Subject Core", size: 1, source: "subject"  },
               {
-                ...moduleList.CM4144, type: "Subject Core",
+                ...moduleList.CM4126, type: "Subject Core",
                 size: 1, source: "subject" 
               },
               {

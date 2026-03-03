@@ -192,7 +192,7 @@ const mscicsData =
                 {
                     semesterName: "Semester 2",
                     modules: [
-                        { ...moduleList.CMM303, type: "Core", size: 4, source: "Core" },
+                        { ...moduleList.CEM321, type: "Core", size: 4, source: "Core" },
                     ],
                 },
             ],

@@ -124,7 +124,7 @@ const gdData =
                     semesterName: "Semester 2",
                     modules: [
                         ...coreModules.stage3.semester2,
-                        { ...moduleList.CM3139, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CE3025, type: "Subject Core", source: "subject" },
                         { ...moduleList.CM3150, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
