@@ -41,11 +41,11 @@ export const moduleList = {
   BS2293: { code: "BS2293", name: "Business Ideas & Opportunities", size: 1 },
   BS2916: { code: "BS2916", name: "Managing Projects", size: 1 },
   BS2268: { code: "BS2268", name: "Personal & Business Finance", size: 1 },
-  BS2005: { code: "BS2005", name: "Digital Context of Business", size: 1 }, 
+  BS2005: { code: "BS2005", name: "Digital Context of Business", size: 1 },
   CE2005: { code: "CE2005", name: "Data Science Development & Deployment", size: 1 },
   CE2003: { code: "CE2003", name: "Principles of Business Data Visualisation", size: 1 },
   CE2004: { code: "CE2004", name: "Technical Communication", size: 1 },
-
+  BS2103: { code: "BS2103", name: "Work and Organisational Behaviour", size: 1 },
 
   // Stage 3 Modules
   CM3113: { code: "CM3113", name: "Concurrent Programming", size: 1 },
@@ -74,7 +74,8 @@ export const moduleList = {
   CE3026: { code: "CE3026", name: "Autonomous Coding", size: 1 },
   CE3005: { code: "CE3005", name: "Employability & Career Planning", size: 1 },
   CE3006: { code: "CE3006", name: "Advanced Business Analytics & Visualisation", size: 1 },
-
+  BS3112: { code: "BS3112", name: "Literature Project", size: 1 },
+  BS3033: { code: "BS3033", name: "People, Policy & Practice", size: 1 },
 
   // Stage 4 Modules
   CE4001: { code: "CE4001", name: "Business Data Group Project", size: 1 },

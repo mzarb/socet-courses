@@ -40,12 +40,15 @@ const baData =
 
             {
               code: "Elective",
-              name: "Elective Choice",
               type: "Elective Choice",
               size: 1, source: "subject",
               options: [
-                { ...moduleList.CM1112, type: "Elective"},
-                { ...moduleList.CM1112, type: "Elective"}
+                { ...moduleList.CE2000, type: "Elective" },
+                { ...moduleList.CM2115, type: "Elective" },
+                { ...moduleList.CM2120, type: "Elective" },
+                { ...moduleList.CM2125, type: "Elective" },
+                { ...moduleList.CM2133, type: "Elective" },
+                { ...moduleList.BS2103, type: "Elective" }
               ],
             },
           ],
@@ -59,11 +62,16 @@ const baData =
 
             {
               code: "Elective",
-              name: "Elective Choice",
               type: "Elective Choice",
               size: 1, source: "subject",
               options: [
-
+                { ...moduleList.CE2001, type: "Elective" },
+                { ...moduleList.CM2116, type: "Elective" },
+                { ...moduleList.CM2121, type: "Elective" },
+                { ...moduleList.CM2123, type: "Elective" },
+                { ...moduleList.CM2136, type: "Elective" },
+                { ...moduleList.CM2138, type: "Elective" },
+                { ...moduleList.BS2916, type: "Elective" }
               ],
             },
           ],
@@ -82,11 +90,16 @@ const baData =
 
             {
               code: "Elective",
-              name: "Elective Choice",
               type: "Elective Choice",
               size: 1, source: "subject",
               options: [
-
+                { ...moduleList.CM3112, type: "Elective" },
+                { ...moduleList.CM3137, type: "Elective" },
+                { ...moduleList.CM3144, type: "Elective" },
+                { ...moduleList.CM3147, type: "Elective" },
+                { ...moduleList.CM3151, type: "Elective" },
+                { ...moduleList.BS3033, type: "Elective" },
+                { ...moduleList.CM3113, type: "Elective" }
               ],
             },
           ],
@@ -100,11 +113,16 @@ const baData =
 
             {
               code: "Elective",
-              name: "Elective Choice",
               type: "Elective Choice",
               size: 1, source: "subject",
               options: [
-
+                { ...moduleList.BS3112, type: "Elective" },
+                { ...moduleList.CM3138, type: "Elective" },
+                { ...moduleList.CM3142, type: "Elective" },
+                { ...moduleList.CM3145, type: "Elective" },
+                { ...moduleList.CM3149, type: "Elective" },
+                { ...moduleList.CM3150, type: "Elective" },
+                { ...moduleList.CM3153, type: "Elective" }
               ],
             },
           ],
@@ -126,7 +144,13 @@ const baData =
               type: "Elective Choice",
               size: 1, source: "subject",
               options: [
-
+                { ...moduleList.CE4145, type: "Elective" },
+                { ...moduleList.CM4110, type: "Elective" },
+                { ...moduleList.CM4125, type: "Elective" },
+                { ...moduleList.CM4137, type: "Elective" },
+                { ...moduleList.CM4143, type: "Elective" },
+                { ...moduleList.BS4329, type: "Elective" },
+                { ...moduleList.CM4132, type: "Elective" }
               ],
             },
           ],
