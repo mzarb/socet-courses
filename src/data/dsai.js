@@ -19,9 +19,9 @@ const dsaiData =
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
-                                electives.stage1.semester1.csElec,
-                                electives.stage1.semester1.ccdElec,
-                                electives.stage1.semester1.cyElec
+                   { ...moduleList.CM1108, type: "Elective" },
+                   { ...moduleList.CM1109, type: "Elective" },
+                   { ...moduleList.CM1131, type: "Elective" },
                 ],
               },
             ],
@@ -36,9 +36,9 @@ const dsaiData =
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
-                                electives.stage1.semester2.csElec,
-                                electives.stage1.semester2.ccdElec,
-                                electives.stage1.semester2.cyElec
+                    { ...moduleList.CM1116, type: "Elective" },
+                    { ...moduleList.CM1132, type: "Elective" },
+                    { ...moduleList.CM1113, type: "Elective" },
                 ],
               },
             ],
@@ -62,10 +62,10 @@ const dsaiData =
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
-                               electives.stage2.semester1.ccdElec,
-                                electives.stage2.semester1.csElec,
-                                electives.stage2.semester1.cyElec,
-                                electives.stage2.semester1.gdElec
+                       { ...moduleList.CM2115, type: "Elective" }, 
+                      { ...moduleList.CM2120, type: "Elective" },
+                      { ...moduleList.CM2119, type: "Elective" },
+                      { ...moduleList.CM2133, type: "Elective" },
                 ],
               },
             ],
@@ -88,9 +88,12 @@ const dsaiData =
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
-                               electives.stage2.semester2.ccdElec,
-                                electives.stage2.semester2.csElec,
-                                electives.stage2.semester2.gdElec
+                    { ...moduleList.CE2001, type: "Elective" },
+                    { ...moduleList.CM2116, type: "Elective" },
+                    { ...moduleList.CM2121, type: "Elective" },
+                    { ...moduleList.CM2123, type: "Elective" },
+                    { ...moduleList.CM2136, type: "Elective" },
+                    { ...moduleList.CM1120, type: "Elective" },
                 ],
               },
             ],
@@ -114,11 +117,11 @@ const dsaiData =
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
-                               electives.stage3.semester1.ccdElec,
-                                electives.stage3.semester1.csElec,
-                                electives.stage3.semester1.cyElec,
-                                electives.stage3.semester1.gdElec,
-                                electives.stage3.semester1.wmElec
+                    { ...moduleList.CM3112, type: "Elective" },
+                    { ...moduleList.CM3113, type: "Elective" },
+                    { ...moduleList.CM3137, type: "Elective" },
+                    { ...moduleList.CM3144, type: "Elective" },
+                    { ...moduleList.CM3147, type: "Elective" },
                 ],
               },
             ],
@@ -138,11 +141,12 @@ const dsaiData =
                type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
-                               electives.stage3.semester2.ccdElec,
-                                electives.stage3.semester2.csElec,
-                                electives.stage3.semester2.cyElec,
-                                electives.stage3.semester2.gdElec,
-                                electives.stage3.semester2.wmElec
+                    { ...moduleList.CM2124, type: "Elective" },
+                    { ...moduleList.CM3138, type: "Elective" },
+                    { ...moduleList.CM3142, type: "Elective" },
+                    { ...moduleList.CM3145, type: "Elective" },
+                    { ...moduleList.CM3149, type: "Elective" },
+                    { ...moduleList.CM3150, type: "Elective" },
                 ],
               },
             ],
@@ -166,11 +170,11 @@ const dsaiData =
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
                 options: [
-                               electives.stage4.semester1.ccdElec,
-                                electives.stage4.semester1.csElec,
-                                electives.stage4.semester1.cyElec,
-                                electives.stage4.semester1.gdElec,
-                                electives.stage4.semester1.wmElec
+                      { ...moduleList.CE4145, type: "Elective" },
+                      { ...moduleList.CM4110, type: "Elective" },
+                      { ...moduleList.CM4132, type: "Elective" },
+                      { ...moduleList.CM4137, type: "Elective" },
+                      { ...moduleList.CM4143, type: "Elective" },
                 ],
               },
             ],
