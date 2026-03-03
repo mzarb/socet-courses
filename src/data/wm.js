@@ -1,5 +1,5 @@
 import { coreModules } from './coremodules';
-//import { electives } from './electives';
+import { electives } from './electives';
 import { moduleList } from './listofmodules';
 
 const wmData =
@@ -21,9 +21,9 @@ const wmData =
                             size: 1, source: "subject",
                             akariLabel: "Web and Mobile Design - Electives Group 1",
                             options: [
-                                //   electives.stage1.semester1.ccdElec,
-                                //   electives.stage1.semester1.cyElec,
-                                //   electives.stage1.semester1.dsElec
+                                  electives.stage1.semester1.ccdElec,
+                                  electives.stage1.semester1.cyElec,
+                                  electives.stage1.semester1.dsElec
 
                             ],
                         },
@@ -40,9 +40,9 @@ const wmData =
                             size: 1, source: "subject",
                             akariLabel: "Web and Mobile Design - Electives Group 2",
                             options: [
-                                //   electives.stage1.semester2.ccdElec,
-                                //   electives.stage1.semester2.cyElec,
-                                //   electives.stage1.semester2.dsElec
+                                  electives.stage1.semester2.ccdElec,
+                                  electives.stage1.semester2.cyElec,
+                                  electives.stage1.semester2.dsElec
                             ],
                         },
                     ],
@@ -67,10 +67,10 @@ const wmData =
                             size: 1, source: "subject",
                             akariLabel: "Web and Mobile Design - Electives Group 3",
                             options: [
-                                //  electives.stage2.semester1.ccdElec,
-                                // electives.stage2.semester1.cyElec,
-                                //  electives.stage2.semester1.dsElec,
-                                // electives.stage2.semester1.gdElec,
+                                 electives.stage2.semester1.ccdElec,
+                                electives.stage2.semester1.cyElec,
+                                 electives.stage2.semester1.dsElec,
+                                electives.stage2.semester1.gdElec,
                             ],
                         },
                     ],
@@ -94,10 +94,10 @@ const wmData =
                             size: 1, source: "subject",
                             akariLabel: "Web and Mobile Design - Electives Group 4",
                             options: [
-                                //  electives.stage2.semester2.ccdElec,
-                                //  electives.stage2.semester2.cyElec,
-                                //  electives.stage2.semester2.dsElec,
-                                //  electives.stage2.semester2.gdElec,
+                                 electives.stage2.semester2.ccdElec,
+                                 electives.stage2.semester2.cyElec,
+                                 electives.stage2.semester2.dsElec,
+                                 electives.stage2.semester2.gdElec,
                             ],
                         },
                     ],
@@ -119,11 +119,11 @@ const wmData =
                             size: 1, source: "subject",
                             akariLabel: "Web and Mobile Design - Electives Group 6",
                             options: [
-                                //  electives.stage3.semester1.ccdElec,
-                                //  electives.stage3.semester1.cyElec,
-                                //  electives.stage3.semester1.dsElec,
-                                //  electives.stage3.semester1.gdElec,
-                                //  electives.stage3.semester1.csElec
+                                 electives.stage3.semester1.ccdElec,
+                                 electives.stage3.semester1.cyElec,
+                                 electives.stage3.semester1.dsElec,
+                                 electives.stage3.semester1.gdElec,
+                                 electives.stage3.semester1.csElec
                             ],
                         },
                     ],
@@ -140,11 +140,11 @@ const wmData =
                             size: 1, source: "subject",
                             akariLabel: "Web and Mobile Design - Electives Group 7",
                             options: [
-                                //  electives.stage3.semester2.ccdElec,
-                                //  electives.stage3.semester2.cyElec,
-                                //  electives.stage3.semester2.dsElec,
-                                //  electives.stage3.semester2.gdElec,
-                                //  electives.stage3.semester2.csElec
+                                  electives.stage3.semester2.ccdElec,
+                                  electives.stage3.semester2.cyElec,
+                                  electives.stage3.semester2.dsElec,
+                                  electives.stage3.semester2.gdElec,
+                                  electives.stage3.semester2.csElec
                             ],
                         },
                     ],

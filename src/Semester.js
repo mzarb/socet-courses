@@ -1,6 +1,6 @@
 // Semester.js
 import React from 'react';
-import Module from './Module';
+import Module from './Module_tryingtoscrape';
 
 const Semester = ({ semester, courseID }) => (
   <div className="semester-container">
