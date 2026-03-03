@@ -5,13 +5,33 @@
   font-family: Arial, sans-serif;
   padding: 20px;
   background-color: #f0f0f0;
+  min-height: 100vh;
 }
 
+/* NEW: Header wrapper to align Logo and Hamburger */
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid #ccc;
+  position: relative;
+}
+
+.nav-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* MODIFIED: course-tabs now handles mobile positioning */
 .course-tabs {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  border-bottom: 2px solid #ccc;
+  transition: all 0.3s ease-in-out;
 }
 
 .tab-button {
@@ -33,13 +53,39 @@
   border-bottom: 3px solid #007bff;
 }
 
-.tab-button.active {
-  color: #007bff;
+/* NEW: Hamburger Icon Styling */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
 }
 
+.hamburger div {
+  width: 2rem;
+  height: 0.25rem;
+  background: #333;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+/* Hamburger Animations when open */
+.hamburger div.open:nth-child(1) { transform: rotate(45deg); }
+.hamburger div.open:nth-child(2) { opacity: 0; transform: translateX(20px); }
+.hamburger div.open:nth-child(3) { transform: rotate(-45deg); }
+
+/* Rest of your existing Course, Stage, and Module styles... */
 .course-container {
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px; /* Adjusted for navbar */
   padding: 20px;
   margin-bottom: 40px;
   background-color: #fff;
@@ -62,8 +108,7 @@
 .stage-label {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  /* background-color: #f7e1b5; /* Beige */
-  background-color: #E6EAFF; /* RGU purple */
+  background-color: #E6EAFF; 
   padding: 10px;
   font-weight: bold;
   font-size: 1.2rem;
@@ -94,7 +139,6 @@
   border-bottom: 2px solid #ccc;
 }
 
-
 /* ==================================== */
 /* 2. Modules Grid and Box Styling */
 /* ==================================== */
@@ -119,7 +163,7 @@
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #e6f7ff; /* A generic light blue fallback */
+  background-color: #e6f7ff; 
 }
 
 .module-code {
@@ -145,8 +189,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  /* background-color: #f7e1b5; /* Beige */
-  background-color: #E6EAFF; /* RGU purple */
+  background-color: #E6EAFF; 
   font-style: italic;
   border: 1px solid #ccc;
   border-top: none;
@@ -169,117 +212,99 @@
 }
 
 @keyframes fan-out {
-  from {
-    transform: scaleY(0);
-    opacity: 0;
-  }
-  to {
-    transform: scaleY(1);
-    opacity: 1;
-  }
+  from { transform: scaleY(0); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
 }
 
 /* ==================================== */
-/* 4. Module Colors (Updated) */
+/* 4. Module Colors */
 /* ==================================== */
-
-/* This rule is for core modules from coreModules.js */
-.module-box.core {
-  background-color: #ddd; /* Light grey */
-}
-
-/* This rule is for subject core modules from data.js */
-.module-box.subject-core {
-  background-color: #e6f7ff; /* Light blue */
-}
-
-/* This rule is for electives */
-.module-box.elective-choice {
-  /* background-color: #f7e1b5; /* Beige */
-  background-color: #E6EAFF; /* RGU purple */
-  font-style: italic;
-
-  text-decoration: underline;
-}
-
-/* This rule is for route choice modules */
-.module-box.route-choice {
-  background-color: #E6EAFF; /* RGU purple */
-  font-style: italic;
-  text-decoration: underline;
-}
-
-/* Ensure text inside route choice modules is white */
+.module-box.core { background-color: #ddd; }
+.module-box.subject-core { background-color: #e6f7ff; }
+.module-box.elective-choice { background-color: #E6EAFF; font-style: italic; text-decoration: underline; }
+.module-box.route-choice { background-color: #E6EAFF; font-style: italic; text-decoration: underline; }
 .module-box.route-choice .module-code,
-.module-box.route-choice .module-name {
-  color: black;
-}
+.module-box.route-choice .module-name { color: black; }
 
 /* ====================================== */
-/* 5. Responsive Design for Small Screens */
+/* 5. Responsive Design (Hamburger Logic) */
 /* ====================================== */
 @media (max-width: 768px) {
-  .stage-row {
-    flex-direction: column;
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
   }
 
+  .course-tabs {
+    display: none; /* Hide standard tabs */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    z-index: 100;
+    width: 200px;
+    margin-bottom: 0;
+  }
+
+  /* When JS adds the .open class */
+  .course-tabs.open {
+    display: flex;
+  }
+
+  .tab-button {
+    top: 0;
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    text-align: left;
+  }
+
+  .tab-button.active {
+    border-bottom: 1px solid #007bff;
+    background-color: #f0f7ff;
+  }
+
+  .stage-row { flex-direction: column; }
   .stage-label {
     writing-mode: horizontal-tb;
     border-right: none;
     border-bottom: 2px solid #ccc;
     border-radius: 4px 4px 0 0;
   }
-
-  .semesters-row {
-    flex-direction: column;
-  }
-
-  .semester-container {
-    border-left: none;
-    border-top: 1px solid #ccc;
-  }
-
-  .modules-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 480px) {
-    .modules-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
+  .semesters-row { flex-direction: column; }
+  .semester-container { border-left: none; border-top: 1px solid #ccc; }
+  .modules-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Add this to your styles.css file */
+@media (max-width: 480px) {
+  .modules-grid { grid-template-columns: repeat(1, 1fr); }
+}
+
+/* ==================================== */
+/* 6. Extras (Gap Year & Disclaimer) */
+/* ==================================== */
 .gap-year {
   text-align: center;
   margin: 20px 0;
   padding: 15px;
-  background-color: #e8f5e9; /* Light green background */
-  border-left: 5px solid #4caf50; /* Green border */
+  background-color: #e8f5e9;
+  border-left: 5px solid #4caf50;
   border-radius: 8px;
   font-weight: bold;
   color: #333;
 }
 
-
-/* ==================================== */
-/* 6. Disclaimer Styling */
-/* ==================================== */
 .course-disclaimer {
   width: 100%;
-  max-width: 1200px; /* Match your content width */
+  max-width: 1200px;
   margin: 40px auto 20px auto;
   padding: 15px;
-  background-color: #fcf8e3; /* Light yellow background */
-  border: 1px solid #faebcc; /* Soft border */
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
   border-radius: 6px;
-  color: #8a6d3b; /* Dark text color */
+  color: #8a6d3b;
   font-size: 0.9em;
   text-align: left;
-}
-
-.course-disclaimer p {
-  margin: 0;
-  line-height: 1.4;
 }

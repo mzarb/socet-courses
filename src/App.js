@@ -1,38 +1,56 @@
-// App.js
 import React, { useState } from 'react';
-import coursesData from './data/index.js'; // This now imports from your new index.js file
+import coursesData from './data/index.js';
 import Course from './Course.js';
 import './styles.css';
 
-// Disclaimer Component to keep the structure clean
 const Disclaimer = () => (
   <div className="course-disclaimer">
     <p>
-      Note electives are still being updated as we are in course transition and may not be correct. <strong>Disclaimer:</strong> This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
+      Note electives are still being updated... <strong>Disclaimer:</strong> This is an unofficial resource.
     </p>
   </div>
 );
+
 function App() {
   const [selectedCourseIndex, setSelectedCourseIndex] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for the hamburger
+
+  const handleCourseSelect = (index) => {
+    setSelectedCourseIndex(index);
+    setIsMenuOpen(false); // Close menu after picking a course
+  };
 
   return (
-    <div className="app-container">
-      <div className="course-tabs">
+  <div className="app-container">
+    <header className="navbar-header">
+      <div className="nav-logo">SoCET Courses</div>
+      
+      <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div className={isMenuOpen ? 'open' : ''}></div>
+        <div className={isMenuOpen ? 'open' : ''}></div>
+        <div className={isMenuOpen ? 'open' : ''}></div>
+      </button>
+
+      <nav className={`course-tabs ${isMenuOpen ? 'open' : ''}`}>
         {coursesData.map((course, index) => (
           <button
             key={index}
             className={`tab-button ${index === selectedCourseIndex ? 'active' : ''}`}
-            onClick={() => setSelectedCourseIndex(index)}
+            onClick={() => {
+              setSelectedCourseIndex(index);
+              setIsMenuOpen(false); // Close menu on selection
+            }}
           >
             {course.name}
           </button>
         ))}
-      </div>
-      <Course course={coursesData[selectedCourseIndex]} />
+      </nav>
+    </header>
 
-      <Disclaimer />
-    </div>
-  );
+    <Course course={coursesData[selectedCourseIndex]} />
+    <Disclaimer />
+  </div>
+);
 }
 
 export default App;

@@ -140,7 +140,6 @@ const baData =
             { ...moduleList.CE4001, type: "Subject Core", size: 1 },
             {
               code: "Elective",
-              name: "Elective Choice",
               type: "Elective Choice",
               size: 1, source: "subject",
               options: [
