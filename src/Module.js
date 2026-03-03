@@ -4,19 +4,20 @@ const routePrefixes = ['Route A', 'Route B', 'Route C', 'Route D', 'Route E', 'R
 
 const Module = ({ module, courseID }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  // Start with the hardcoded options immediately
+  // Start with whatever is in the options (static routes or fallback electives)
   const [liveOptions, setLiveOptions] = useState(module.options || []);
 
   useEffect(() => {
-    // If it's an elective and has a label, try to fetch the live data
+    // Only fetch if it's an elective with a label
     if (module.type === "Elective Choice" && module.akariLabel && courseID) {
       fetch(`/api/fetch-group?courseId=${courseID}&label=${encodeURIComponent(module.akariLabel)}`)
         .then(res => res.json())
         .then(data => {
           if (data && data.length > 0) {
+            // Unify the data: Map Akari 'title' to 'name' to match your moduleList
             const formatted = data.map(m => ({
               code: m.code,
-              name: m.title // Akari returns title, we need name
+              name: m.title 
             }));
             setLiveOptions(formatted);
           }
@@ -31,9 +32,7 @@ const Module = ({ module, courseID }) => {
     }
   };
 
-  const handleMouseLeave = () => {
-    setIsExpanded(false);
-  };
+  const handleMouseLeave = () => setIsExpanded(false);
 
   const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '-')}`;
 
@@ -51,15 +50,15 @@ const Module = ({ module, courseID }) => {
 
       {isExpanded && (module.type === "Elective Choice" || module.type === "Route Choice") && (
         <ul className="elective-options">
-          {/* If there's an akariLabel and we have no data yet, show syncing */}
-          {module.akariLabel && liveOptions.length === 0 ? (
-            <li>Syncing with Akari...</li>
+          {/* If it's an elective waiting for data, show syncing. Routes will skip this. */}
+          {module.type === "Elective Choice" && module.akariLabel && liveOptions.length === 0 ? (
+            <li className="loading-text">Syncing with Akari...</li>
           ) : (
             liveOptions.map((option, index) => (
               <li key={index}>
                 {module.type === "Elective Choice" && `${option.code}: ${option.name}`}
                 {module.type === "Route Choice" && (
-                  `${routePrefixes[index]}: ${option.code}: ${option.name || option.title}`
+                  `${routePrefixes[index] || 'Route'}: ${option.code}: ${option.name}`
                 )}
               </li>
             ))
