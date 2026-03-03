@@ -64,6 +64,8 @@ export const moduleList = {
   CM3136:{code: "CM3136", name: "3D Animation", size:1},
   CM3152: {code: "CM3152", name: "AI for Problem Solving", size:1},
   CE3009: {code: "CE3009", name: "Interactive Narrative Design", size:1},
+  CE3025: {code: "CE3025", name: "Experiential Development", size: 1},
+  CE3026: {code: "CE3026", name: "Autonomous Coding", size:1},
 
 
   // Stage 4 Modules

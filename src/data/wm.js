@@ -111,7 +111,7 @@ const wmData =
                     semesterName: "Semester 1",
                     modules: [
                         ...coreModules.stage3.semester1,
-                        { ...moduleList.CM3140, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CE3026, type: "Subject Core", size: 1, source: "subject" },
                         { ...moduleList.CM3147, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
@@ -133,7 +133,7 @@ const wmData =
                     modules: [
                         ...coreModules.stage3.semester2,
                         { ...moduleList.CM3138, type: "Subject Core", size: 1, source: "subject" },
-                        { ...moduleList.CM3139, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CE3025, type: "Subject Core", size: 1, source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
@@ -157,7 +157,7 @@ const wmData =
                 {
                     semesterName: "Semester 1",
                     modules: [
-                        { ...moduleList.CM4132, type: "Subject Core", size: 1, source: "subject" },
+                        { ...moduleList.CM4110, type: "Subject Core", size: 1, source: "subject" },
                         { ...moduleList.CM4133, type: "Subject Core", size: 1, source: "subject" },
                         { ...moduleList.CB3162, type: "Subject Core", size: 1, source: "subject" },
                         {
