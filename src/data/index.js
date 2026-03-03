@@ -6,7 +6,7 @@ import wmData from './wm';
 import gdData from './gd';
 import dsaiData from './dsai';
 import dsbmData from './dsbm';
-//import badata from './ba';
+import badata from './ba';
 import mscicsData from './mscics';
 
 const coursesData = [

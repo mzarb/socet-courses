@@ -1,13 +1,13 @@
 // Semester.js
 import React from 'react';
-import Module from './Module_tryingtoscrape';
+import Module from './Module';
 
-const Semester = ({ semester, courseID }) => (
+const Semester = ({ semester }) => (
   <div className="semester-container">
     <div className="semester-header">{semester.semesterName}</div>
     <div className="modules-grid">
       {semester.modules.map((module, index) => (
-        <Module key={index} module={module} courseID={courseID}/>
+        <Module key={index} module={module} />
       ))}
     </div>
   </div>

@@ -4,7 +4,7 @@ import { moduleList } from './listofmodules';
 
 const mscicsData =
 {
-    name: "MSci Computing Science",
+    name: "MSci Computing Science (26-27)",
     stages: [
         {
             stageName: "Stage 1",

@@ -8,7 +8,6 @@ import './styles.css';
 const Disclaimer = () => (
   <div className="course-disclaimer">
     <p>
-      Currently displaying a mishmash of 25/26 and 26/27 as we're in between course changes. <br/>
       <strong>Disclaimer:</strong> This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
     </p>
   </div>

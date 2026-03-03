@@ -3,7 +3,7 @@ import { coreModules } from './coremodules';
 const baData = 
 
       {
-    name: "BSc (Hons) Business Analytics",
+    name: "BSc (Hons) Business Analytics (26-27)",
     stages: [
       {
         stageName: "Stage 1",

@@ -16,7 +16,6 @@ export const moduleList = {
   CM1121: { code: "CM1121", name: "Web UX", size: 1 },
   BS1009: { code: "BS1009", name: "Business Perspectives", size: 1},
   BS1005: {code: "BS1005", name: "Sustainable Business", size: 1},
-  CE1337: {code: "CE1337", name: "Programming Bootcamp", size: 1},
 
   // Stage 2 Modules
   CM2115: { code: "CM2115", name: "Advanced Software Design and Development", size: 1 },
@@ -35,11 +34,15 @@ export const moduleList = {
   CM2112: { code: "CM2112", name: "Real World Projects & Professional Skills", size: 1 },
   CM2124: { code: "CM2124", name: "Research Methods", size: 1 },
   CM2134: {code: "CM2134", name: "Operating Systems & Virtualisation Security", size: 1},
+    CM2136: {code: "CM2136", name: "Cryptography", size:1},
     CM2119:{code: "CM2119", name: "Experimental Game Mechanics", size:1},
     CM2126:{code: "CM2126", name: "2D Animation Production", size:1},
     CM2122: {code: "CM2122", name: "Quality Assurance for Games", size: 1},
     BS2293: {code: "BS2293", name: "Business Ideas & Opportunities", size: 1},
     BS2916: {code: "BS2916", name: "Managing Projects", size: 1},
+BS2293: {code: "BS2293", name: "Business Ideas & Opportunities", size: 1},
+BS2916: {code: "BS2916", name: "Managing Projects", size: 1},
+CE3009: {code:"CE3009", name: "Interactive Narrative Design", size:1},
 
   // Stage 3 Modules
   CM3113: { code: "CM3113", name: "Concurrent Programming", size: 1 },
@@ -63,9 +66,6 @@ export const moduleList = {
   CM3128:{code: "CM3128", name: "Design Principles in Composition", size:1},
   CM3136:{code: "CM3136", name: "3D Animation", size:1},
   CM3152: {code: "CM3152", name: "AI for Problem Solving", size:1},
-  CE3009: {code: "CE3009", name: "Interactive Narrative Design", size:1},
-  CE3025: {code: "CE3025", name: "Experiential Development", size: 1},
-  CE3026: {code: "CE3026", name: "Autonomous Coding", size:1},
 
 
   // Stage 4 Modules
@@ -94,7 +94,6 @@ CM4305: {code: "CM4305", name: "MSci Industrial Placement", size: 1},
 CM4307: {code: "CM4307", name: "MSci Study Abroad", size: 1},
 CM4309: {code: "CM4309", name: "MSci Research Placement", size: 1},
   CM4134: { code: "CM4134", name: "Capstone Project", size: 4 },
-  CE4321: { code: "CE4321", name: "Capstone Project", size: 4},
 
   // Stage 5 modules
   CMM302: {code: "CMM302", name: "Computing Science Research", size: 1},

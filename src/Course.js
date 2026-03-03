@@ -16,7 +16,7 @@ const Course = ({ course }) => {
             <div className="stage-label">{stage.stageName}</div>
             <div className="semesters-row">
               {stage.semesters.map((semester, semesterIndex) => (
-                <Semester key={semesterIndex} semester={semester} courseID={course.id} />
+                <Semester key={semesterIndex} semester={semester} />
               ))}
             </div>
           </div>

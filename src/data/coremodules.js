@@ -4,7 +4,7 @@ import {moduleList} from './listofmodules';
 export const coreModules = {
   stage1: {
     semester1: [
-      { code: "CE1337", ...moduleList.CE1337, type: "Core", source: "core"  },
+      { code: "CM1112", ...moduleList.CM1112, type: "Core", source: "core"  },
       { code: "CM1119", ...moduleList.CM1119, type: "Core", source: "core"  },
     ],
     semester2: [
@@ -30,7 +30,7 @@ export const coreModules = {
   },
   stage4: {
     semester2: [
-      { code: "CE4321", ...moduleList.CE4321, type: "Core" },
+      { code: "CM4134", ...moduleList.CM4134, type: "Core" },
     ],
   },
   // Add other stages and semesters as needed

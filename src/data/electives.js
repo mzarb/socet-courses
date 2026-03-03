@@ -66,7 +66,7 @@ export const electives = {
         source: "elective",
       },
       ccdElec: {
-        ...moduleList.CM2125,
+        ...moduleList.CM2119,
         type: "Elective",
         source: "elective",
       },
@@ -98,12 +98,12 @@ export const electives = {
         source: "elective",
       },
       ccdElec: {
-        ...moduleList.CM2121,
+        ...moduleList.CM2125,
         type: "Elective",
         source: "elective",
       },
       gdElec: {
-        ...moduleList.CM2123,
+        ...moduleList.CM2122,
         type: "Elective",
         source: "elective",
       },
@@ -198,7 +198,7 @@ export const electives = {
         source: "elective",
       },
       ccdElec: {
-        ...moduleList.CM4110,
+        ...moduleList.CM4136,
         type: "Elective",
         source: "elective",
       },

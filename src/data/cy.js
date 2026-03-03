@@ -1,11 +1,10 @@
 import { coreModules } from './coremodules';
-//import { electives } from './electives';
+import { electives } from './electives';
 import { moduleList } from './listofmodules';
 
 const cyData = 
       {
-    name: "BSc (Hons) Cyber Security",
-    id: "6206",
+    name: "BSc (Hons) Cyber Security (26-27)",
     stages: [
       {
         stageName: "Stage 1",
@@ -19,11 +18,10 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 1",
                 options: [
-                              //  electives.stage1.semester1.csElec,
-                              //  electives.stage1.semester1.ccdElec,
-                              //  electives.stage1.semester1.dsElec
+                                electives.stage1.semester1.csElec,
+                                electives.stage1.semester1.ccdElec,
+                                electives.stage1.semester1.dsElec
                 ],
               },
             ],
@@ -37,11 +35,10 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 2",
                 options: [
-                             //   electives.stage1.semester2.csElec,
-                             //   electives.stage1.semester2.ccdElec,
-                             //   electives.stage1.semester2.dsElec
+                                electives.stage1.semester2.csElec,
+                                electives.stage1.semester2.ccdElec,
+                                electives.stage1.semester2.dsElec
                 ],
               },
             ],
@@ -64,13 +61,12 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 3",
                 options: [
-                           //    electives.stage2.semester1.ccdElec,
-                           //     electives.stage2.semester1.csElec,
-                           //     electives.stage2.semester1.dsElec,
-                           //     electives.stage2.semester1.gdElec,
-                           //     electives.stage2.semester1.wmElec
+                               electives.stage2.semester1.ccdElec,
+                                electives.stage2.semester1.csElec,
+                                electives.stage2.semester1.dsElec,
+                                electives.stage2.semester1.gdElec,
+                                electives.stage2.semester1.wmElec
                 ],
               },
             ],
@@ -92,13 +88,12 @@ const cyData =
                 code: "Elective",
                type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 5",
                 options: [
-                         //      electives.stage2.semester2.ccdElec,
-                         //       electives.stage2.semester2.csElec,
-                         //       electives.stage2.semester2.dsElec,
-                         //       electives.stage2.semester2.gdElec,
-                         //       electives.stage2.semester2.wmElec
+                               electives.stage2.semester2.ccdElec,
+                                electives.stage2.semester2.csElec,
+                                electives.stage2.semester2.dsElec,
+                                electives.stage2.semester2.gdElec,
+                                electives.stage2.semester2.wmElec
                 ],
               },
             ],
@@ -121,13 +116,12 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 8",
                 options: [
-                         //      electives.stage3.semester1.ccdElec,
-                         //       electives.stage3.semester1.csElec,
-                         //       electives.stage3.semester1.dsElec,
-                         //       electives.stage3.semester1.gdElec,
-                         //       electives.stage3.semester1.wmElec
+                               electives.stage3.semester1.ccdElec,
+                                electives.stage3.semester1.csElec,
+                                electives.stage3.semester1.dsElec,
+                                electives.stage3.semester1.gdElec,
+                                electives.stage3.semester1.wmElec
                 ],
               },
             ],
@@ -146,13 +140,12 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 10",
                 options: [
-                           //    electives.stage3.semester2.ccdElec,
-                           //     electives.stage3.semester2.csElec,
-                           //     electives.stage3.semester2.dsElec,
-                           //     electives.stage3.semester2.gdElec,
-                           //     electives.stage3.semester2.wmElec
+                               electives.stage3.semester2.ccdElec,
+                                electives.stage3.semester2.csElec,
+                                electives.stage3.semester2.dsElec,
+                                electives.stage3.semester2.gdElec,
+                                electives.stage3.semester2.wmElec
                 ],
               },
             ],
@@ -175,13 +168,12 @@ const cyData =
                 code: "Elective",
                 type: "Elective Choice",
                 size: 1, source: "subject" ,
-                akariLabel: "Cyber Security - Electives Group 12",
                 options: [
-                       //        electives.stage4.semester1.ccdElec,
-                       //         electives.stage4.semester1.csElec,
-                       //         electives.stage4.semester1.dsElec,
-                       //         electives.stage4.semester1.gdElec,
-                       //         electives.stage4.semester1.wmElec
+                               electives.stage4.semester1.ccdElec,
+                                electives.stage4.semester1.csElec,
+                                electives.stage4.semester1.dsElec,
+                                electives.stage4.semester1.gdElec,
+                                electives.stage4.semester1.wmElec
                 ],
               },
             ],

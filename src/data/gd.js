@@ -1,11 +1,10 @@
 import { coreModules } from './coremodules';
-//import { electives } from './electives';
+import { electives } from './electives';
 import { moduleList } from './listofmodules'; // Import the central module list
 
 const gdData =
 {
-    name: "BSc (Hons) Games Design",
-    id: 6687,
+    name: "BSc (Hons) Games Design (26-27)",
     stages: [
         {
             stageName: "Stage 1",
@@ -19,11 +18,10 @@ const gdData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                            akariLabel: "Games Design - Electives Group 1",
                             options: [
-                             //   electives.stage1.semester1.csElec,
-                             //   electives.stage1.semester1.cyElec,
-                             //   electives.stage1.semester1.dsElec
+                                electives.stage1.semester1.csElec,
+                                electives.stage1.semester1.cyElec,
+                                electives.stage1.semester1.dsElec
                             ],
                         },
                     ],
@@ -37,11 +35,9 @@ const gdData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                                        akariLabel: "Games Design - Electives Group 2",
                             options: [
-                             //   electives.stage1.semester2.csElec,
-                             //   electives.stage1.semester2.cyElec,
-                             //   electives.stage1.semester2.dsElec
+                                electives.stage1.semester2.cyElec,
+                                electives.stage1.semester2.dsElec
                             ],
                         },
                     ],
@@ -64,13 +60,12 @@ const gdData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                                        akariLabel: "Games Design - Electives Group 3",
                             options: [
-                             //   electives.stage2.semester1.csElec,
-                             //   electives.stage2.semester1.cyElec,
-                             //   electives.stage2.semester1.dsElec,
-                             //   electives.stage2.semester1.ccdElec,
-                             //   electives.stage2.semester1.wmElec
+                                electives.stage2.semester1.csElec,
+                                electives.stage2.semester1.cyElec,
+                                electives.stage2.semester1.dsElec,
+                                electives.stage2.semester1.ccdElec,
+                                electives.stage2.semester1.wmElec
                             ],
                         },
                     ],
@@ -92,13 +87,11 @@ const gdData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                                        akariLabel: "Games Design - Electives Group 4",
                             options: [
-                          //      electives.stage2.semester2.csElec,
-                          //      electives.stage2.semester2.cyElec,
-                          //      electives.stage2.semester2.dsElec,
-                          //      electives.stage2.semester2.ccdElec,
-                          //      electives.stage2.semester2.wmElec
+                                electives.stage2.semester2.csElec,
+                                electives.stage2.semester2.cyElec,
+                                electives.stage2.semester2.dsElec,
+                                electives.stage2.semester2.wmElec
                             ],
                         },
                     ],
@@ -118,13 +111,11 @@ const gdData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                                        akariLabel: "Games Design - Electives Group 6",
                             options: [
-                            //    electives.stage3.semester1.csElec,
-                            //    electives.stage3.semester1.cyElec,
-                            //    electives.stage3.semester1.dsElec,
-                            //    electives.stage3.semester1.ccdElec,
-                            //    electives.stage3.semester1.wmElec
+                                electives.stage3.semester1.csElec,
+                                electives.stage3.semester1.cyElec,
+                                electives.stage3.semester1.dsElec,
+                                electives.stage3.semester1.wmElec
                             ],
                         },
                     ],
@@ -133,19 +124,18 @@ const gdData =
                     semesterName: "Semester 2",
                     modules: [
                         ...coreModules.stage3.semester2,
-                        { ...moduleList.CE3025, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CM3139, type: "Subject Core", source: "subject" },
                         { ...moduleList.CM3150, type: "Subject Core", source: "subject" },
                         {
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                                        akariLabel: "Games Design - Electives Group 7",
                             options: [
-                            //    electives.stage3.semester2.csElec,
-                            //    electives.stage3.semester2.cyElec,
-                            //    electives.stage3.semester2.dsElec,
-                            //    electives.stage3.semester2.ccdElec,
-                            //    electives.stage3.semester2.wmElec
+                                electives.stage3.semester2.csElec,
+                                electives.stage3.semester2.cyElec,
+                                electives.stage3.semester2.dsElec,
+                                electives.stage3.semester2.ccdElec,
+                                electives.stage3.semester2.wmElec
                             ],
                         },
                     ],
@@ -165,13 +155,12 @@ const gdData =
                             code: "Elective",
                             type: "Elective Choice",
                             size: 1, source: "subject",
-                                                        akariLabel: "Games Design - Electives Group 8",
                             options: [
-                              //  electives.stage4.semester1.csElec,
-                              //  electives.stage4.semester1.cyElec,
-                              //  electives.stage4.semester1.dsElec,
-                              //  electives.stage4.semester1.ccdElec,
-                              //  electives.stage4.semester1.wmElec
+                                electives.stage4.semester1.csElec,
+                                electives.stage4.semester1.cyElec,
+                                electives.stage4.semester1.dsElec,
+                                electives.stage4.semester1.ccdElec,
+                                electives.stage4.semester1.wmElec
                             ],
                         },
                     ],

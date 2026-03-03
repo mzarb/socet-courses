@@ -4,7 +4,7 @@ import { moduleList } from './listofmodules';
 
 const dsbmData = 
       {
-    name: "BSc (Hons) Data Science with Business Management",
+    name: "BSc (Hons) Data Science with Business Management (26-27)",
     stages: [
       {
         stageName: "Stage 1",
