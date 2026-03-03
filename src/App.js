@@ -1,3 +1,16 @@
+import React, { useState } from 'react';
+import coursesData from './data/index.js'; 
+import Course from './Course.js';
+import './styles.css';
+
+const Disclaimer = () => (
+  <div className="course-disclaimer">
+    <p>
+      Note electives are still being updated as we are in course transition and may not be correct. <strong>Disclaimer:</strong> This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
+    </p>
+  </div>
+);
+
 function App() {
   const [selectedCourseIndex, setSelectedCourseIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +22,7 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Side Menu Drawer remains the same */}
+      {/* The side drawer menu */}
       <nav className={`course-tabs ${isMenuOpen ? 'open' : ''}`}>
         {coursesData.map((course, index) => (
           <button
@@ -23,10 +36,15 @@ function App() {
       </nav>
 
       <div className="course-container">
+        {/* Integrated Title and Hamburger Wrapper */}
         <div className="title-wrapper">
           <h1 className="course-title">{coursesData[selectedCourseIndex].name}</h1>
           
-          <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button 
+            className="hamburger" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
             <div className={isMenuOpen ? 'open' : ''}></div>
             <div className={isMenuOpen ? 'open' : ''}></div>
             <div className={isMenuOpen ? 'open' : ''}></div>
@@ -40,3 +58,6 @@ function App() {
     </div>
   );
 }
+
+// Essential for the build to pass:
+export default App;
