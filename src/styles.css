@@ -1,5 +1,5 @@
 /* ==================================== */
-/* 1. Overall Application and Header    */
+/* 1. Overall Application Layout        */
 /* ==================================== */
 .app-container {
   font-family: Arial, sans-serif;
@@ -9,33 +9,30 @@
   overflow-x: hidden;
 }
 
-/* Updated Header for Universal Hamburger */
-.navbar-header {
+/* THE NEW LAYOUT: Hamburger next to Title */
+.title-wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 15px 25px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  position: sticky;
-  top: 10px;
-  z-index: 100;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  justify-content: center; /* Centers the title */
+  position: relative; 
+  margin-bottom: 30px;
+  padding: 10px 0;
 }
 
-.nav-logo {
+.course-title {
+  text-align: center;
+  font-size: 1.8rem;
   font-weight: bold;
-  font-size: 1.2rem;
   color: #333;
+  margin: 0;
+  padding: 0 60px; /* Prevents title from overlapping hamburger */
 }
 
 /* ==================================== */
-/* 2. Unified Hamburger Menu (Drawer)   */
+/* 2. Unified Side Drawer (The Menu)    */
 /* ==================================== */
 .hamburger {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
@@ -43,7 +40,8 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  position: absolute; 
+  right: 0;
   z-index: 1001;
 }
 
@@ -57,7 +55,7 @@
   transform-origin: 1px;
 }
 
-/* Hamburger Animations */
+/* Hamburger X Animation */
 .hamburger div.open:nth-child(1) { transform: rotate(45deg); }
 .hamburger div.open:nth-child(2) { opacity: 0; transform: translateX(20px); }
 .hamburger div.open:nth-child(3) { transform: rotate(-45deg); }
@@ -104,7 +102,7 @@
 }
 
 /* ==================================== */
-/* 3. Restoration: Course & Table Layout */
+/* 3. Course Container & Stage Tables   */
 /* ==================================== */
 .course-container {
   border: 1px solid #ccc;
@@ -112,14 +110,6 @@
   padding: 20px;
   margin-bottom: 40px;
   background-color: #fff;
-}
-
-.course-title {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
 }
 
 .stage-row {
@@ -144,6 +134,7 @@
 
 .semesters-row { display: flex; flex: 1; }
 .semester-container { display: flex; flex-direction: column; flex: 1; border-left: 1px solid #ccc; }
+
 .semester-header {
   text-align: center;
   font-weight: bold;
@@ -183,7 +174,7 @@
 .module-name { font-size: 1em; font-weight: 500; margin-top: 5px; }
 
 /* ==================================== */
-/* 5. The "Fan Out" Animation           */
+/* 5. Elective Fan Out Animation        */
 /* ==================================== */
 .elective-options {
   position: absolute;
@@ -205,7 +196,6 @@
 }
 
 .elective-options li { padding: 8px; border-bottom: 1px solid #ddd; text-align: left; font-size: 0.9em; }
-.elective-options li:last-child { border-bottom: none; }
 
 @keyframes fan-out {
   from { transform: scaleY(0); opacity: 0; }
@@ -222,10 +212,12 @@
 .module-box.route-choice .module-code, .module-box.route-choice .module-name { color: black; }
 
 /* ====================================== */
-/* 7. Responsive Overrides (Course Tables)*/
+/* 7. Responsive Tablet/Mobile Overrides  */
 /* ====================================== */
 @media (max-width: 768px) {
-  .course-tabs { width: 80%; }
+  .course-tabs { width: 85%; }
+  .course-title { font-size: 1.4rem; padding: 0 45px; }
+  
   .stage-row, .semesters-row { flex-direction: column; }
   .stage-label {
     writing-mode: horizontal-tb;
