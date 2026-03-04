@@ -1,3 +1,5 @@
+import { moduleList } from './listofmodules'; // Import the central module list
+
 const rmData = {
     name: "BEng/MEng Robotics and Mechatronics",
     stages: [
