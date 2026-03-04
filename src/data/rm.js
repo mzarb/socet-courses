@@ -17,8 +17,9 @@ const rmData = {
                 {
                     semesterName: "Semester 2",
                     modules: [
-                        { ...moduleList.CM1113, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE1006, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CM1113, type: "Subject Core", source: "subject" },
+
                         { ...moduleList.CE1007, type: "Subject Core", source: "subject" },
                     ],
                 },
