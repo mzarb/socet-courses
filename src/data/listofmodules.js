@@ -207,4 +207,12 @@ export const moduleList = {
   CE5001: { code: "CE5001", name: "Advanced Vibrations and Structural Dynamics", size: 2 },
   CE5002: { code: "CE5002", name: "Advanced Fluid Dynamics", size: 2 },
   CE5007: { code: "CE5007", name: "Smart Engineering", size: 2 },
+
+  // --- New REE Elective Additions ---
+  
+  // Stage 4 / MEng Level Electives
+  EN5200: { code: "EN5200", name: "Advanced Carbon Capture, Utilisation And Storage", size: 1 },
+  ENM506: { code: "ENM506", name: "Hydrogen Energy Systems", size: 1 },
+  ENM508: { code: "ENM508", name: "Geothermal Energy and Applications", size: 1 },
+  ENM509: { code: "ENM509", name: "Wind Energy Systems", size: 1 },
 };
