@@ -71,7 +71,6 @@ const edData = {
                 {
                     semesterName: "Semester 3",
                     modules: [
-                        { ...moduleList.CE5004, type: "Subject Core", source: "subject", tag: "MEng-F" }, // From 5-year S3 text
                         { ...moduleList.EN4601, type: "Subject Core", source: "subject", tag: "MEng-F" }, // From MEng-F S3 text
                         { ...moduleList.CE5000, type: "Subject Core", source: "subject", tag: "MEng-F" }, // From MEng-F S3 text
                         { ...moduleList.CE5006, type: "Subject Core", source: "subject", tag: "MEng-F" }, // From MEng-F S3 text
