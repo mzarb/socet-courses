@@ -154,8 +154,17 @@ body.menu-open {
   border-radius: 4px 0 0 4px;
 }
 
-.semesters-row { display: flex; flex: 1; }
-.semester-container { display: flex; flex-direction: column; flex: 1; border-left: 1px solid #ccc; }
+.semesters-row {
+  display: flex;
+  flex-wrap: wrap; /* Allows Semester 3 to move to a new line if needed */
+  gap: 15px;      /* Adds a nice gap between the semester columns */
+  flex: 1;
+}
+
+.semester-container {
+  flex: 1 1 300px; /* This tells the semester: "Try to be 300px wide, but grow if there's space" */
+  min-width: 250px; /* Prevents the semester from ever becoming a tiny sliver */
+}
 
 .semester-header {
   text-align: center;
@@ -170,7 +179,8 @@ body.menu-open {
 /* ==================================== */
 .modules-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /*grid-template-columns: repeat(4, 1fr);*/
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 10px;
   padding: 10px;
 }
