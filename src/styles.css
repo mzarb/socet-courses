@@ -186,7 +186,7 @@ body.menu-open {
 }
 
 /* On larger desktop screens, switch to 4x1 to spread them out */
-@media (min-width: 1400px) {
+@media (min-width: 1000px) {
   .modules-grid {
     grid-template-columns: repeat(4, 1fr);
   }
