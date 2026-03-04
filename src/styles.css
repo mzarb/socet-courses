@@ -60,7 +60,7 @@
 .hamburger div.open:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
 
 /* ==================================== */
-/* 2. Side Menu Drawer (Scroll Enabled) */
+/* 2. Side Menu Drawer (Fixed Mobile Scroll) */
 /* ==================================== */
 .course-tabs {
   display: flex;
@@ -69,44 +69,43 @@
   top: 0;
   right: -100%; 
   width: 320px;
-  height: 100vh; /* Full screen height */
+  
+  /* Use dvh to account for mobile browser address bars */
+  height: 100vh;
+  height: 100dvh; 
+  
   background-color: #fff;
-  padding: 80px 10px 40px 10px;
+  
+  /* Increase top padding so the first item isn't under the hamburger */
+  padding: 100px 0 40px 0; 
+  
   box-shadow: -5px 0 15px rgba(0,0,0,0.15);
-  z-index: 1000;
+  z-index: 2000; /* Higher than everything else */
   transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* FIX: Enable scrolling for long course lists */
+  /* Essential Scroll Logic */
   overflow-y: auto; 
-  -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
+  overscroll-behavior: contain; /* Prevents the main page from scrolling when menu reaches end */
+  -webkit-overflow-scrolling: touch; 
 }
 
 .course-tabs.open {
   right: 0;
 }
 
+/* Ensure buttons don't shrink inside the scroll view */
 .tab-button {
+  flex-shrink: 0; 
   width: 100%;
   text-align: left;
   background: transparent;
   border: none;
   border-bottom: 1px solid #f0f0f0;
-  padding: 18px 25px;
+  padding: 20px 25px;
   font-size: 1rem;
   font-weight: bold;
   color: #444;
   cursor: pointer;
-  transition: background 0.2s;
-}
-
-.tab-button:hover {
-  background-color: #f8f9fa;
-}
-
-.tab-button.active {
-  background-color: #E6EAFF;
-  color: #007bff;
-  border-left: 5px solid #007bff;
 }
 
 /* ==================================== */
