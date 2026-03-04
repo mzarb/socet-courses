@@ -129,4 +129,4 @@ const edData = {
 }
 
 
-export default enData
+export default edData
