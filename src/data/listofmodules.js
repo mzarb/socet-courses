@@ -157,4 +157,22 @@ export const moduleList = {
   EN5600: { code: "EN5600", name: "Post-Project Industrial Placement", size: 2 },
 
   // Stage 5 Cores (Now used in FT Semester 3s)
+  // --- New Robotics & Mechatronics Additions ---
+
+  // Stage 2
+  CE2011: { code: "CE2011", name: "Embedded Systems Fundamentals", size: 1 },
+  CE2016: { code: "CE2016", name: "Sensors & Signal Conditioning", size: 1 },
+  CE2017: { code: "CE2017", name: "Digital System Design", size: 1 },
+
+  // Stage 3
+  CE3013: { code: "CE3013", name: "Mechatronics", size: 1 },
+  CE3012: { code: "CE3012", name: "Control Engineering", size: 1 },
+  CE3022: { code: "CE3022", name: "Real-time Embedded Systems", size: 1 },
+
+  // Stage 4
+  CE4005: { code: "CE4005", name: "Electrical Power Machines and Applications", size: 1 },
+  CE4008: { code: "CE4008", name: "Robotic Dynamics & Kinematics", size: 1 },
+
+  // Stage 5
+  CE5009: { code: "CE5009", name: "Advanced Robotics", size: 2 }, // 30 credits
 };
