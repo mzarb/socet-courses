@@ -59,7 +59,7 @@ name: "BEng/MEng Mechanical Engineering",
                         {
                             code: "Routes",
                             type: "Route Choice",
-                            size: 3, source: "subject",
+                            size: 1, source: "subject",
                             options: [
                                 { ...moduleList.CM3151, label: "Mechanical Engineering" },
                                 { ...moduleList.CE3013, label: "Mechanical and Electrical Engineering" },
@@ -76,7 +76,7 @@ name: "BEng/MEng Mechanical Engineering",
                         {
                             code: "Routes",
                             type: "Route Choice",
-                            size: 3, source: "subject",
+                            size: 1, source: "subject",
                             options: [
                                 { ...moduleList.CE3017, label: "Mechanical Engineering" },
                                 { ...moduleList.CE3016, label: "Mechanical and Electrical Engineering" },
@@ -106,7 +106,7 @@ name: "BEng/MEng Mechanical Engineering",
                         {
                             code: "Routes",
                             type: "Route Choice",
-                            size: 3, source: "subject",
+                            size: 1, source: "subject",
                             options: [
                                 { ...moduleList.CE4011, label: "Mechanical Engineering" },
                                 { ...moduleList.CE4005, label: "Mechanical and Electrical Engineering" },
@@ -116,7 +116,7 @@ name: "BEng/MEng Mechanical Engineering",
                         {
                             code: "Routes",
                             type: "Route Choice",
-                            size: 3, source: "subject",
+                            size: 1, source: "subject",
                             options: [
                                 { ...moduleList.CE4010, label: "Mechanical Engineering" },
                                 { ...moduleList.CE4009, label: "Mechanical and Electrical Engineering" },
@@ -139,7 +139,7 @@ name: "BEng/MEng Mechanical Engineering",
                         {
                             code: "Routes",
                             type: "Route Choice",
-                            size: 3, source: "subject",
+                            size: 1, source: "subject",
                             tag: "MEng-F",
                             options: [
                                 { ...moduleList.CE5001, label: "Mechanical Engineering" },
@@ -162,7 +162,7 @@ name: "BEng/MEng Mechanical Engineering",
                         {
                             code: "Routes",
                             type: "Route Choice",
-                            size: 3, source: "subject",
+                            size: 1, source: "subject",
                             tag: "MEng-5",
                             options: [
                                 { ...moduleList.CE5001, label: "Mechanical Engineering" },
