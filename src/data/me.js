@@ -139,7 +139,7 @@ name: "BEng/MEng Mechanical Engineering",
                         {
                             code: "Routes",
                             type: "Route Choice",
-                            size: 1, source: "subject",
+                            size: 2, source: "subject",
                             tag: "MEng-F",
                             options: [
                                 { ...moduleList.CE5001, label: "Mechanical Engineering" },
