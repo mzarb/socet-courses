@@ -193,4 +193,18 @@ export const moduleList = {
   // Stage 5 / FT Summer
   CE5008: { code: "CE5008", name: "Selected Topics of Industrial Engineering", size: 2 }, // 30 credits
   CE5004: { code: "CE5004", name: "Industrial Automation and Robotics", size: 1 },
+
+  // Stage 3
+  CE3021: { code: "CE3021", name: "Heat Transfer and Turbomachinery", size: 1 },
+  CE3018: { code: "CE3018", name: "Oil and Gas Drilling and Well Completion Engineering", size: 1 },
+  CE3017: { code: "CE3017", name: "Renewable Energy Engineering", size: 1 },
+
+  // Stage 4
+  CE4007: { code: "CE4007", name: "Petroleum Systems and Production Engineering", size: 1 },
+  CE4009: { code: "CE4009", name: "Advanced Control and Instrumentation", size: 1 },
+
+  // Stage 5 / FT Summer
+  CE5001: { code: "CE5001", name: "Advanced Vibrations and Structural Dynamics", size: 2 },
+  CE5002: { code: "CE5002", name: "Advanced Fluid Dynamics", size: 2 },
+  CE5007: { code: "CE5007", name: "Smart Engineering", size: 2 },
 };

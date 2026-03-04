@@ -11,6 +11,7 @@ import mscicsData from './mscics';
 import reeData from './ree';
 import rmData from './rm';
 import edData from './ed';
+import meData from './me';
 
 const coursesData = [
     csData,
@@ -22,6 +23,7 @@ const coursesData = [
     dsbmData,
     badata,
     mscicsData,
+    meData,
     reeData,
     rmData,
     edData,
