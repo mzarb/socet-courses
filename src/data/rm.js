@@ -34,7 +34,12 @@ const rmData = {
                         { ...moduleList.CE2007, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2008, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2011, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE2006, type: "Elective" },
+                            { ...moduleList.CM2115, type: "Elective" },
+                            { ...moduleList.CM2133, type: "Elective" },
+                            { ...moduleList.CM2137, type: "Elective" },
+                        ] },
                     ],
                 },
                 {
@@ -43,7 +48,11 @@ const rmData = {
                         { ...moduleList.CE2012, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2016, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2017, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE2014, type: "Elective" },
+                            { ...moduleList.CM2116, type: "Elective" },
+                            { ...moduleList.CM2136, type: "Elective" },
+                        ] },
                     ],
                 },
             ],
@@ -57,7 +66,11 @@ const rmData = {
                         { ...moduleList.CM3151, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3024, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3013, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE3014, type: "Elective" },
+                            { ...moduleList.CE3010, type: "Elective" },
+                            { ...moduleList.CM3113, type: "Elective" },
+                        ] },
                     ],
                 },
                 {
@@ -66,7 +79,12 @@ const rmData = {
                         { ...moduleList.CE3015, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3012, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3022, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE3023, type: "Elective" },
+                            { ...moduleList.CM3150, type: "Elective" },
+                            { ...moduleList.CM3152, type: "Elective" },
+                            { ...moduleList.CM3153, type: "Elective" },
+                        ] },
                     ],
                 },
                 {
@@ -88,7 +106,11 @@ const rmData = {
                         { ...moduleList.CM4126, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE4005, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE4008, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE4011, type: "Elective" },
+                            { ...moduleList.CE4010, type: "Elective" },
+                            { ...moduleList.CE4145, type: "Elective" },
+                        ] },
                     ],
                 },
                 {

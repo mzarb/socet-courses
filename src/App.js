@@ -6,7 +6,9 @@ import './styles.css';
 const Disclaimer = () => (
   <div className="course-disclaimer">
     <p>
-      Updated March 2026. This resource now reflects delivery for the 2026/27 academic session. <strong>Disclaimer:</strong> This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
+      Updated March 2026. This resource now reflects delivery for the 2026/27 academic session. <br/>
+      Note that electives are offered at the discretion of the School. <br/>
+      <strong>Disclaimer:</strong> This is an unofficial, manually maintained resource by a member of SoCET staff — please refer to Akari for official course information.
     </p>
   </div>
 );
