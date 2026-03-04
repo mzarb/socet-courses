@@ -98,6 +98,7 @@ name: "BEng/MEng Mechanical Engineering",
                                 { ...moduleList.CE3016, type: "Elective" },
                                 { ...moduleList.CE3020, type: "Elective" },
                                 { ...moduleList.CE3017, type: "Elective" },
+                        ]
                         },
                     ],
                 },
