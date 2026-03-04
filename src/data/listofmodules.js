@@ -175,4 +175,22 @@ export const moduleList = {
 
   // Stage 5
   CE5009: { code: "CE5009", name: "Advanced Robotics", size: 2 }, // 30 credits
+
+  // Stage 2
+  CE2009: { code: "CE2009", name: "Engineering Materials and Manufacturing", size: 1 },
+  CE2010: { code: "CE2010", name: "Engineering Metrology", size: 1 },
+  CE2013: { code: "CE2013", name: "Applied Thermofluids: Energy and Flow", size: 1 },
+
+  // Stage 3
+  CE3014: { code: "CE3014", name: "Advanced Manufacturing Systems", size: 1 },
+  CE3019: { code: "CE3019", name: "Circular Economy", size: 1 },
+  CE3023: { code: "CE3023", name: "Quality Engineering", size: 1 },
+
+  // Stage 4
+  CE4006: { code: "CE4006", name: "Product Design and Development", size: 1 },
+  CE4011: { code: "CE4011", name: "Safety, Risk and Principles of Engineering Management", size: 1 },
+
+  // Stage 5 / FT Summer
+  CE5008: { code: "CE5008", name: "Selected Topics of Industrial Engineering", size: 2 }, // 30 credits
+  CE5004: { code: "CE5004", name: "Industrial Automation and Robotics", size: 1 },
 };

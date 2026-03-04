@@ -10,6 +10,7 @@ import badata from './ba';
 import mscicsData from './mscics';
 import reeData from './ree';
 import rmData from './rm';
+import edData from './ed';
 
 const coursesData = [
     csData,
@@ -23,6 +24,7 @@ const coursesData = [
     mscicsData,
     reeData,
     rmData,
+    edData,
 ];
 
 export default coursesData;
