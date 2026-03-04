@@ -42,7 +42,12 @@ const edData = {
                         { ...moduleList.CE2012, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2013, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2014, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE2015, type: "Elective" },
+                            { ...moduleList.CE2017, type: "Elective" },
+                            { ...moduleList.CE3022, type: "Elective" },
+                            { ...moduleList.CE3012, type: "Elective" },
+                        ] },
                     ],
                 },
             ],
@@ -56,7 +61,12 @@ const edData = {
                         { ...moduleList.CE3024, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3014, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE4010, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE3013, type: "Elective" },
+                            { ...moduleList.CE3010, type: "Elective" },
+                            { ...moduleList.CE3021, type: "Elective" },
+                            { ...moduleList.CM3151, type: "Elective" },
+                        ] },
                     ],
                 },
                 {
@@ -65,7 +75,11 @@ const edData = {
                         { ...moduleList.CE3015, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3019, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3023, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE3022, type: "Elective" },
+                            { ...moduleList.CE3016, type: "Elective" },
+                            { ...moduleList.CE3020, type: "Elective" },
+                        ] },
                     ],
                 },
                 {
@@ -87,7 +101,11 @@ const edData = {
                         { ...moduleList.CE4003, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE4006, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE4011, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE4008, type: "Elective" },
+                            { ...moduleList.CE4005, type: "Elective" },
+                            { ...moduleList.CE4004, type: "Elective" },
+                        ] },
                     ],
                 },
                 {

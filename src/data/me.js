@@ -33,7 +33,11 @@ name: "BEng/MEng Mechanical Engineering",
                         { ...moduleList.CE2006, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2007, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2008, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE2011, type: "Elective" }, 
+                            { ...moduleList.CE2009, type: "Elective" },
+                            { ...moduleList.CE2010, type: "Elective" },
+                        ] },
                     ],
                 },
                 {
@@ -42,7 +46,11 @@ name: "BEng/MEng Mechanical Engineering",
                         { ...moduleList.CE2012, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2013, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2014, type: "Subject Core", source: "subject" },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE2015, type: "Elective" },
+                            { ...moduleList.CE2016, type: "Elective" },
+                            { ...moduleList.CE2017, type: "Elective" },
+                        ] },
                     ],
                 },
             ],
@@ -61,9 +69,9 @@ name: "BEng/MEng Mechanical Engineering",
                             type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                { ...moduleList.CM3151, label: "Mechanical Engineering" },
-                                { ...moduleList.CE3013, label: "Mechanical and Electrical Engineering" },
-                                { ...moduleList.CE3018, label: "Mechanical and Offshore Engineering" }
+                                { ...moduleList.CM3151, label: "ME" },
+                                { ...moduleList.CE3013, label: "MEE" },
+                                { ...moduleList.CE3018, label: "MOE" }
                             ],
                         },
                     ],
@@ -78,12 +86,19 @@ name: "BEng/MEng Mechanical Engineering",
                             type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                { ...moduleList.CE3017, label: "Mechanical Engineering" },
-                                { ...moduleList.CE3016, label: "Mechanical and Electrical Engineering" },
-                                { ...moduleList.CE3019, label: "Mechanical and Offshore Engineering" }
+                                { ...moduleList.CE3017, label: "ME" },
+                                { ...moduleList.CE3016, label: "MEE" },
+                                { ...moduleList.CE3019, label: "MOE" }
                             ],
                         },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                                { ...moduleList.CE3022, type: "Elective" },
+                                { ...moduleList.CE3019, type: "Elective" },
+                                { ...moduleList.CE3023, type: "Elective" },
+                                { ...moduleList.CE3016, type: "Elective" },
+                                { ...moduleList.CE3020, type: "Elective" },
+                                { ...moduleList.CE3017, type: "Elective" },
+                        },
                     ],
                 },
                 {
@@ -108,9 +123,9 @@ name: "BEng/MEng Mechanical Engineering",
                             type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                { ...moduleList.CE4011, label: "Mechanical Engineering" },
-                                { ...moduleList.CE4005, label: "Mechanical and Electrical Engineering" },
-                                { ...moduleList.CE4007, label: "Mechanical and Offshore Engineering" }
+                                { ...moduleList.CE4011, label: "ME" },
+                                { ...moduleList.CE4005, label: "MEE" },
+                                { ...moduleList.CE4007, label: "MOE" }
                             ],
                         },
                         {
@@ -118,12 +133,22 @@ name: "BEng/MEng Mechanical Engineering",
                             type: "Route Choice",
                             size: 1, source: "subject",
                             options: [
-                                { ...moduleList.CE4010, label: "Mechanical Engineering" },
-                                { ...moduleList.CE4009, label: "Mechanical and Electrical Engineering" },
-                                { ...moduleList.CE4004, label: "Mechanical and Offshore Engineering" }
+                                { ...moduleList.CE4010, label: "ME" },
+                                { ...moduleList.CE4009, label: "MEE" },
+                                { ...moduleList.CE4004, label: "MOE" }
                             ],
                         },
-                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [] },
+                        { code: "Elective", type: "Elective Choice", size: 1, source: "subject", options: [
+                            { ...moduleList.CE4008, type: "Elective" },
+    { ...moduleList.CE4006, type: "Elective" },
+    { ...moduleList.CE4005, type: "Elective" },
+    { ...moduleList.CE4007, type: "Elective" },
+    { ...moduleList.CE4004, type: "Elective" },
+    { ...moduleList.CE4009, type: "Elective" },
+    { ...moduleList.CM4126, type: "Elective" },
+    { ...moduleList.CE4011, type: "Elective" },
+    { ...moduleList.CE4010, type: "Elective" },
+                        ] },
                     ],
                 },
                 {
@@ -142,9 +167,9 @@ name: "BEng/MEng Mechanical Engineering",
                             size: 2, source: "subject",
                             tag: "MEng-F",
                             options: [
-                                { ...moduleList.CE5001, label: "Mechanical Engineering" },
-                                { ...moduleList.CE5007, label: "Mechanical and Electrical Engineering" },
-                                { ...moduleList.CE5002, label: "Mechanical and Offshore Engineering" }
+                                { ...moduleList.CE5001, label: "ME" },
+                                { ...moduleList.CE5007, label: "MEE" },
+                                { ...moduleList.CE5002, label: "MOE" }
                             ],
                         },
                     ],
@@ -165,9 +190,9 @@ name: "BEng/MEng Mechanical Engineering",
                             size: 2, source: "subject",
                             tag: "MEng-5",
                             options: [
-                                { ...moduleList.CE5001, label: "Mechanical Engineering" },
-                                { ...moduleList.CE5007, label: "Mechanical and Electrical Engineering" },
-                                { ...moduleList.CE5002, label: "Mechanical and Offshore Engineering" }
+                                { ...moduleList.CE5001, label: "ME" },
+                                { ...moduleList.CE5007, label: "MEE" },
+                                { ...moduleList.CE5002, label: "MOE" }
                             ],
                         },
                     ],
