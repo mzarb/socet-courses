@@ -34,6 +34,13 @@ const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '
       onMouseLeave={handleMouseLeave}
       style={boxStyle}
     >
+{/* ADD THIS SECTION HERE: Logic for MEng / FT tags */}
+      {module.tag && (
+        <span className={`module-tag ${module.tag.toLowerCase()}`}>
+          {module.tag}
+        </span>
+      )}
+
       <div className="module-content">
         <div className="module-code">{module.code}</div>
         <div className="module-name">{module.name}</div>

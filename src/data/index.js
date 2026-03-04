@@ -8,6 +8,7 @@ import dsaiData from './dsai';
 import dsbmData from './dsbm';
 import badata from './ba';
 import mscicsData from './mscics';
+import reeData from './ree';
 
 const coursesData = [
     csData,
@@ -19,6 +20,7 @@ const coursesData = [
     dsbmData,
     badata,
     mscicsData,
+    reeData,
 ];
 
 export default coursesData;

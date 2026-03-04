@@ -114,4 +114,42 @@ export const moduleList = {
   CMM547: { code: "CMM547", name: "AI & Data Governance", size: 1 },
   CMM303: { code: "CMM303", name: "MSci Capstone Project", size: 4 },
   CEM321: { code: "CEM321", name: "Capstone Project", size: 4 },
+
+  // REE modules
+  // Stage 1
+  CE1003: { code: "CE1003", name: "Create and Build", size: 2 }, // 30 credits
+  CE1004: { code: "CE1004", name: "Statics and Structural Equilibrium", size: 1 }, // 15 credits
+  CE1005: { code: "CE1005", name: "Mathematical Thinking for Engineers", size: 1 }, // 15 credits
+  CE1006: { code: "CE1006", name: "Design and Innovate", size: 2 }, // 30 credits
+  CE1007: { code: "CE1007", name: "Engineering Analysis: Materials and Motion", size: 1 }, // 15 credits
+  CE1008: { code: "CE1008", name: "Foundations of Thermofluids", size: 1 }, // 15 credits
+
+  // Stage 2
+  CE2006: { code: "CE2006", name: "Design of Mechanical Systems", size: 1 },
+  CE2007: { code: "CE2007", name: "Electromechanical Energy Conversion", size: 1 },
+  CE2008: { code: "CE2008", name: "Mathematical Modelling and Analysis", size: 1 },
+  CE2012: { code: "CE2012", name: "Robot Wars", size: 1 },
+  CE2014: { code: "CE2014", name: "Engineering Analysis: Structures and Vibration", size: 1 },
+  CE2015: { code: "CE2015", name: "Renewable Energy and Where to Find it", size: 1 },
+  CE2023: { code: "CE2023", name: "Fluid Dynamics and Hydropower systems", size: 1 },
+
+  // Stage 3
+  CE3010: { code: "CE3010", name: "Engineers, Innovation and Society", size: 1 },
+  CE3011: { code: "CE3011", name: "Solar Energy Systems", size: 1 },
+  CE3024: { code: "CE3024", name: "Engineering Project Planning and Professional Practice", size: 1 },
+  CE3015: { code: "CE3015", name: "Engineering Group Design Project", size: 1 },
+  CE3016: { code: "CE3016", name: "Integrating Renewable Energy: Smart Grids, Energy Storage and Hydrogen Systems", size: 1 },
+  CE3020: { code: "CE3020", name: "Sustainable Power from Wind and Water", size: 1 },
+
+  // Stage 4
+  CE4003: { code: "CE4003", name: "Computational Mechanics", size: 1 },
+  CE4004: { code: "CE4004", name: "Offshore Hydrodynamics and Structural Loading", size: 1 },
+  CE4010: { code: "CE4010", name: "Failure Analysis", size: 1 },
+  CE4321: { code: "CE4321", name: "Capstone Project", size: 4 }, // 60 credits
+
+  // Stage 5
+  CE5000: { code: "CE5000", name: "Engineering Leadership and Management for Sustainability", size: 1 },
+  CE5006: { code: "CE5006", name: "Reliability and Lifecycle Analysis", size: 1 },
+  CE5010: { code: "CE5010", name: "Advanced Renewable Energy System Design", size: 2 }, // 30 credits
+  CE5003: { code: "CE5003", name: "MEng Group Project", size: 4 }, // 60 credits
 };
