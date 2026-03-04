@@ -151,4 +151,10 @@ export const moduleList = {
   CE5006: { code: "CE5006", name: "Reliability and Lifecycle Analysis", size: 1 },
   CE5010: { code: "CE5010", name: "Advanced Renewable Energy System Design", size: 2 }, // 30 credits
   CE5003: { code: "CE5003", name: "MEng Group Project", size: 4 }, // 60 credits
+
+  // Placement Modules
+  EN4601: { code: "EN4601", name: "Pre-Project Industrial Placement", size: 2 },
+  EN5600: { code: "EN5600", name: "Post-Project Industrial Placement", size: 2 },
+
+  // Stage 5 Cores (Now used in FT Semester 3s)
 };

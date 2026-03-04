@@ -50,12 +50,6 @@ const reeData =
                         { ...moduleList.CE2014, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2015, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE2023, type: "Subject Core", source: "subject" },
-                        {
-                            code: "Elective",
-                            type: "Elective Choice",
-                            size: 1, source: "subject",
-                            options: [], 
-                        },
                     ],
                 },
             ],
@@ -97,6 +91,14 @@ const reeData =
                         },
                     ],
                 },
+                {
+                    semesterName: "Semester 3",
+                    modules: [
+                        { ...moduleList.EN4601, type: "Subject Core", source: "subject", tag: "FT" },
+                        { ...moduleList.CE5000, type: "Subject Core", source: "subject", tag: "FT" },
+                        { ...moduleList.CE5006, type: "Subject Core", source: "subject", tag: "FT" },
+                    ],
+                },
             ],
         },
         {
@@ -120,12 +122,13 @@ const reeData =
                     semesterName: "Semester 2",
                     modules: [
                         { ...moduleList.CE4321, type: "Subject Core", source: "subject" },
-                        {
-                            code: "Elective",
-                            type: "Elective Choice",
-                            size: 1, source: "subject",
-                            options: [], 
-                        },
+                    ],
+                },
+                {
+                    semesterName: "Semester 3",
+                    modules: [
+                        { ...moduleList.EN5600, type: "Subject Core", source: "subject", tag: "FT" },
+                        { ...moduleList.CE5010, type: "Subject Core", source: "subject", tag: "FT" },
                     ],
                 },
             ],
