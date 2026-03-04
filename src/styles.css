@@ -60,7 +60,7 @@
 .hamburger div.open:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
 
 /* ==================================== */
-/* 2. Side Menu Drawer (Fixed Mobile Scroll) */
+/* 2. Side Menu Drawer (Fixed Bounce)   */
 /* ==================================== */
 .course-tabs {
   display: flex;
@@ -70,30 +70,33 @@
   right: -100%; 
   width: 320px;
   
-  /* Use dvh to account for mobile browser address bars */
+  /* Use vh and dvh for maximum compatibility */
   height: 100vh;
   height: 100dvh; 
   
   background-color: #fff;
   
-  /* Increase top padding so the first item isn't under the hamburger */
-  padding: 100px 0 40px 0; 
+  /* Top padding for the hamburger, Bottom padding for the "Bounce" fix */
+  padding: 90px 0 120px 0; 
   
   box-shadow: -5px 0 15px rgba(0,0,0,0.15);
-  z-index: 2000; /* Higher than everything else */
+  z-index: 2000;
   transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* Essential Scroll Logic */
+  /* Scroll behavior */
   overflow-y: auto; 
-  overscroll-behavior: contain; /* Prevents the main page from scrolling when menu reaches end */
-  -webkit-overflow-scrolling: touch; 
+  -webkit-overflow-scrolling: touch;
 }
 
-.course-tabs.open {
-  right: 0;
+/* Add a ghost element at the very end of the list for extra scroll space */
+.course-tabs::after {
+  content: "";
+  display: block;
+  height: 100px; /* This is your "blank space" at the bottom */
+  width: 100%;
+  flex-shrink: 0;
 }
 
-/* Ensure buttons don't shrink inside the scroll view */
 .tab-button {
   flex-shrink: 0; 
   width: 100%;
@@ -101,7 +104,7 @@
   background: transparent;
   border: none;
   border-bottom: 1px solid #f0f0f0;
-  padding: 20px 25px;
+  padding: 18px 25px;
   font-size: 1rem;
   font-weight: bold;
   color: #444;
