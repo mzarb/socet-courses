@@ -27,7 +27,7 @@ const reeData =
             ],
         },
         {
-            stageName: "Stage 2",
+            stageName: "Stage 2", gapYear:true,
             semesters: [
                 {
                     semesterName: "Semester 1",
@@ -77,12 +77,6 @@ const reeData =
                         { ...moduleList.CE3015, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3016, type: "Subject Core", source: "subject" },
                         { ...moduleList.CE3020, type: "Subject Core", source: "subject" },
-                        {
-                            code: "Elective",
-                            type: "Elective Choice",
-                            size: 1, source: "subject",
-                            options: [], 
-                        },
                         {
                             code: "Elective",
                             type: "Elective Choice",
