@@ -1,4 +1,4 @@
-import { coreModules } from './coremodules';
+//import { coreModules } from './coremodules';
 import { moduleList } from './listofmodules'; // Import the central module list
 
 const reeData =

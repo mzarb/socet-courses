@@ -145,7 +145,6 @@ export const moduleList = {
   CE4003: { code: "CE4003", name: "Computational Mechanics", size: 1 },
   CE4004: { code: "CE4004", name: "Offshore Hydrodynamics and Structural Loading", size: 1 },
   CE4010: { code: "CE4010", name: "Failure Analysis", size: 1 },
-  CE4321: { code: "CE4321", name: "Capstone Project", size: 4 }, // 60 credits
 
   // Stage 5
   CE5000: { code: "CE5000", name: "Engineering Leadership and Management for Sustainability", size: 1 },
