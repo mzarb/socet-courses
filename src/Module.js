@@ -1,8 +1,8 @@
 // Module.js
 import React, { useState } from 'react';
 
-  // Array for route prefixes
-  const routePrefixes = ['Route A', 'Route B', 'Route C', 'Route D', 'Route E', 'Route F'];
+// Array for route prefixes
+const routePrefixes = ['Route A', 'Route B', 'Route C', 'Route D', 'Route E', 'Route F'];
 
 const Module = ({ module }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -21,7 +21,7 @@ const Module = ({ module }) => {
 
   // Update this line to include a class for the core modules
   // This line now correctly applies the color classes based on the module's type.
-const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '-')}`;
+  const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '-')}`;
 
   const boxStyle = {
     gridColumn: `span ${module.size || 1}`,
@@ -34,7 +34,7 @@ const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '
       onMouseLeave={handleMouseLeave}
       style={boxStyle}
     >
-{/* ADD THIS SECTION HERE: Logic for MEng / FT tags */}
+      {/* ADD THIS SECTION HERE: Logic for MEng / FT tags */}
       {module.tag && (
         <span className={`module-tag ${module.tag.toLowerCase()}`}>
           {module.tag}
@@ -45,14 +45,16 @@ const moduleClassName = `module-box ${module.type.toLowerCase().replace(/\s/g, '
         <div className="module-code">{module.code}</div>
         <div className="module-name">{module.name}</div>
       </div>
-          {(module.type === "Elective Choice" || module.type === "Route Choice") && isExpanded && module.options && (
+      {(module.type === "Elective Choice" || module.type === "Route Choice") && isExpanded && module.options && (
         <ul className="elective-options">
           {module.options.map((option, index) => (
             <li key={index}>
               {module.type === "Elective Choice" && `${option.code}: ${option.name}`}
               {module.type === "Route Choice" && (
                 // Prepend 'Route A', 'Route B', etc. for Route Choice options
-                `${routePrefixes[index]}: ${option.code}: ${option.name}`
+                option.label
+                  ? `${option.label}: ${option.code}: ${option.name}`
+                  : `${routePrefixes[index]}: ${option.code}: ${option.name}`
               )}
             </li>
           ))}
