@@ -3,7 +3,7 @@ import { moduleList } from './listofmodules'; // Import the central module list
 
 const reeData =
 {
-    name: "MEng Renewable Energy Engineering",
+    name: "BEng/MEng Renewable Energy Engineering",
     stages: [
         {
             stageName: "Stage 1",
