@@ -88,9 +88,9 @@ const reeData =
                 {
                     semesterName: "Semester 3",
                     modules: [
-                        { ...moduleList.EN4601, type: "Subject Core", source: "subject", tag: "MEng-Fast Track" },
-                        { ...moduleList.CE5000, type: "Subject Core", source: "subject", tag: "MEng-Fast Track" },
-                        { ...moduleList.CE5006, type: "Subject Core", source: "subject", tag: "MEng-Fast Track" },
+                        { ...moduleList.EN4601, type: "Subject Core", source: "subject", tag: "MEng-F" },
+                        { ...moduleList.CE5000, type: "Subject Core", source: "subject", tag: "MEng-F" },
+                        { ...moduleList.CE5006, type: "Subject Core", source: "subject", tag: "MEng-F" },
                     ],
                 },
             ],
@@ -121,8 +121,8 @@ const reeData =
                 {
                     semesterName: "Semester 3",
                     modules: [
-                        { ...moduleList.EN5600, type: "Subject Core", source: "subject", tag: "MEng-Fast Track" },
-                        { ...moduleList.CE5010, type: "Subject Core", source: "subject", tag: "MEng-Fast Track" },
+                        { ...moduleList.EN5600, type: "Subject Core", source: "subject", tag: "MEng-F" },
+                        { ...moduleList.CE5010, type: "Subject Core", source: "subject", tag: "MEng-F" },
                     ],
                 },
             ],
@@ -133,15 +133,15 @@ const reeData =
                 {
                     semesterName: "Semester 1",
                     modules: [
-                        { ...moduleList.CE5000, type: "Subject Core", source: "subject", tag: "MEng-5 Year" },
-                        { ...moduleList.CE5006, type: "Subject Core", source: "subject", tag: "MEng-5 Year" },
-                        { ...moduleList.CE5010, type: "Subject Core", source: "subject", tag: "MEng-5 Year" },
+                        { ...moduleList.CE5000, type: "Subject Core", source: "subject", tag: "MEng-5" },
+                        { ...moduleList.CE5006, type: "Subject Core", source: "subject", tag: "MEng-5" },
+                        { ...moduleList.CE5010, type: "Subject Core", source: "subject", tag: "MEng-5" },
                     ],
                 },
                 {
                     semesterName: "Semester 2",
                     modules: [
-                        { ...moduleList.CE5003, type: "Subject Core", source: "subject", tag: "MEng-5 Year" },
+                        { ...moduleList.CE5003, type: "Subject Core", source: "subject", tag: "MEng-5" },
                     ],
                 },
             ],
