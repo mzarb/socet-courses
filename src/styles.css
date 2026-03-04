@@ -58,36 +58,49 @@
 .hamburger div.open:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .hamburger div.open:nth-child(2) { opacity: 0; }
 .hamburger div.open:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
 /* ==================================== */
-/* 2. Side Menu Drawer (Fixed Visibility) */
+/* 2. Side Menu Drawer (The Final Fix)  */
 /* ==================================== */
 .course-tabs {
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
-  /* Use a fixed pixel width for the 'off-screen' calculation */
-  right: -320px; 
+  right: -100%; /* Completely off-screen */
   width: 320px;
   height: 100vh;
   height: 100dvh; 
   background-color: #fff;
   
-  /* Space at the top for hamburger and massive space at bottom for scrolling */
-  padding: 80px 0 150px 0; 
+  /* Buffer at the top for hamburger and massive buffer at bottom for scroll */
+  padding: 100px 0 200px 0; 
   
-  box-shadow: -5px 0 15px rgba(0,0,0,0.15);
+  box-shadow: -10px 0 20px rgba(0,0,0,0.2);
   z-index: 2000;
-  transition: right 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out, visibility 0.3s;
+  
+  /* Hide it from the screen and screen readers when closed */
+  visibility: hidden; 
   
   /* Scroll logic */
-  overflow-y: auto; 
+  overflow-y: scroll; /* Forces scrollbar to be active */
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
-/* This class MUST be present in your App.js logic */
 .course-tabs.open {
-  right: 0 !important;
+  right: 0;
+  visibility: visible; /* Only visible when open */
+}
+
+/* Spacer fix: Adding an actual div-like spacer at the end of the list */
+.course-tabs::after {
+  content: "";
+  display: block;
+  min-height: 150px; /* Forces extra scroll room at the bottom */
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .tab-button {
@@ -97,11 +110,16 @@
   background: transparent;
   border: none;
   border-bottom: 1px solid #f0f0f0;
-  padding: 18px 25px;
-  font-size: 1rem;
+  padding: 20px 25px;
+  font-size: 1.1rem; /* Slightly larger for easier mobile tapping */
   font-weight: bold;
   color: #444;
   cursor: pointer;
+}
+
+/* Prevents the main page from scrolling when the menu is open */
+body.menu-open {
+  overflow: hidden;
 }
 
 /* ==================================== */

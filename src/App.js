@@ -20,6 +20,15 @@ function App() {
     setIsMenuOpen(false); 
   };
 
+  // This prevents the background from scrolling while the menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMenuOpen]);
+
   return (
     <div className="app-container">
       {/* The side drawer menu */}
