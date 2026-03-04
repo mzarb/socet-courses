@@ -179,10 +179,17 @@ body.menu-open {
 /* ==================================== */
 .modules-grid {
   display: grid;
-  /*grid-template-columns: repeat(4, 1fr);*/
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  /* Forces exactly 2 columns - creates the 2x2 look for 4 modules */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 10px;
   padding: 10px;
+}
+
+/* On larger desktop screens, switch to 4x1 to spread them out */
+@media (min-width: 1400px) {
+  .modules-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .module-box {
