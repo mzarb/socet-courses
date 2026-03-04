@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import coursesData from './data/index.js'; 
 import Course from './Course.js';
 import './styles.css';
