@@ -113,13 +113,14 @@ const rmData = {
                     modules: [
                         { ...moduleList.CE5000, type: "Subject Core", source: "subject", tag: "MEng-5" },
                         { ...moduleList.CE5006, type: "Subject Core", source: "subject", tag: "MEng-5" },
+                        { ...moduleList.CE5009, type: "Subject Core", source: "subject", tag: "MEng-5" },
                     ],
                 },
                 {
                     semesterName: "Semester 2",
                     modules: [
                         { ...moduleList.CE5003, type: "Subject Core", source: "subject", tag: "MEng-5" },
-                        { ...moduleList.CE5009, type: "Subject Core", source: "subject", tag: "MEng-5" },
+
                     ],
                 },
             ],
