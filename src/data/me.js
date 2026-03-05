@@ -155,7 +155,7 @@ name: "BEng/MEng Mechanical Engineering",
                 {
                     semesterName: "Semester 2",
                     modules: [
-                        { ...moduleList.CM4134, type: "Subject Core", source: "subject" },
+                        { ...moduleList.CE4321, type: "Subject Core", source: "subject" },
                     ],
                 },
                 {
